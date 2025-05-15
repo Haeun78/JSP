@@ -1,9 +1,97 @@
-.footer-container{
-    border: 1px solid black;
-    background-color: gray;
-
-}
-
-.divisor{
+/* ===== Footer Wrapper ===== */
+.footer-container {
+    /* border: 1px solid black; */
+    background-color: #f8f8f8;
+    padding: 30px 40px;
+    font-size: 14px;
+    color: #333;
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+  
+  /* ===== 푸터 메인 컨테이너 첫번째 줄 ===== */
+  .first-line-container {
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  
+  .first-line-left button,
+  .first-line-right button {
+    background: none;
+    border: none;
+    color: #555;
+    margin: 5px 10px 5px 0;
+    cursor: pointer;
+    font-size: 12px;
+  }
+  
+  .first-line-left button:hover,
+  .first-line-right button:hover {
+    text-decoration: underline;
+  }
+  
+  .divisor1 {
     display: inline-block;
+    height: 14px;
+    background-color: #ccc;
+    margin: 0 12px;
+  }
+
+  .divisor2 {
+    /* display: inline-block; */
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+  }
+  
+  /* ===== 푸터 메인 컨테이너 두번째 줄 ===== */
+  .second-line-container {
+    /* border: 1px solid black; */
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    /* flex-wrap: wrap; */
+    /* gap: 30px; */
+    margin-top: 10px;
+    padding: 0px 30px;
+  }
+  
+  /* ===== 푸터 두번째 줄 왼쪽 칸 ===== */
+  .second-line-left .title {
+    /* border: 1px solid black; */
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 6px;
+  }
+  
+  .second-line-left .copyright {
+    /* border: 1px solid black; */
+    font-size: 8px;
+    color: #777;
+  }
+  
+  /* ===== 푸터 두번째 줄 오른쪽 칸 ===== */
+  .second-line-right {
+  /* border: 1px solid black; */
+  padding-left: 30px;
+  display: flex;             /* 핵심: 가로 정렬 */
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  font-size: 10px;
 }
+
+.second-line-right .first,
+.second-line-right .second,
+.second-line-right .third {
+  /* border: 1px solid black; */
+  flex: 1;                   /* 3등분 자동 배치 */
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+
+  
