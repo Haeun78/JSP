@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>아이디/비밀번호 찾기</title>
+</head>
+<body>
+
+  <!-- 헤더 -->
+  <header>
+    <div>
+      <a href="main.html" class="logo-icon">
+        <img src="" alt="로고" class="logo">
+      </a>
+    </div>
+
+    <!-- 오른쪽 상단 링크 -->
+    <div align="right">
+      <a href="login.html">로그인</a> |
+      <a href="signup.html">회원가입</a> |
+      <a href="support.html">고객센터</a>
+    </div>
+    <hr>
+  </header>
+
+  <!-- 메인 -->
+  <main align="center">
+    <h2>아이디/비밀번호 찾기</h2>
+
+    <!-- ① 탭 버튼: HTML만으로 눌림 상태 유지 -->
+    <p>
+      <input type="radio" name="findTab" id="find-id" checked>
+      <label for="find-id"><strong>아이디 찾기</strong></label>
+
+      <input type="radio" name="findTab" id="find-pw">
+      <label for="find-pw">비밀번호 찾기</label>
+    </p>
+
+    <!-- 아이디 찾기 방법 선택 -->
+    <p><strong>아이디 찾기 방법 선택</strong></p>
+    <p>
+      <input type="radio" name="method" id="phone" checked>
+      <label for="phone">휴대폰 번호</label>
+      &nbsp;&nbsp;
+      <input type="radio" name="method" id="email">
+      <label for="email">이메일</label>
+    </p>
+
+    <!-- 이름/휴대폰 입력 -->
+    <p><input type="text" placeholder="이름을 입력해주세요." size="40"></p>
+    <p><input type="text" placeholder="휴대폰 번호('-'없이 입력)를 입력해주세요." size="40"></p>
+
+    <p>
+      <button type="button">인증번호 받기</button>
+    </p>
+  </main>
+
+  <!-- 푸터 -->
+  <footer>
+    <br><br><br><br><br><br><br>
+  </footer>
+
+</body>
+</html>
