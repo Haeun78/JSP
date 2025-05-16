@@ -1,3 +1,79 @@
-div {
+/* div {
     border: 1px solid rgb(158, 158, 158);
+} */
+
+/* ===== 기본 리셋 ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background-color: #ffffff;
+  color: #333;
+}
+
+/* main - css*/
+#main{
+    width: 70%;
+    margin: auto;
+}
+
+/* ===== 아이콘 전체 컨테이너 ===== */
+.field-icon-wrapper {
+  width: 70%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* 한 줄에 12개 */
+  gap: 24px;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  justify-items: center; /* 가운데 정렬 */
+}
+
+/* ===== 개별 아이콘 박스 ===== */
+.btn-icon-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80px;
+}
+
+/* ===== 버튼 스타일 ===== */
+.btn-icon {
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+  border: none;
+  border-radius: 10%;
+  box-shadow: 0 2px 8px rgba(157, 157, 157, 0.432);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-icon:hover {   /*아이콘에 호버할 때 위로 살짝 올라감*/
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== 아이콘 이미지 ===== */
+.btn-img img {
+  width: 85%;
+  height: auto;
+}
+
+/* ===== 아이콘 이름 텍스트 ===== */
+.btn-name {
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+}
+
+/* ===== 도서 전체 섹션 ===== */
