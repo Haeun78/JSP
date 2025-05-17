@@ -16,20 +16,21 @@ body {
 }
 
 /* main - css*/
-#main{
-    width: 70%;
-    margin: auto;
-}
+/* #main{
+  width: 70%;
+  margin: auto;
+} */
 
 /* ===== 아이콘 전체 컨테이너 ===== */
 .field-icon-wrapper {
+  /* border: 1px solid gray; */
   width: 70%;
   margin: auto;
   display: grid;
   grid-template-columns: repeat(12, 1fr); /* 한 줄에 12개 */
   gap: 24px;
-  padding: 40px 20px;
-  background-color: #f9f9f9;
+  padding: 40px 0px;
+  background-color: #ffffff;
   justify-items: center; /* 가운데 정렬 */
 }
 
@@ -47,7 +48,7 @@ body {
   height: 80px;
   background-color: #fff;
   border: none;
-  border-radius: 10%;
+  border-radius: 50%;
   box-shadow: 0 2px 8px rgba(157, 157, 157, 0.432);
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -76,4 +77,496 @@ body {
   text-align: center;
 }
 
-/* ===== 도서 전체 섹션 ===== */
+/* ===== 도서 섹션 ===== */
+/* 섹션 전체 배경 및 여백 설정 */
+.all-choice-wrapper {
+  background-color: #f1f1f12d;
+  width: 70%;
+  margin: auto;
+  /* padding: 48px 24px; */
+  /* font-family: 'Noto Sans KR', sans-serif; */
+}
+
+/* 전체 콘텐츠 중앙 정렬 + 최대 너비 제한 */
+.all-choice-container {
+  /* border: 1px solid gray; */
+  /* max-width: 1200px; */
+  margin: 0 auto;
+}
+
+/* 섹션 제목: "모두의 선택" */
+.title-container .title-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 32px;
+  padding-left: 6px;
+  border-left: 4px solid #00a67e;
+}
+
+/* ===== 2. 첫 줄 - 대표 도서 영역 ===== */
+.first-book-img-zone{ 
+  position: relative;
+}
+
+/* 왼쪽 이미지 + 오른쪽 정보 배치 */
+.first-contents {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+/* ----- 왼쪽 도서 이미지 ----- */
+/* 이미지 박스 배경 + 정렬 */
+.first-left .first-book-img-zone {
+  border: none;
+  width: 600px;
+  height: 400px;
+  background-color: #f4ffdd;
+  border-radius: 16px;
+  overflow: hidden;
+
+  /* 중앙 정렬 유지 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* 부드러운 그림자 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+  /* 약간의 안쪽 여백 */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* 이미지 감싸는 div도 정렬 보조 */
+.first-book-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  
+}
+
+/* 이미지 내부의 실제 책 이미지 */
+.first-book-img img {
+  width: 30%;
+  height: auto;
+  display: block; 
+
+  /*이미지 모서리 부드럽게*/
+  border-radius: 5px;
+
+  /*이미지 그림자*/
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.267); 
+
+  /* 부드러운 확대를 위한 설정 */
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* 자연스러운 곡선 */
+  will-change: transform; /* 성능 최적화 */
+}
+
+.first-book-img img:hover {
+  /*이미지 확대*/
+  transform: scale(1.05); 
+  cursor: pointer;
+}
+
+/* 이미지 왼쪽 상단 숫자 표시 */
+.content-num {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  background-color: #111;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+/* ----- 오른쪽 도서 정보 영역 ----- */
+.first-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* 도서 분류 (문학, 경제 등) */
+.classification {
+  width: 50px;
+  height: auto;
+  font-size: 13px;
+  text-align: center;
+  color: #4d4d4d;
+  display: inline-block;
+  border: 2px solid #bbbbbbb7;
+  padding: 2px 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+/* 제목 + 더보기 아이콘 정렬 */
+.first-right .title-container {
+  /* border: 1px solid gray; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.first-right .title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #111;
+}
+
+.more-icon img {
+  /* border: 1px solid gray; */
+  width: 25px;
+  height: 25px;
+  
+}
+
+/* 작가 / 출판사 / 출시일 표시 */
+.sub-title-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: #666;
+  margin: 10px 0;
+}
+
+.sub-title-container .divisor {
+  width: 1px;
+  height: 12px;
+  background-color: #ccc;
+}
+
+/* 도서 설명 (5줄까지만 표시, 말줄임 처리) */
+.content {
+  width: 60%;
+  font-size: 14px;
+  color: #444;
+  line-height: 1.6;
+  max-height: 7.2em; /* 1.6em × 4.5줄 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  margin-bottom: 20px;
+}
+
+/* 가격 정보: 할인율, 할인가, 원, 정가 */
+.price {
+  /* border: 1px solid gray; */
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.price div:first-child {
+  /* 할인율 */
+  /* border: 1px solid gray; */
+  color: #d43f3a; 
+  font-weight: bold;
+}
+
+.price div:nth-child(2) {
+  font-size: 25px; /* 할인된 가격 */
+  font-weight: bold;
+}
+
+.price div:last-child {
+  font-size: 13px;
+  color: #aaa;
+  text-decoration: line-through; /* 정가 */
+}
+
+/* ===== 장바구니 / 바로구매 버튼 ===== */
+.button-container {
+  width: 60%;
+  display: flex;
+  gap: 12px;
+}
+
+.cart-button,
+.buy-button {
+  flex: 1;
+  padding: 12px 0;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-button {
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #ccc;
+}
+
+.buy-button {
+  background-color: #333;
+  color: #fff;
+}
+
+/* 버튼 내부 텍스트 + 아이콘 정렬 */
+.button-text {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.arrow-right-icon img {
+  width: 16px;
+  height: 16px;
+}
+
+/* ===== 3. 두 번째 줄 추천 카드 ===== */
+/* 그리드 4칸 정렬 */
+.second-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* 각 도서 카드 전체 박스 */
+.second-etc-card {
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+/* hover 효과 */
+.second-etc-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+/* 카드 내 이미지 영역 */
+.second-etc-book-img-zone {
+  position: relative;
+  height: 180px;
+  background-color: #eef8db;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.second-book-img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.second-book-img img {
+  width: 33%;
+  height: auto;
+  border-radius: 3px;
+}
+
+/* 카드 안 순위 표시 */
+.second-etc-book-img-zone .content-num {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  background-color: #111;
+  color: #fff;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* 카드 정보 본문 */
+.second-etc-body {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 200px;
+}
+
+/* 제목 + 더보기 아이콘 정렬 */
+.second-etc-body .title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.second-etc-body .title {
+  font-size: 15px;
+  font-weight: bold;
+  color: #222;
+}
+
+.second-etc-body .more-icon img {
+  width: 16px;
+  height: 16px;
+}
+
+/* 작가 / 출판사 / 출시일 */
+.second-etc-body .sub-title-container {
+  display: flex;
+  align-items: center;
+  font-size: 10px;
+  color: #666;
+  gap: 6px;
+  margin: 6px 0;
+}
+
+.second-etc-body .sub-title-container .divisor {
+  width: 1px;
+  height: 10px;
+  background-color: #ccc;
+}
+
+/* 도서 서평 (3줄 말줄임) */
+.second-etc-body .content {
+  font-size: 10px;
+  color: #555;
+  line-height: 1.5;
+  max-height: 3.6em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  margin-bottom: 8px;
+}
+
+/* 가격 정보 */
+.second-etc-body .price {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.second-etc-body .price div:first-child {
+  color: #d43f3a;
+  font-weight: bold;
+}
+
+.second-etc-body .price div:nth-child(2) {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.second-etc-body .price div:last-child {
+  text-decoration: line-through;
+  color: #aaa;
+  font-size: 12px;
+}
+
+.divisor-long{
+  width: 70%;
+  height: 1px;
+  border: 1px solid rgba(198, 198, 198, 0.308);
+  margin: auto;
+  margin-top: 50px;
+}
+
+/*------------베스트 셀러 도서 구간-----------*/
+.best-book-list{
+  /* border: 1px solid gray; */
+  margin: auto;
+  margin-top: 50px;
+  width: 70%;
+  height: auto;
+}
+
+.best-seller-body {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 6칸 정렬 */
+  gap: 24px;
+}
+
+.best-book-zone {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  /* box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06); */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.best-book-zone:hover {
+  transform: translateY(-4px);
+  cursor: pointer;
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12); */
+}
+
+/* ===== 책 이미지 ===== */
+.best-book-img {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.best-book-img .book-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 3px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.647);
+  object-fit: contain;
+  display: block;
+}
+
+/* ===== 책 제목 ===== */
+.best-book-title {
+  font-size: 15px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 6px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* ===== 작가 및 출판사명 ===== */
+.author-publisher {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* ===== 가격 영역 ===== */
+.price-container {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  font-size: 13px;
+  justify-content: center;
+}
+
+.price-container div:first-child {
+  color: #d43f3a;
+  font-weight: bold;
+}
+
+.price-container div:nth-child(2) {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.price-container div:last-child {
+  color: #888;
+}
