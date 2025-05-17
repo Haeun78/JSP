@@ -207,7 +207,7 @@
     <div id="cat-best-week" class="book-grid">
       <% for (int i = 1; i <= 10; i++) { %>
         <div class="book-card">
-          <a href="#"><img src="img/표지1.jpg" alt="book"></a>
+          <a href="#"><img src="image/index_book1.jpg" alt="book"></a>
           <a href="#" class="book-title">[주간] 도서 <%=i%></a>
           <div class="book-author">작가 이름</div>
           <div class="book-price">₩<%= 10000 + i * 1000 %></div>
@@ -219,7 +219,7 @@
     <div id="cat-best-month" class="book-grid">
       <% for (int i = 11; i <= 20; i++) { %>
         <div class="book-card">
-          <a href="#"><img src="img/표지1.jpg" alt="book"></a>
+          <a href="#"><img src="image/index_book1.jpg" alt="book"></a>
           <a href="#" class="book-title">[월간] 도서 <%=i%></a>
           <div class="book-author">작가 이름</div>
           <div class="book-price">₩<%= 10000 + i * 1000 %></div>
