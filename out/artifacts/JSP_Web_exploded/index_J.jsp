@@ -224,7 +224,7 @@
           <div class="book-author">작가 이름</div>
           <div class="book-price">₩<%= 10000 + i * 1000 %></div>
         </div>
-      <% } %>
+      <% } %> 
     </div>
   </main>
 
