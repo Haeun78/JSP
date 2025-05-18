@@ -3,50 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <title>회원가입 - 책광장모두</title>
+  <link rel="stylesheet" href="./css/signup.css">
+  <link rel="stylesheet" href="./css/index.css">
+  
+  <script defer src="./js/signup.js"></script>
 </head>
 <body>
 
   <!-- 헤더 -->
   <header>
-    <div>
-      <a href="main.html" class="logo-icon">
-        <img src="" alt="로고" class="logo">
+    <div class="top-bar">
+      <a href="index.html" class="logo-icon">
+        <img src="./image/책광장모두.png" alt="로고" class="logo">
       </a>
+      <div class="top-links">
+        <a href="help.html">고객센터</a>
+      </div>
     </div>
-    <div style="text-align: right;">
-      <a href="login.html">로그인</a> |
-      <a href="signup.html">회원가입</a> |
-      <a href="support.html">고객센터</a>
-    </div>
-    <hr>
   </header>
 
   <!-- 메인 -->
   <main>
-
-    <h2 style="margin-left: 40px;">회원가입</h2>
+    <h2 class="title">회원가입</h2>
 
     <!-- 로그인 정보 -->
-    <section style="margin: 40px;">
+    <section>
       <h3>로그인 정보</h3>
       <p>아이디 *  
-        <input type="text" size="30">
+        <input type="text" id="userid" name="userid">
         <button type="button">중복확인</button>
       </p>
       <p>비밀번호 *<br>
-        <input type="password" size="50" placeholder="영문자, 숫자 포함 6자 이상, 20자 이하 입력해주세요.">
+        <input type="password" id="password" name="password" placeholder="영문자, 숫자 포함 6자 이상, 20자 이하 입력해주세요.">
       </p>
-      <p>비밀번호 재확인<br>
-        <input type="password" size="50" placeholder="비밀번호를 한 번 더 입력해주세요.">
+      <p>비밀번호 재확인 *<br>
+        <input type="password" id="confirmPassword" name="repassword" placeholder="비밀번호를 한 번 더 입력해주세요.">
         <button type="button">비밀번호 확인</button>
       </p>
     </section>
 
     <!-- 회원 정보 -->
-    <section style="margin: 40px;">
+    <section>
       <h3>회원정보</h3>
       <p>이름 *<br>
-        <input type="text" size="20">
+        <input type="text" id="name" name="name">
       </p>
       <p>성별 *<br>
         <input type="radio" name="gender" id="male"><label for="male"> 남 </label>
@@ -55,54 +55,116 @@
     </section>
 
     <!-- 추가 정보 -->
-    <section style="margin: 40px;">
+    <section>
       <h3>추가 정보</h3>
       <p>생년월일 *<br>
-        <input type="text" placeholder="XXXX" size="4"> 년
-        <input type="text" placeholder="XX" size="2"> 월
-        <input type="text" placeholder="XX" size="2"> 일
+        <input type="text" id="birth-year" name="birthYear" placeholder="YYYY" size="4"> 년
+        <input type="text" id="birth-month" name="birthMonth" placeholder="MM" size="2"> 월
+        <input type="text" id="birth-day" name="birthDay" placeholder="DD" size="2"> 일
       </p>
       <p>연락처 *<br>
-        <input type="text" placeholder="010-XXXX-XXXX" size="40">
+        <input type="text" id="phone" name="phone" placeholder="010-XXXX-XXXX">
       </p>
       <p>이메일 *<br>
-        <input type="text" size="20"> @
-        <select>
-          <option>선택하세요</option>
-          <option>gmail.com</option>
-          <option>naver.com</option>
-          <option>daum.net</option>
+        <input type="text" id="email" name="email">
+        @
+        <select id="email-domain">
+          <option value="">선택하세요</option>
+          <option value="gmail.com">gmail.com</option>
+          <option value="naver.com">naver.com</option>
+          <option value="daum.net">daum.net</option>
         </select>
         <button type="button">중복확인</button>
       </p>
     </section>
 
     <!-- 소속 기관 -->
-    <section style="margin: 40px;">
+    <section>
       <h3>소속기관·단체</h3>
       <p>
-        <input type="text" placeholder="소속기관·단체를 입력해주세요." size="40">
-        <input type="text" placeholder="인증번호를 입력해주세요." size="30">
+        <input type="text" placeholder="소속기관·단체를 입력해주세요.">
+        <input type="text" placeholder="인증번호를 입력해주세요.">
       </p>
     </section>
 
     <!-- 약관 동의 -->
-    <section style="margin: 40px;">
-      <input type="checkbox" id="agreeall">
-      <label for="agreeall"><strong>전체 동의합니다.</strong></label><br>
-      <small>전체동의는 필수 정보에 대한 동의가 포함되어 있으며, 개별로도 선택하실 수 있습니다.</small>
-    </section>
+<section>
+  <label>
+    <input type="checkbox" id="agreeAll"> <strong>전체 동의합니다.</strong>
+  </label>
+  <br>
+  <small>전체동의는 필수 정보에 대한 동의가 포함되어 있으며, 개별로도 선택하실 수 있습니다.</small>
+  <br><br>
+  <label>
+    <input type="checkbox" class="terms" id="privacy"> 개인정보 처리방침
+    <button type="button" onclick="alert('개인정보 처리방침 내용입니다.')">내용보기</button>
+  </label><br>
+  <label>
+    <input type="checkbox" class="terms" id="commerce"> 전자상거래(인터넷사이버몰) 표준약관
+    <button type="button" onclick="alert('전자상거래 표준약관 내용입니다.')">내용보기</button>
+  </label>
+</section>
+
 
     <!-- 버튼 영역 -->
-    <section style="margin: 60px; text-align: center;">
-  <button type="button" onclick="location.href='login.html'">취소</button>
-  <button type="button" onclick="location.href='auth.html'">확인</button>
-</section>
+    <section style="text-align: center; margin-top: 40px;">
+      <button type="button" onclick="location.href='login_form.html'">취소</button>
+      <button type="button" id="submitBtn">확인</button>
+    </section>
   </main>
 
   <!-- 푸터 -->
   <footer>
-    <br><br><br><br><br>
+    <!-- 푸터 메인 컨테이너 -->
+    <div class="footer-container">
+        <!-- 푸터 메인 컨테이너 첫번째 줄-->
+        <div class="first-line-container">
+            <div class="first-line-left">
+                <button>사이트소개</button>
+                <button>출판협동조합 사이트 바로가기</button>
+                <div class="divisor1"></div>
+                <button>서비스이용약관</button>
+                <button>개인정보처리방침</button>
+                <button>책임의 한계와 법적 고지</button>
+                <button>이메일 무단수집거부</button>
+            </div>
+            <div class="first-line-right">
+                <button>고객센터</button>
+                <button>1:1문의</button>
+                <button>나의 즐겨찾기</button>
+            </div>
+        </div>
+
+        <div class="divisor2"></div> <!-- 푸터 메인 컨테이너 구부선-->
+
+        <!-- 푸터 메인 컨테이너 두번째 줄-->
+        <div class="second-line-container">
+            <div class="second-line-left">
+                <div class="title">책광장모두</div>
+                <div class="copyright">
+                    Copyright (C) by 한국출판협동조합. All rights reserved.
+                </div>
+            </div>
+            <div class="second-line-right">
+                <div class="first">
+                    <div><img src="./image/geo-alt.svg" alt="">서울특별시 마포구 토정로222 (한국출판협동조합)</div>
+                    <div>경기도 파주시 적성면 적성산단3로 10 (가월리)</div>
+                    <div><img src="./image/envelope.svg" alt="">modoo@koreabook.or.kr</div>
+                </div>
+                <div class="second">
+                    <div><img src="./image/telephone.svg" alt="">02-701-0805</div>
+                    <div><img src="./image/newspaper.svg" alt="">02-716-2999</div>
+                    <div>031-944-8234~6</div>
+                    <div style="cursor: pointer; margin-top: 10px;">한국출판협동조합 플러스친구</div>
+                </div>
+                <div class="third">
+                    <div>대표자 | 주정관 | 사업자등록번호 | 105-82-02347</div>
+                    <div>통신판매업신고번호 | 제2007-3130118-30206728</div>
+                    <div>부가통신사업신고번호 | 제2-01-0123호</div>
+                </div>
+            </div>
+        </div>
+    </div>
   </footer>
 
 </body>

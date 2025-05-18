@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>적립금 내역</title>
+  <link rel="stylesheet" href="./css/mypage_main.css" />
+  <link rel="stylesheet" href="./css/points_details.css" />
+  <link rel="stylesheet" href="./css/index.css">
+ 
+  <div class="top-bar">
+    <a href="index.html" class="logo-icon">
+          <img src="./image/책광장모두.png" alt="로고" class="logo">
+    </a>
+    <div class="top-links">
+      <a href="index.html">로그아읏</a>
+      <a href="help.html">고객센터</a>
+      <a href="mypage.html">마이페이지</a>
+    </div>
+    </div>
+</head>
+<body>
+<script>
+  const isLoggedIn = true;
+  if (!isLoggedIn) {
+    alert("로그인 후 이용 가능한 서비스입니다.");
+    window.location.href = "login_form.html";
+  }
+</script>
+<div class="main-nav">
+  <div class="menu">
+    <a href="#">분야별 도서</a>
+    <a href="#">독서기록장</a>
+    <a href="#">역대수상작</a>
+    <a href="#">이벤트소식</a>
+    <a href="#">공지사항</a>
+  </div>
+</div>
+<div class="container">
+  <div class="sidebar">
+    <a href="mypage_main.html"><h3>마이페이지</h3></a>
+    <ul>
+      <li><a href="edit_profile_page.html">회원정보수정</a></li>
+      <li><a href="#">적립금 내역</a></li>
+      <li><a href="#">장바구니</a></li>
+      <li><a href="order_list.html">주문/배송내역</a></li>
+      <li><a href="address_manage.html">배송지 관리</a></li>
+      <li><a href="favorites.html">찜 목록</a></li>
+      <li><a href="#">작성글 관리</a></li>
+      <li><a href="inquiry.html">1:1 문의</a></li>
+    </ul>
+  </div>
+  <div class="content">
+    <h2>적립금 내역</h2>
+    <div class="container">
+        <div class="box-group">
+            <!-- 회원 정보 박스 -->
+            <div class="member-info">
+            <p>안녕하세요,<br><strong>○○○님</strong></p>
+            <form action="edit-profile-page.html">
+                <button type="submit" class="edit-button">회원 정보 수정 &gt;</button>
+              </form>
+            </div>
+        
+            <!-- 적립금 박스들 -->
+            <div class="point-box gray">
+            <p>사용 가능 적립금<br><span class="amount">0</span>원</p>
+            </div>
+            <div class="point-box gray">
+            <p>사용 가능 적립금<br><span class="amount">0</span>원</p>
+            </div>
+        </div>
+      </div>
+      
+      <!-- 적립 내역 테이블 -->
+      <table class="point-table">
+        <thead>
+          <tr>
+            <th>적립일자</th>
+            <th>주문번호</th>
+            <th>구분</th>
+            <th>유효기간</th>
+            <th>금액</th>
+          </tr>
+        </thead>
+      </table>
+      <!-- 페이지네이션 -->
+      <div class="pagination">
+        <button disabled>&laquo;</button>
+        <button disabled>&lt;</button>
+        <button disabled>&gt;</button>
+        <button disabled>&raquo;</button>
+      </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div class="links-left">
+      <a href="#">사이트소개</a>
+      <a href="#">출판협동조합 사이트 바로가기</a>
+      <a href="#">서비스이용약관</a>
+      <a href="#">개인정보처리방침</a>
+      <a href="#">책임의 한계와 법적 고지</a>
+      <a href="#">이메일 무단수집거부</a>
+    </div>
+    <div class="links-right">
+      <a href="customer.html">고객센터</a>
+      <a href="inquiry.html">1:1문의</a>
+      <a href="favorites.html">나의 즐겨찾기</a>
+    </div>
+  </div>
+  <div class="footer-main">
+    <div class="left">
+      <strong>책광장모두</strong>
+      <span>Copyright (C) by 한국출판협동조합. All rights reserved.</span>
+    </div>
+    <div class="center">
+      서울특별시 마포구 토정로222 (한국출판협동조합)<br />
+      경기도 파주시 적성면 적성산단3로 10 (가월리)<br />
+      modoo@koreabook.or.kr<br />
+      02-701-0805 / 02-716-2999 / 031-944-8234~6
+    </div>
+    <div class="right">
+      대표자 | 주정관<br />
+      사업자등록번호 | 105-82-02347<br />
+      통신판매업신고번호 | 제2007-3130118-30206728<br />
+      부가통신사업신고번호 | 제2-01-0123호
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

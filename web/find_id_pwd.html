@@ -3,62 +3,96 @@
 <head>
   <meta charset="UTF-8">
   <title>아이디/비밀번호 찾기</title>
+  <link rel="stylesheet" href="./css/find_id_pwd.css">
+  <script defer src="./js/find_id_pwd.js"></script>
 </head>
 <body>
 
   <!-- 헤더 -->
   <header>
-    <div>
-      <a href="main.html" class="logo-icon">
-        <img src="" alt="로고" class="logo">
+    <div class="top-bar">
+      <a href="index.html" class="logo-icon">
+        <img src="./image/책광장모두.png" alt="로고" class="logo">
       </a>
+      <div class="top-links">
+        <a href="login_form.html">로그인</a>
+        <a href="terms.html">회원가입</a>
+        <a href="help.html">고객센터</a>
+      </div>
     </div>
-
-    <!-- 오른쪽 상단 링크 -->
-    <div align="right">
-      <a href="login.html">로그인</a> |
-      <a href="signup.html">회원가입</a> |
-      <a href="support.html">고객센터</a>
-    </div>
-    <hr>
   </header>
 
   <!-- 메인 -->
-  <main align="center">
-    <h2>아이디/비밀번호 찾기</h2>
+  <main>
+    <div class="form-container">
+      <h2>아이디/비밀번호 찾기</h2>
 
-    <!-- ① 탭 버튼: HTML만으로 눌림 상태 유지 -->
-    <p>
-      <input type="radio" name="findTab" id="find-id" checked>
-      <label for="find-id"><strong>아이디 찾기</strong></label>
+      <div class="tab-section">
+        <input type="radio" id="find-id" name="findTab" checked>
+        <label for="find-id">아이디 찾기</label>
+        <input type="radio" id="find-pw" name="findTab">
+        <label for="find-pw">비밀번호 찾기</label>
+      </div>
 
-      <input type="radio" name="findTab" id="find-pw">
-      <label for="find-pw">비밀번호 찾기</label>
-    </p>
+      <div class="method-section">
+        <label><input type="radio" name="method" value="phone" checked> 휴대폰 번호</label>
+        <label><input type="radio" name="method" value="email"> 이메일</label>
+      </div>
 
-    <!-- 아이디 찾기 방법 선택 -->
-    <p><strong>아이디 찾기 방법 선택</strong></p>
-    <p>
-      <input type="radio" name="method" id="phone" checked>
-      <label for="phone">휴대폰 번호</label>
-      &nbsp;&nbsp;
-      <input type="radio" name="method" id="email">
-      <label for="email">이메일</label>
-    </p>
+      <form id="findForm">
+        <div class="input-group" id="id-input" style="display: none;">
+          <input type="text" placeholder="아이디를 입력해 주세요.">
+        </div>
 
-    <!-- 이름/휴대폰 입력 -->
-    <p><input type="text" placeholder="이름을 입력해주세요." size="40"></p>
-    <p><input type="text" placeholder="휴대폰 번호('-'없이 입력)를 입력해주세요." size="40"></p>
+        <div class="input-group">
+          <input type="text" placeholder="이름을 입력해 주세요.">
+        </div>
 
-    <p>
-      <button type="button">인증번호 받기</button>
-    </p>
+        <div class="input-group" id="contact-input">
+          <input type="text" placeholder="휴대폰 번호('-'없이 입력)">
+        </div>
+
+        <button type="submit">인증번호 받기</button>
+      </form>
+    </div>
   </main>
 
   <!-- 푸터 -->
   <footer>
-    <br><br><br><br><br><br><br>
-  </footer>
+  <div class="footer-top">
+    <div class="links-left">
+      <a href="#">사이트소개</a>
+      <a href="#">출판협동조합 사이트 바로가기</a>
+      <a href="#">서비스이용약관</a>
+      <a href="#">개인정보처리방침</a>
+      <a href="#">책임의 한계와 법적 고지</a>
+      <a href="#">이메일 무단수집거부</a>
+    </div>
+    <div class="links-right">
+      <a href="customer.html">고객센터</a>
+      <a href="inquiry.html">1:1문의</a>
+      <a href="favorites.html">나의 즐겨찾기</a>
+    </div>
+  </div>
+  <div class="footer-main">
+    <div class="left">
+      <strong>책광장모두</strong>
+      <span>Copyright (C) by 한국출판협동조합. All rights reserved.</span>
+    </div>
+    <div class="center">
+      서울특별시 마포구 토정로222 (한국출판협동조합)<br />
+      경기도 파주시 적성면 적성산단3로 10 (가월리)<br />
+      modoo@koreabook.or.kr<br />
+      02-701-0805 / 02-716-2999 / 031-944-8234~6
+    </div>
+    <div class="right">
+      대표자 | 주정관<br />
+      사업자등록번호 | 105-82-02347<br />
+      통신판매업신고번호 | 제2007-3130118-30206728<br />
+      부가통신사업신고번호 | 제2-01-0123호
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>
