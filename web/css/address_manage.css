@@ -1,0 +1,42 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 40px;
+  background-color: #fff;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.add-btn {
+  padding: 8px 14px;
+  margin-bottom: 20px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.address-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.address-table th,
+.address-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+}
+
+.address-table th {
+  background-color: #f0f0f0;
+}
