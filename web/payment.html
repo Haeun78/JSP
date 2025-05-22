@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>결제 페이지</title>
+    <link rel="stylesheet" href="./css/payment.css" />
+</head>
+<body>
+    <div id="Payment">
+        <div class="payment-main-container">
+            <!-- 주문 결제 영역 -->
+            <section class="payment-order-info">
+                <div class="title">주문결제</div>
+                <div class="divisor"></div>
+
+                <!-- 주문 도서 -->
+                <div class="section-title">주문 도서</div>
+                <ul class="order-list">
+                    <li class="order-list-item">
+                        <div class="order-item">
+                        <div class="book-thumbnail">
+                            <img src="./image/이미지 샘플.png" alt="이미지" width="80" />
+                        </div>
+                        <div class="book-info">
+                            <div class="store-name">책광장모두</div>
+                            <div class="book-title">영화가 태어나는 곳에서</div>
+                        </div>
+                        <div class="book-quantity">1권</div>
+                        <div class="price-box">
+                            <div class="price-details">
+                                <div class="discount-rate"><span>10%</span></div>
+                                <div class="discounted-price">17,550원</div>
+                                <div class="original-price">19,500원</div>
+                            </div>
+                            <div class="expected-points">적립 예정 금액: 870원</div>
+                        </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <!-- <div style="margin-top: 12px; display: flex;">
+                    <button type="button" style="margin-left: auto; text-decoration: underline; font-weight: bold;">
+                    적립금으로 응원하기 유의사항
+                    </button>
+                </div> -->
+
+                <!-- 배송지 정보 -->
+                <div class="delivery-info">
+                    <div class="section-title">배송지 정보</div>
+                    <div class="mobile-wrapper">
+                        <div class="delivery-header">
+                            <span class="recipient-name"></span>
+                            <span class="default-address">기본배송지</span>
+                            <button class="change-address-btn">배송지 변경</button>
+                        </div>
+                        <div class="delivery-body">
+                            <ul>
+                                <li><span></span></li>
+                                <li>[00000] 배송지를 등록해주세요.</li>
+                                <li>
+                                    <input type="text" placeholder="요청사항 직접 입력" />
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 포인트 사용 -->
+                <div class="point-section">
+                    <div class="section-title">포인트 사용</div>
+                    <div class="point-label">포인트</div>
+                    <div class="point-input">
+                        <input type="text" value="0" /> 원
+                        <p>보유 적립금: <span>0</span>원</p>
+                    </div>
+                    <button class="button-use-all"><span>모두 사용</span></button>
+                </div>
+
+                <!-- 결제 수단 -->
+                <div class="payment-method">
+                    <div class="section-title">결제 수단</div>
+                    <ul>
+                        <li><button class="payment-option active" value="CARD">신용카드/간편결제</button></li>
+                        <li><button class="payment-option" value="BANK">계좌이체</button></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 오른쪽 결제 요약 영역 -->
+            <section class="purchase">
+                <div class="purchase-steps-wrapper">
+
+                    <!-- 결제 단계 표시 -->
+                    <div class="purchase-steps">
+                        <div class="off">장바구니</div>
+                        <div class="next-icon"></div>
+                        <div class="on">주문결제</div>
+                        <div class="next-icon"></div>
+                        <div class="off">주문완료</div>
+                    </div>
+
+                    <!-- 결제 정보 요약 -->
+                    <div class="purchase-predict">
+                        <div class="purchase-book">
+                            <span>구매 도서</span>
+                        </div>
+                        <div class="purchase-box">
+                            <!-- 금액 정보 -->
+                            <div class="pay-info">
+                                <ul>
+                                    <li>상품금액 <span><strong>17,550</strong> 원</span></li>
+                                    <li>쿠폰 사용 <span><strong>0</strong> 원</span></li>
+                                    <li>적립금 사용 <span><strong>0</strong> 원</span></li>
+                                </ul>
+                            </div>
+
+                            <!-- 결제 예정 금액 -->
+                            <div class="amount-predict">
+                                <ul>
+                                    <li class="predict">결제 예정 금액 <span><strong>17,550</strong> 원</span></li>
+                                    <li>적립 예정 <span><strong>870</strong> 원</span></li>
+                                    <li>응원 예정 <span><strong>0</strong> 원</span></li>
+                                </ul>
+                            </div>
+
+                            <!-- 적립금 응원 체크박스 -->
+                            <div class="point-box">
+                                <label>
+                                    <input type="checkbox" id="agAll">
+                                    <span>적립금으로 응원하기</span>
+                                </label>
+                            </div>
+
+                            <!-- 결제 버튼 -->
+                            <div class="payment-btn">
+                                <button class="btn-full-width button-pay"><span>결제하기</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    
+
+    <script src="./js/payment.js"></script>
+</body>
+</html>
