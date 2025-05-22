@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상품 상세 페이지</title>
+    <link rel="stylesheet" href="./css/product_detail_view.css">
+</head>
+<body>
+    <header>
+
+    </header>
+    <div class="page-container">
+        <div class="book-detail-container">
+            <div class="class-detail-container">
+                <div class="class-container">
+                    <a href="./index.html">책광장모두</a>
+                </div>
+                <div class="class-container">
+                    <div class="right-arrow">
+                        <div class="arrow-img-box">
+                            <img src="./icon/arrow_right_icon.svg" alt="오른쪽화살표">
+                        </div>
+                        <a href="./book_field_page.html">분야별도서</a>
+                    </div>
+                </div>
+                <div class="class-container">
+                    <div class="right-arrow">
+                        <div class="arrow-img-box">
+                            <img src="./icon/arrow_right_icon.svg" alt="오른쪽화살표">
+                        </div>
+                        문학
+                    </div>
+                </div>
+            </div>
+            <div class="title-container">
+                <div class="title-container">
+                    <div class="title">도서제목</div>
+                    <div class="share-button">
+                        <div class="share-button-img">
+                            <img src="./icon/share-fill.svg" alt="링크공유">
+                        </div>
+                    </div>
+                </div>
+                <div class="sub-title-line">
+                    <div class="sub-titl-text"> 서브 타이틀</div>
+                </div>
+            </div>
+            <div class="book-detail-body">
+                <div class="left">
+                    <div class="book-img">
+                        <div class="img-box">
+                            <img src="./image/이미지 샘플.png" alt="도서 표지">
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="tags-container"></div>
+                    <div class="rating-container">
+                        <div class="star">
+                            <div class="star-img">
+                                <img src="./icon/star.svg" alt="별점">
+                            </div>
+                        </div>
+                        <div class="star">
+                            <div class="star-img">
+                                <img src="./icon/star.svg" alt="별점">
+                            </div>
+                        </div>
+                        <div class="star">
+                            <div class="star-img">
+                                <img src="./icon/star.svg" alt="별점">
+                            </div>
+                        </div>
+                        <div class="star">
+                            <div class="star-img">
+                                <img src="./icon/star.svg" alt="별점">
+                            </div>
+                        </div>
+                        <div class="star">
+                            <div class="star-img">
+                                <img src="./icon/star.svg" alt="별점">
+                            </div>
+                        </div>
+                        <div class="rating">0.0</div>
+                        <div class="review-container">
+                            <div class="review-conunt">2개 리뷰</div>
+                            <div class="right-arrow">
+                                <div class="arrow-img-box">
+                                    <img src="./icon/arrow_right_icon.svg" alt="오른쪽화살표">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="name-container">
+                        작가 지음
+                        <div></div>
+                        출판사명
+                        <div></div>
+                        출판일시
+                    </div>
+                    <div class="price-container">
+                        <div class="title">판매가</div>
+                        <div class="price-container">
+                            <div class="sale-percent">10%</div>
+                            <div class="price-after"><span>13,500</span>원</div>
+                            <div class="price-before">15,000 원</div>
+                        </div>
+                    </div>
+                    <div class="row-container">
+                        <div class="title">적립금</div>
+                        670원(4.5% 적립)
+                    </div>
+                    <div class="row-container">
+                        <div class="title">배송안내</div>
+                        서울특별시 마포구 토정로222 | 평균 3일 내 배송
+                    </div>
+                    <div class="shipping-fee">
+                        책광장모두는 한 권만 사도
+                        <b>무료 배송</b>
+                    </div>
+                    <div class="extra">
+                        [기획전 한강의 빛과 실]
+                    </div>
+                    <div class="qty-selection-container">
+                        <div class="row">
+                            <div class="text">수량</div>
+                            <div class="selection-container">
+                                <button onclick="decreaseQty()">−</button>
+                                <input type="number" id="quantity" value="1" readonly>
+                                <button onclick="increaseQty()">＋</button>
+                            </div>
+                            <div class="total-amount-text">총 구매 금액</div>
+                            <div class="total-price">13,500</div>
+                            <div class="unit">원</div>
+                        </div>
+                        <div class="row">
+                            <button class="button like">
+                                <div>
+                                    <div class="heart-img-box">
+                                        <img src="./icon/heart_empty.svg" alt="찜목록 하트">
+                                    </div>
+                                </div>
+                            </button>
+                                
+                            <button class="button cart">
+                                <div>장바구니
+                                    <div class="cart-img-box">
+                                        <img src="./icon/cart.svg" alt="장바구니니">
+                                    </div>
+                                </div>
+                            </button>
+
+                            <button class="button buy">
+                                <div>바로구매
+                                    <div class="cart-img-box">
+                                        <img src="./icon/arrow_right_icon.svg" alt="바로구매">
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="book-detail-menu-container">
+            <button class="menu-item selected" data-tab="book-info" onclick="showTab('book-info')">도서정보</button>
+            <button class="menu-item" data-tab="review" onclick="showTab('review')">리뷰 0개</button>
+            <button class="menu-item" data-tab="shipping" onclick="showTab('shipping')">배송/반품/교환</button>
+        </div>
+
+        <!-- 1. 탭 콘텐츠 영역 : 도서정보 -->
+        <div class="book-info-presenter tab-content" id="book-info">
+            <div class="title-blue border-none">기본정보</div>
+            <div class="info-container">
+                <div class="info-container">
+                    <div class="info-row">
+                        <div class="column">ISBN</div>
+                        <div class="info-data">9788932043562</div>
+                    </div>
+                    <div class="info-row">
+                        <div class="column">발행일</div>
+                        <div class="info-data">2025-04-18</div>
+                    </div>
+                    <div class="info-row">
+                        <div class="column">크기·무게</div>
+                        <div class="info-data">120 * 188 mm</div>
+                    </div>
+                </div>
+                <div class="title-blue">분야</div>
+                <div class="classfication-container">
+                    <div class="class-container">
+                        <div class="class-detail">책광장모두</div>
+                        <div class="class-detail">
+                            <div class="right-arrow">
+                                <div class="arrow-img-box">
+                                    <img src="./icon/arrow_right_icon.svg" alt="오른쪽화살표">
+                                </div>
+                            </div>
+                            분야별 도서
+                        </div>
+                        <div class="class-detail">
+                            <div class="right-arrow">
+                                <div class="arrow-img-box">
+                                    <img src="./icon/arrow_right_icon.svg" alt="오른쪽화살표">
+                                </div>
+                            </div>
+                            문학
+                        </div>
+                    </div>
+                </div>
+                <div class="title-blue">책소개</div>
+                <pre class="book-comment-container">
+                    마침내 우리 곁에 당도한 봄, 
+                    깨어나는 연둣빛 생명의 경이
+
+                    살아 있는 한 희망을 상상하는 일,
+                    그 오래고 깊은 사랑에 대한 한강의 기록들
+                    “역사적 트라우마를 정면으로 마주하고 인간 삶의 연약함을 드러내는 강렬하고 시적인 산문”이라는 선정 이유와 함께 2024년 노벨문학상을 수상한 작가 한강의 신작 『빛과 실』(2025)이 문학과지성사 산문 시리즈 〈문지 에크리〉의 아홉번째 책으로 출간되었다. 노벨문학상 수상 강연문 「빛과 실」(2024)을 포함해 미발표 시와 산문, 그리고 작가가 자신의 온전한 최초의 집으로 ‘북향 방’과 ‘정원’을 얻고서 써낸 일기까지 총 열두 꼭지의 글이, 역시 작가가 기록한 사진들과 함께 묶였다. 
+
+                    삼십 년 넘게 ‘쓰는 사람’의 정체성으로, “세계는 왜 이토록 폭력적이고 고통스러운가? 동시에 세계는 어떻게 이렇게 아름다운가?”라는 “두 질문 사이의 긴장과 내적 투쟁”을 글쓰기의 동력으로 삼아온 작가가 그 숱한 질문들 속 “가장 깊은 겹”이 “언제나 사랑을 향하고” 있던 게 아닐까, 그것이 바로 “내 삶의 가장 오래고 근원적인 배음”(29쪽)이 아닐까 묻고 답하기까지, 시차를 두고 쓰인 시와 산문, 일기와 사진이 새롭게 제 자리를 잡았다. “북향의 사람”(「북향 방」)으로 읽고 쓰는 동안, 종일 빛이 들지 않는 정원에 음지에서도 견뎌내는 식물들의 뿌리를 내리고 탁상용 거울 여러 개의 방향을 옮겨가며 햇빛을 붙드는 작가의 작고도 간절한 일상을 따라 읽다 보면 자연스럽게 다음의 구절이 떠오른다. “이 행성에 깃들인 사람들과 생명체들의 일인칭을 끈질기게 상상하는, 끝끝내 우리를 연결하는 언어를 다루는 문학에는 필연적으로 체온이 깃들어 있습니다.”(34쪽) 
+
+                    “글쓰기가 나를 밀고 생명 쪽으로 갔을 뿐이다.”(57쪽)라고 작가는 말했다. 책장을 넘기면 흑면과 백면이 교차하며 맞닿은 글과 이미지가 서로에게 스미고 또 끌어당기며 작가의 방과 정원에 깃드는 빛과 그림자를, 이어지는 작가의 낮과 밤을 읽는 이로 하여금 좇게 만든다. 멀게는 사십여 년 전 유년의 기억이 저장된 중철 제본 노트에서 시작된사랑, 따뜻한 생명에 대한 의문과 갈구가, 가깝게는 코로나19-팬데믹에 휩싸인 2020~2024년 북향의 방과 정원에서 “보고 듣고 냄새 맡고 맛보고 부드러움과 온기와 차가움과 통증을 느끼는” “그 생생한 감각들”이 일기와 산문 속에서 오롯하다. “햇빛이 잎사귀들을 통과할 때 생겨나는 투명한 연둣빛이 있다. 그걸 볼 때마다 내가 느끼는 특유의 감각이 있다. 식물과 공생해온 인간의 유전자에 새겨진 것이리라 짐작되는, 거의 근원적이라고 느껴지는 기쁨의 감각이다.”(「북향 정원」, 95쪽) 
+                    여기, ‘시적인 산문’이란 한강의 언어가 ‘경계 없는 글쓰기’라는 형식과 만났을 때 비로소 우리가 마주하게 된 세계는 생명의 경이와 눈부신 빛으로 가득하다.
+                </pre>
+                <div class="book-info-img-container"></div>
+                <div class="title-blue">책 속으로</div>
+                <div class="foreword-container"></div>
+                <div class="title-blue">출판사 서평</div>
+                <pre class="publisher-comment">
+                    마침내 우리 곁에 당도한 봄, 
+                    깨어나는 연둣빛 생명의 경이
+
+                    살아 있는 한 희망을 상상하는 일,
+                    그 오래고 깊은 사랑에 대한 한강의 기록들
+                    “역사적 트라우마를 정면으로 마주하고 인간 삶의 연약함을 드러내는 강렬하고 시적인 산문”이라는 선정 이유와 함께 2024년 노벨문학상을 수상한 작가 한강의 신작 『빛과 실』(2025)이 문학과지성사 산문 시리즈 〈문지 에크리〉의 아홉번째 책으로 출간되었다. 노벨문학상 수상 강연문 「빛과 실」(2024)을 포함해 미발표 시와 산문, 그리고 작가가 자신의 온전한 최초의 집으로 ‘북향 방’과 ‘정원’을 얻고서 써낸 일기까지 총 열두 꼭지의 글이, 역시 작가가 기록한 사진들과 함께 묶였다. 
+
+                    삼십 년 넘게 ‘쓰는 사람’의 정체성으로, “세계는 왜 이토록 폭력적이고 고통스러운가? 동시에 세계는 어떻게 이렇게 아름다운가?”라는 “두 질문 사이의 긴장과 내적 투쟁”을 글쓰기의 동력으로 삼아온 작가가 그 숱한 질문들 속 “가장 깊은 겹”이 “언제나 사랑을 향하고” 있던 게 아닐까, 그것이 바로 “내 삶의 가장 오래고 근원적인 배음”(29쪽)이 아닐까 묻고 답하기까지, 시차를 두고 쓰인 시와 산문, 일기와 사진이 새롭게 제 자리를 잡았다. “북향의 사람”(「북향 방」)으로 읽고 쓰는 동안, 종일 빛이 들지 않는 정원에 음지에서도 견뎌내는 식물들의 뿌리를 내리고 탁상용 거울 여러 개의 방향을 옮겨가며 햇빛을 붙드는 작가의 작고도 간절한 일상을 따라 읽다 보면 자연스럽게 다음의 구절이 떠오른다. “이 행성에 깃들인 사람들과 생명체들의 일인칭을 끈질기게 상상하는, 끝끝내 우리를 연결하는 언어를 다루는 문학에는 필연적으로 체온이 깃들어 있습니다.”(34쪽) 
+
+                    “글쓰기가 나를 밀고 생명 쪽으로 갔을 뿐이다.”(57쪽)라고 작가는 말했다. 책장을 넘기면 흑면과 백면이 교차하며 맞닿은 글과 이미지가 서로에게 스미고 또 끌어당기며 작가의 방과 정원에 깃드는 빛과 그림자를, 이어지는 작가의 낮과 밤을 읽는 이로 하여금 좇게 만든다. 멀게는 사십여 년 전 유년의 기억이 저장된 중철 제본 노트에서 시작된사랑, 따뜻한 생명에 대한 의문과 갈구가, 가깝게는 코로나19-팬데믹에 휩싸인 2020~2024년 북향의 방과 정원에서 “보고 듣고 냄새 맡고 맛보고 부드러움과 온기와 차가움과 통증을 느끼는” “그 생생한 감각들”이 일기와 산문 속에서 오롯하다. “햇빛이 잎사귀들을 통과할 때 생겨나는 투명한 연둣빛이 있다. 그걸 볼 때마다 내가 느끼는 특유의 감각이 있다. 식물과 공생해온 인간의 유전자에 새겨진 것이리라 짐작되는, 거의 근원적이라고 느껴지는 기쁨의 감각이다.”(「북향 정원」, 95쪽) 
+                    여기, ‘시적인 산문’이란 한강의 언어가 ‘경계 없는 글쓰기’라는 형식과 만났을 때 비로소 우리가 마주하게 된 세계는 생명의 경이와 눈부신 빛으로 가득하다.
+                </pre>
+                <div class="title-blue">목차</div>
+                <pre class="index">
+                    마침내 우리 곁에 당도한 봄, 
+                    깨어나는 연둣빛 생명의 경이
+
+                    살아 있는 한 희망을 상상하는 일,
+                    그 오래고 깊은 사랑에 대한 한강의 기록들
+                    “역사적 트라우마를 정면으로 마주하고 인간 삶의 연약함을 드러내는 강렬하고 시적인 산문”이라는 선정 이유와 함께 2024년 노벨문학상을 수상한 작가 한강의 신작 『빛과 실』(2025)이 문학과지성사 산문 시리즈 〈문지 에크리〉의 아홉번째 책으로 출간되었다. 노벨문학상 수상 강연문 「빛과 실」(2024)을 포함해 미발표 시와 산문, 그리고 작가가 자신의 온전한 최초의 집으로 ‘북향 방’과 ‘정원’을 얻고서 써낸 일기까지 총 열두 꼭지의 글이, 역시 작가가 기록한 사진들과 함께 묶였다. 
+                </pre>
+            </div>
+        </div>
+
+        <!-- 2. 탭 콘텐츠 영역 : 리뷰 영역 -->
+        <div class="tab-content" id="review" style="display: none;">
+            <div class="review-presenter">
+                <!-- 제목 영역 -->
+                <div class="title-container">
+                리뷰 (<span id="review-count">0</span>)
+                    <button class="review-button" onclick="openReviewModal()">리뷰작성</button>
+                </div>
+
+                <!-- 리뷰 요약 -->
+                <div class="rating-summary">
+                    <div class="block left">
+                        <div class="title-text-container">
+                            <div class="title-text">구매자 평점</div>
+                            <div class="title-sub-text">총 0명 평가</div>
+                        </div>
+                        <div class="rating-container">
+                            <div class="rating-number">0.0<span> / 5</span></div>
+                            <div class="rating-star">
+                                <img src="./icon/star.svg" height="24" width="24">
+                                <img src="./icon/star.svg" height="24" width="24">
+                                <img src="./icon/star.svg" height="24" width="24">
+                                <img src="./icon/star.svg" height="24" width="24">
+                                <img src="./icon/star.svg" height="24" width="24">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 리뷰 리스트 -->
+                <div class="review-container">
+                    <p style="color:#888;">작성된 리뷰가 없습니다.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 리뷰 작성 모달창 -->
+        <div id="review-modal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <span class="close" onclick="closeReviewModal()">&times;</span>
+                <h3>리뷰 작성</h3>
+
+                <!-- 평점 선택 -->
+                <div class="rating-input">
+                    <label>평점:</label>
+                    <div id="star-input">
+                        <!-- JS에서 동적 생성 -->
+                    </div>
+                </div>
+
+                <!-- 텍스트 입력 -->
+                <div class="text-input">
+                    <label>리뷰 내용:</label>
+                    <textarea id="review-text" placeholder="리뷰를 입력해주세요" rows="4"></textarea>
+                </div>
+
+                <!-- 제출 버튼 -->
+                <button class="submit-btn" onclick="submitReview()">등록</button>
+            </div>
+        </div>
+
+        <!-- 3. 탭 콘텐츠 영역 : 배송/반품/교환 안내 -->
+        <div class="information-presenter tab-content" id="shipping" style="display: none;">
+
+            <div class="menu-title">배송/반품/교환 안내사항</div>
+
+            <!-- 회색 박스 전체 -->
+            <div class="info-box">
+                <!-- 항목 01 -->
+                <div class="info-row">
+                    <div class="info-label">01. 반품신청</div>
+                    <div class="info-content">
+                    마이페이지의 주문/배송내역 상세 조회 후 반품신청하시거나 공지사항 고객센터의 1:1문의를 이용해주시기 바랍니다.<br />
+                    도서를 반송해 주시면 반품도서 확인 후 환불처리가 진행됩니다.
+                    </div>
+                </div>
+
+                <!-- 항목 02 -->
+                <div class="info-row">
+                    <div class="info-label">02. 반품기한</div>
+                    <div class="info-content">
+                        단순 변심인 경우: 상품 수령 후 7일 이내 신청<br />
+                        상품 불량/오배송인 경우: 상품 수령 후 30일 이내 반품 신청 가능
+                    </div>
+                </div>
+
+                <!-- 항목 03 -->
+                <div class="info-row">
+                    <div class="info-label">03. 반품 배송비</div>
+                    <div class="info-content">
+                        반품사유가 단순변심 및 착오로 인한 구매일 경우, 상품 반송비용은 고객 부담입니다.
+                        (도서 산간지역일 경우 추가 배송비 포함)
+                    </div>
+                </div>
+
+                <!-- 항목 04 -->
+                <div class="info-row">
+                    <div class="info-label">04. 환불시점</div>
+                    <div class="info-content">
+                        (1)신용카드 - 환불시점 : 취소완료 후 3~5일 내 카드사 승인취소 (영업일 기준)<br />
+                        (2)계좌 이체/가상계좌 - 취소, 반품완료 후 고객 명의의 환불계좌로 2~3일 내 입금 (영업일 기준)<br />
+                        (3)쿠폰, 적립금 - 반품완료 후, 적립금 복구 - 반품완료 후, 쿠폰 복구
+                    </div>
+                </div>
+
+                <!-- 항목 05 -->
+                <div class="info-row">
+                    <div class="info-label">05. 취소,교환,반품 불가 사유</div>
+                    <div class="info-content">
+                        (1)단순변심 또는 주문오류로 인한 교환, 반품 신청일 때, 타 도서로의 교환이 불가합니다.<br />
+                        (2)반품 교환이 가능한 도서에 한해 상품을 수령하신 날로부터 7일이내로 반품 신청이 가능하고 반송은 고객님께서 부담합니다.<br />
+                        (3)반품 불가 도서: 잡지, 만화책, 영상화보집, 대학입시자료 같은 시기물 수험서<br />
+                        (4)상품을 훼손하거나 사용한 경우 또는 비닐 랩핑을 벗기지 않은 상태에서만 가능<br />
+                        (5)포장 박스/겉표지가 없으면 교환/반품이 제한됩니다.
+                    </div>
+                </div>
+
+                <!-- 항목 06 -->
+                <div class="info-row">
+                    <div class="info-label">06. 소비자 피해보상 환불 지연에 대한 배상</div>
+                    <div class="info-content">
+                        상품의 불량에 의한 환불, 교환, A/S, 환불, 품질보증 및 피해보상 등에 관한 사항은
+                        소비자분쟁해결기준(공정거래위원회 고시)에 따라 처리됩니다.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+
+    </footer>
+
+    <!-- js  -->
+    <script src="./js/product_detail_view.js"></script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장바구니 페이지</title>
+    <link rel="stylesheet" href="./css/cart_view.css">
+</head>
+<body>
+    <header>
+        <!--  헤더 -->
+        <div class="top-bar">
+            <a href="./index.html" class="logo-icon">
+                <img src="./image/책광장모두.png" alt="로고" class="logo">
+            </a>
+            <div class="top-links">
+                <a href="login_form.html">로그인</a>
+                <a href="signup.html">회원가입</a>
+                <a href="help.html">고객센터</a>
+                <a href="mypage.html">마이페이지</a>
+
+                <!-- 검색 아이콘 (돋보기) -->
+                <a href="search.html" class="search-icon">
+                    <img src="" alt="검색" />
+                </a>
+            </div>
+        </div>
+
+        <nav class="main-menu">
+            <a href="./book_field_page.html">분야별 도서</a>
+            <a href="#">독서기록장</a>
+            <a href="./full_award_timeline_2004_2025.html">역대수상작</a>
+            <a href="#">이벤트소식</a>
+            <a href="#">공지사항</a>
+        </nav>
+    </header>
+
+    <div class="cart-container">
+         <h2 class="cart-title">장바구니</h2>
+
+        <div class="cart-controls">
+            <label><input type="checkbox" id="select-all"> 전체선택</label>
+            <button id="delete-selected">선택 삭제</button>
+            <span id="selected-count">총 0개 선택</span>
+        </div>
+
+        <div class="cart-content">
+            <!-- 🧾 상품 리스트 -->
+            <div class="cart-list">
+            <div class="cart-item">
+                <input type="checkbox" class="item-checkbox" />
+                <img src="./image/이미지 샘플.png" class="item-thumbnail" />
+                <div class="item-info">
+                <h3 class="item-title">빛과 실</h3>
+                <p class="item-author">한강 | 문학과지성사</p>
+                <p class="item-price"><span class="unit-price">13500</span>원</p>
+                <div class="qty-box">
+                    <button class="qty-minus">−</button>
+                    <input type="number" class="qty-input" value="1" readonly />
+                    <button class="qty-plus">＋</button>
+                </div>
+                </div>
+                <button class="item-delete">삭제</button>
+            </div>
+            <div class="cart-item">
+                <input type="checkbox" class="item-checkbox" />
+                <img src="./image/이미지 샘플.png" class="item-thumbnail" />
+                <div class="item-info">
+                <h3 class="item-title">빛과 실</h3>
+                <p class="item-author">한강 | 문학과지성사</p>
+                <p class="item-price"><span class="unit-price">13500</span>원</p>
+                <div class="qty-box">
+                    <button class="qty-minus">−</button>
+                    <input type="number" class="qty-input" value="1" readonly />
+                    <button class="qty-plus">＋</button>
+                </div>
+                </div>
+                <button class="item-delete">삭제</button>
+            </div>
+            <div class="cart-item">
+                <input type="checkbox" class="item-checkbox" />
+                <img src="./image/이미지 샘플.png" class="item-thumbnail" />
+                <div class="item-info">
+                <h3 class="item-title">빛과 실</h3>
+                <p class="item-author">한강 | 문학과지성사</p>
+                <p class="item-price"><span class="unit-price">13500</span>원</p>
+                <div class="qty-box">
+                    <button class="qty-minus">−</button>
+                    <input type="number" class="qty-input" value="1" readonly />
+                    <button class="qty-plus">＋</button>
+                </div>
+                </div>
+                <button class="item-delete">삭제</button>
+            </div>
+
+            <!-- 💡 복사해서 상품 더 추가 가능 -->
+            </div>
+
+            <!-- 💰 결제 요약 -->
+            <div class="cart-summary">
+            <div class="summary-text">총 상품 금액: <span id="total-price">0</span>원</div>
+            <div class="summary-text">결제 예정 금액: <span id="expected-price">0</span>원</div>
+            <div class="summary-text">적립금: <span id="point">0</span>원</div>
+            <button id="purchase-btn">구매하기</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <!-- 푸터 메인 컨테이너 -->
+        <div class="footer-container">
+            <!-- 푸터 메인 컨테이너 첫번째 줄-->
+            <div class="first-line-container">
+                <div class="first-line-left">
+                    <button>사이트소개</button>
+                    <button>출판협동조합 사이트 바로가기</button>
+                    <div class="divisor1"></div>
+                    <button>서비스이용약관</button>
+                    <button>개인정보처리방침</button>
+                    <button>책임의 한계와 법적 고지</button>
+                    <button>이메일 무단수집거부</button>
+                </div>
+                <div class="first-line-right">
+                    <button>고객센터</button>
+                    <button>1:1문의</button>
+                    <button>나의 즐겨찾기</button>
+                </div>
+            </div>
+
+            <div class="divisor2"></div> <!-- 푸터 메인 컨테이너 구부선-->
+
+            <!-- 푸터 메인 컨테이너 두번째 줄-->
+            <div class="second-line-container">
+                <div class="second-line-left">
+                    <div class="title">책광장모두</div>
+                    <div class="copyright">
+                        Copyright (C) by 한국출판협동조합. All rights reserved.
+                    </div>
+                </div>
+                <div class="second-line-right">
+                    <div class="first">
+                        <div><img src="./image/geo-alt.svg" alt="">서울특별시 마포구 토정로222 (한국출판협동조합)</div>
+                        <div>경기도 파주시 적성면 적성산단3로 10 (가월리)</div>
+                        <div><img src="./image/envelope.svg" alt="">modoo@koreabook.or.kr</div>
+                    </div>
+                    <div class="second">
+                        <div><img src="./image/telephone.svg" alt="">02-701-0805</div>
+                        <div><img src="./image/newspaper.svg" alt="">02-716-2999</div>
+                        <div>031-944-8234~6</div>
+                        <div style="cursor: pointer; margin-top: 10px;">한국출판협동조합 플러스친구</div>
+                    </div>
+                    <div class="third">
+                        <div>대표자 | 주정관 | 사업자등록번호 | 105-82-02347</div>
+                        <div>통신판매업신고번호 | 제2007-3130118-30206728</div>
+                        <div>부가통신사업신고번호 | 제2-01-0123호</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="./js/cart_view.js"></script>
+</body>
+</html>
