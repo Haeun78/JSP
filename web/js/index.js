@@ -1,40 +1,93 @@
 
 //경현 - 자바 스크립트
 // 현재 보여주고 있는 슬라이드의 인덱스 (0부터 시작)
-    let currentIndex = 0;
+const slider = document.getElementById('bookSlider');
+const container = document.querySelector('.slider-container');
 
-    // 슬라이더 전체를 감싸고 있는 요소(=책 카드들이 들어 있는 부모 컨테이너)
-    const slider = document.getElementById('bookSlider');
+let currentIndex = 0;
+const cardWidth = 200; // 카드 width + gap
 
-    // 각 책 카드의 너비 (200px) + 카드 사이 간격(margin) 20px
-    const itemWidth = 200 + 20; 
+function slideLeft() {
+  if (currentIndex > 0) {
+    currentIndex--;
+    slider.style.transform = `translateX(-${cardWidth * currentIndex}px)`;
+  }
+}
 
-    // 화면에 한 번에 보이는 책 카드 수 (예: 4개)
-    const visibleCount = 4;
+function slideRight() {
+  const maxScroll = slider.scrollWidth - container.offsetWidth;
+  const maxIndex = Math.ceil(maxScroll / cardWidth);
 
-    // 왼쪽 화살표를 눌렀을 때 호출되는 함수
-    function slideLeft() {
-        // 현재 인덱스가 0보다 크면 (즉, 왼쪽으로 더 갈 수 있다면)
-        if (currentIndex > 0) {
-            // 인덱스를 하나 줄여서 왼쪽으로 이동
-            currentIndex--;
+  if (currentIndex < maxIndex) {
+    currentIndex++;
+    const scrollX = Math.min(cardWidth * currentIndex, maxScroll); // 너무 넘지 않도록
+    slider.style.transform = `translateX(-${scrollX}px)`;
+  }
+}
 
-            // 슬라이더를 왼쪽으로 itemWidth만큼 이동시킴 (X축 기준 이동)
-            slider.style.transform = `translateX(-${itemWidth * currentIndex}px)`;
-        }
+//상세 검색 슬라이더
+function toggleSearchPanel() {
+  const panel = document.getElementById("searchPanel");
+  panel.classList.toggle("active");
+}
+
+//상세 검색 기간
+function selectDateRange(button, isCustom = false) {
+  // 모든 버튼에서 active 제거
+  const buttons = document.querySelectorAll('.filter-btn');
+  buttons.forEach(btn => btn.classList.remove('active'));
+
+  // 클릭된 버튼에 active 추가
+  button.classList.add('active');
+
+  // 직접입력이면 날짜 입력칸 보이기
+  const dateRange = document.getElementById('date-range');
+  if (isCustom) {
+    dateRange.style.display = 'inline-block';
+  } else {
+    dateRange.style.display = 'none';
+  }
+}
+// 상세 검색 초기화
+function resetSearchForm() {
+  // 1. 전체 텍스트 입력 필드 초기화
+  const inputs = document.querySelectorAll('.search-panel input[type="text"], .search-panel input[type="date"]');
+  inputs.forEach(input => input.value = '');
+
+  // 2. 카테고리 select 초기화 (분야)
+  document.getElementById('category-select').selectedIndex = 0;
+
+  // 3. 출간일 버튼 active 초기화
+  const buttons = document.querySelectorAll('.filter-btn');
+  buttons.forEach(btn => btn.classList.remove('active'));
+  buttons[0].classList.add('active'); // "전체" 버튼에 active 다시 줌
+
+  // 4. 날짜 범위 선택창 숨기기
+  document.getElementById('date-range').style.display = 'none';
+
+  // 5. 체크박스 초기화
+  document.querySelector('input[name="exclude_soldout"]').checked = false;
+}
+
+//  [추가] 검색 버튼 눌렀을 때 유효성 검사 (검색어 하나라도 없으면 경고창)
+function validateAndSubmit() {
+  const form = document.getElementById('detailSearchForm');
+  const inputs = form.querySelectorAll('input[type="text"]');
+  let hasValue = false;
+
+  inputs.forEach(input => {
+    if (input.value.trim() !== '') {
+      hasValue = true;
     }
+  });
 
-    // 오른쪽 화살표를 눌렀을 때 호출되는 함수
-    function slideRight() {
-        // 현재 인덱스가 (전체 카드 개수 - 화면에 보이는 카드 개수)보다 작으면 오른쪽으로 이동 가능
-        if (currentIndex < slider.children.length - visibleCount) {
-            // 인덱스를 하나 늘려서 오른쪽으로 이동
-            currentIndex++;
+  if (!hasValue) {
+    alert("검색어를 하나 이상 입력해주세요.");
+    return; // 폼 제출 방지
+  }
 
-            // 슬라이더를 왼쪽으로 itemWidth만큼 이동시킴 (X축 기준)
-            slider.style.transform = `translateX(-${itemWidth * currentIndex}px)`;
-        }
-    }
+  form.submit(); // 직접 전송
+}
 
     //나눔 - 자바스크립트
     function showTab(tab) {
