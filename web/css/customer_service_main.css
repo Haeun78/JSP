@@ -1,0 +1,254 @@
+/* 전체 페이지 컨테이너 */
+.customer-service-main {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: 'Noto Sans KR', sans-serif;
+  color: #222;
+}
+
+/* 좌측 사이드 메뉴 */
+.sub-menu {
+  width: 220px;
+  margin-right: 40px;
+}
+
+/* 고객센터 타이틀 */
+.sub-menu-header a {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: #333;
+}
+
+/* 메뉴 항목 */
+.sub-menu-box {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  display: block;
+  font-size: 15px;
+  color: #333;
+  padding: 10px 0;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.menu-item:hover {
+  color: #1e76af;
+  font-weight: bold;
+}
+
+/* 구분선 */
+.divisor-sub-menu {
+  height: 1px;
+  background-color: #e0e0e0;
+  margin: 24px 0;
+}
+
+/* 상담 정보 */
+.sub-menu-text-box {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #444;
+}
+
+.sub-menu-text1 {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.sub-menu-phone {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+/* 우측 메인 컨텐츠 */
+.customer-service-main-container {
+  flex: 1;
+}
+
+.box-container {
+  display: flex;
+  gap: 24px;
+}
+
+.box {
+  flex: 1;
+  background-color: #f9f9f9;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.05);
+}
+
+/* 박스 제목 */
+.box-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 이미지 아이콘 */
+.img-box1 img {
+  width: 20px;
+  height: 20px;
+}
+
+.img-box2 img {
+  width: 18px;
+  height: 18px;
+}
+
+/* 박스 내용 */
+.box-content {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+/* 고객센터 전화번호 */
+.box-number {
+  font-size: 24px;
+  font-weight: bold;
+  color: #222;
+}
+
+/* 1:1 문의 버튼 */
+.box-btn a {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: white;
+  color: #1e76af;
+  border: 1px solid #1e76af;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.box-btn a:hover {
+  background-color: #1e76af;
+  color: white;
+}
+
+
+
+/* ===== 푸터 전체 ===== */
+footer {
+  width: 100%;
+  background-color: #d4d4d470;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 13px;
+  color: #333;
+}
+
+.footer-container {
+  margin: auto;
+  padding: 30px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.first-line-container, 
+.second-line-container{
+  width: 65%;
+  margin: auto;
+
+}
+/* ===== 첫 번째 줄 ===== */
+.first-line-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.first-line-left,
+.first-line-right {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.first-line-left button,
+.first-line-right button {
+  background: none;
+  border: none;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.first-line-left a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.divisor1 {
+  width: 1px;
+  height: 12px;
+  background-color: #999;
+  margin: 0 10px;
+}
+
+.divisor2{
+  height: 1px; 
+  background-color: #cfcfcf;
+}
+
+/* ===== 두 번째 줄 ===== */
+.second-line-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.second-line-left{
+  border: 1px solid black;
+  width: 300px;
+}
+
+.second-line-left .title {
+  font-weight: bold;
+  font-size: 30px;
+  margin-bottom: 5px;
+}
+
+.second-line-left .copyright {
+  font-size: 10px;
+  color: #777;
+}
+
+.second-line-right {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.second-line-right .first,
+.second-line-right .second,
+.second-line-right .third {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  /* font-size: ; */
+}
+
+.second-line-right img {
+  width: 14px;
+  vertical-align: middle;
+  margin-right: 10px;
+}

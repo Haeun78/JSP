@@ -1,0 +1,155 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.one-main-container {
+  display: flex;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+  }
+
+  /* 문의 목록 영역 */
+.inquiry-section {
+  flex: 1;
+  margin-left: 40px;
+}
+
+.inquiry-section h2 {
+  margin-bottom: 24px;
+}
+
+.inquiry-item {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.inquiry-header {
+  background-color: #f9f9f9;
+  padding: 16px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.inquiry-header:hover {
+  background-color: #f0f0f0;
+}
+
+.inquiry-title-type {
+  display: flex;
+  flex-direction: column;
+}
+
+.inquiry-title {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.inquiry-type {
+  display: inline-block;
+  font-size: 13px;
+  color: #555;
+  background-color: #eef1f6;
+  padding: 3px 8px;
+  border-radius: 10px;
+  width: fit-content;
+}
+
+.inquiry-meta {
+  font-size: 13px;
+  color: #777;
+  margin-top: 6px;
+}
+
+.inquiry-status.waiting {
+  color: rgb(39, 39, 39);
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.inquiry-status.done {
+  color: red;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.inquiry-content-wrapper {
+  overflow: hidden;
+  height: 0;
+  transition: height 0.3s ease;
+}
+
+.inquiry-content {
+  padding: 16px;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.15s ease;
+}
+
+.inquiry-item.open .inquiry-content {
+  max-height: 1000px;
+  padding: 16px;
+}
+
+.file-attachment {
+  margin-top: 12px;
+}
+
+.file-attachment img {
+  width: 30%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 8px;
+}
+
+.file-link {
+  color: #1e76af;
+  text-decoration: none;
+}
+
+.file-link:hover {
+  text-decoration: underline;
+}
+
+.modify-buttons {
+  text-align: right;
+  margin-top: 16px;
+}
+
+.modify-buttons button {
+  margin-left: 10px;
+  padding: 6px 12px;
+  font-size: 13px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modify-buttons .edit-btn {
+  background-color: #4caf50;
+  color: white;
+}
+
+.modify-buttons .delete-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.no-inquiry {
+  border: 1px solid #ddd;
+  padding: 30px;
+  text-align: center;
+  color: #666;
+  margin: 30px 0;
+  border-radius: 6px;
+}

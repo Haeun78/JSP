@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>독서기록 작성</title>
+<link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
+<link rel="stylesheet" href="./css/index.css">
+<link rel="stylesheet" href="./css/reading_record_write.css">
+
+</head>
+<body>
+    <header class="top-bar">
+        <!-- 헤더 로고 부분 -->
+        <div class="header-left">
+            <a href="index.html" class="logo-link">
+                <img src="./image/책광장모두.png" alt="로고" class="logo">
+            </a>
+            <button class="org-btn">한국출판협동조합</button>
+        </div>
+
+        <!--  헤더 검색 부분 -->
+        <div class="header-center">
+            <input type="text" class="search-input" placeholder="한 권만 사도 무료배송">
+            <!-- 상세검색 버튼 -->
+            <button class="detail-search-btn" onclick="toggleSearchPanel()">상세검색</button>
+
+            <!-- 상세검색 패널 -->
+            <div class="search-panel" id="searchPanel">
+                <div class="search-inner">
+                    <button class="close-btn" onclick="toggleSearchPanel()">✕</button>
+                    <h3 class="panel-title">도서 상세검색</h3>
+                    <p class="guide-text">* 도서명/저자/출판사/검색키워드(주제어) 중 하나 이상을 입력해주세요</p>
+
+                    <!-- 실제 form 시작 -->
+                    <form action="search_result.html" method="GET" id="detailSearchForm">
+                        <!-- 1줄: 분야 + 입력창들 -->
+                        <div class="form-line">
+                            <select name="category" id="category-select" class="scroll-select">
+                                <option value="">전체</option>
+                                <option>문학</option>
+                                <option>경제/경영</option>
+                                <option>자기계발</option>
+                                <option>인문학</option>
+                                <option>종교</option>
+                                <option>역사</option>
+                                <option>예술</option>
+                                <option>사회과학</option>
+                                <option>자연과학</option>
+                                <option>기술/공학</option>
+                                <option>컴퓨터/IT</option>
+                                <option>유아</option>
+                                <option>어린이</option>
+                                <option>청소년</option>
+                                <option>초등 학습서</option>
+                                <option>중/고등 학습서</option>
+                                <option>대학교재</option>
+                                <option>취업/수험서</option>
+                                <option>외국어</option>
+                                <option>가정/살림</option>
+                                <option>건강/레저</option>
+                                <option>여행</option>
+                                <option>잡지</option>
+                                <option>만화</option>
+                            </select>
+                            <input type="text" name="title" placeholder="도서명을 입력해주세요.">
+                            <input type="text" name="isbn" placeholder="ISBN을 입력해주세요.">
+                            <input type="text" name="author" placeholder="저자/역자를 입력해주세요.">
+                            <input type="text" name="publisher" placeholder="출판사를 입력해주세요.">
+                            <input type="text" name="keyword" placeholder="주제어를 입력해주세요.">
+                        </div>
+
+                        <!-- 2줄: 출간일 -->
+                        <div class="form-line publish-line">
+                            <div class="date-buttons-group">
+                                <label>출간일</label>
+                                <button type="button" class="filter-btn active" onclick="selectDateRange(this)">전체</button>
+                                <button type="button" class="filter-btn" onclick="selectDateRange(this)">최근 1개월</button>
+                                <button type="button" class="filter-btn" onclick="selectDateRange(this)">3개월</button>
+                                <button type="button" class="filter-btn" onclick="selectDateRange(this)">6개월</button>
+                                <button type="button" class="filter-btn" onclick="selectDateRange(this)">1년</button>
+                                <button type="button" class="filter-btn" onclick="selectDateRange(this, true)">직접입력</button>
+
+                                <div id="date-range" style="display: none; margin-left: 10px;">
+                                    <input type="date" id="start-date">
+                                    <span>-</span>
+                                    <input type="date" id="end-date">
+                                </div>
+                            </div>
+
+                            <div class="exclude-checkbox">
+                                <input type="checkbox" name="exclude_soldout" id="exclude_soldout">
+                                <label for="exclude_soldout">품절/절판 제외</label>
+                            </div>
+                        </div>
+
+                        <!-- 버튼 -->
+                        <div class="form-line">
+                            <button type="button" class="submit-btn white" onclick="resetSearchForm()">초기화</button>
+                            <button type="button" class="submit-btn blue" onclick="validateAndSubmit()">검색</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- 헤더 로그인 박스 부분 -->
+        <div class="header-right">
+            <a href="login_form.html">로그인</a>
+            <span class="divider">|</span>
+            <a href="signup.html">회원가입</a>
+            <span class="divider">|</span>
+            <a href="help.html">고객센터</a>
+        </div>
+    </header>
+
+    <nav class="main-menu">
+        <a href="./book_field_page.html">분야별 도서</a>
+        <a href="./reading_record_main.html">독서기록장</a>
+        <a href="./awarded_list_timeline.html">역대수상작</a>
+        <a href="#">이벤트소식</a>
+        <a href="./notice_list.html">공지사항</a>
+    </nav>
+
+    <main class="write-container">
+        <h1>📖 독서 기록 작성</h1>
+        <form class="write-form" id="recordForm">
+            <div class="flex-row">
+                <input type="text" name="title" placeholder="책 제목을 입력하세요" required />
+            </div>
+
+            <div class="flex-row">
+                <input type="text" name="author" placeholder="지은이 (예: 홍길동)" />
+                <input type="text" name="publisher" placeholder="출판사 (예: 도서출판 미래)" />
+            </div>
+
+            <div class="flex-row">
+                <input type="date" name="startDate" placeholder="시작일" />
+                <input type="date" name="endDate" placeholder="종료일" />
+            </div>
+
+            <div class="thumbnail-preview">
+                <label for="thumbnail">썸네일 이미지 첨부</label>
+                <div style="flex: 1;">
+                    <input type="file" id="thumbnail" name="thumbnail" accept="image/*" />
+                    <img id="thumbnailPreview" src="#" alt="썸네일 미리보기" style="display: none; margin-top: 10px;" />
+                </div>
+            </div>
+
+            <div id="editor"></div>
+            <p style="margin-top: 10px; font-weight: bold; color: #666;">✍️ 책을 여는 마음 / 내용과 문장 / 책을 닫는 마음 형식에 맞춰 자유롭게 작성해보세요.</p>
+
+            <div class="button-group">
+                <button type="button" class="button-cancel" id="cancelBtn">취소하기</button>
+                <button type="submit" class="button-save">기록 저장하기</button>
+            </div>
+        </form>
+    </main>
+
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <p>📚 독서 기록이 저장되었습니다.</p>
+        </div>
+    </div>
+
+    <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+    <script src="./js/reading_record_write.js"></script>
+
+</body>
+</html>

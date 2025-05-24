@@ -1,0 +1,173 @@
+/* 전체 페이지 기본 스타일 */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 40px;
+}
+
+/* 전체 레이아웃: 좌측 메뉴 + 우측 폼 */
+.one-write-container {
+  display: flex;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* 우측 폼 영역 */
+.inquiry-form-section {
+  flex: 1;
+}
+
+.form-title {
+  font-size: 20px;
+  margin-top: 0px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 16px;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+textarea {
+  margin-top: 10px;
+  height: 120px;
+  resize: vertical;
+}
+
+.email-field {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.email-field input {
+  flex: 1;
+}
+
+.edit-btn {
+  padding: 8px 12px;
+  border: 1px solid #1e76af;
+  background: white;
+  color: #1e76af;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.edit-btn:hover {
+  background-color: #f0f8ff;
+}
+
+.form-row.two-col {
+  display: flex;
+  gap: 20px;
+}
+
+.form-row.two-col .form-group {
+  flex: 1;
+}
+
+.required {
+  color: red;
+  font-weight: bold;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.cancel-btn {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.submit-btn {
+  background-color: #1e76af;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 15px;
+  cursor: pointer;
+  border: none;
+}
+
+.submit-btn:hover {
+  background-color: #155d8a;
+}
+
+.submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+#filePreview img {
+  display: block;
+  max-width: 200px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* 모달창 css */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-content {
+  width: 200px;
+  height: 130px;
+  background: white;
+  padding: 40px 60px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content p {
+  font-size: 12px;
+  margin-bottom: 50px;
+}
+
+.modal-content button {
+  padding: 12px 28px;
+  background-color: #1e76af;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
