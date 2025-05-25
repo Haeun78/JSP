@@ -8,18 +8,9 @@
 </head>
 <body>
 
-<script>
-  const isLoggedIn = true;
-  if (!isLoggedIn) {
-    alert("로그인 후 이용 가능한 서비스입니다.");
-    window.location.href = "login_form.html";
-  }
-</script>
-
 <div class="top-bar">
   <a href="#">로그아웃</a>
-  <a href="#">회원가입</a>
-  <a href="customer.html">고객센터</a>
+  <a href="customer_service_main.html">고객센터</a>
   <a href="mypage_main.html">마이페이지</a>
 </div>
 
@@ -42,84 +33,53 @@
   <div class="sidebar">
     <a href="mypage_main.html"><h3>마이페이지</h3></a>
     <ul>
-      <li><a href="#">회원정보수정</a></li>
-      <li><a href="#">적립금 내역</a></li>
-      <li><a href="#">장바구니</a></li>
+      <li><a href="edit_profile_page.html">회원정보수정</a></li>
+      <li><a href="payment.html">적립금 내역</a></li>
+      <li><a href="cart_view.html">장바구니</a></li>
       <li><a href="order_list.html">주문/배송내역</a></li>
       <li><a href="address_manage.html">배송지 관리</a></li>
       <li><a href="favorites.html">찜 목록</a></li>
-      <li><a href="#">작성글 관리</a></li>
-      <li><a href="inquiry.html">1:1 문의</a></li>
+      <li><a href="myrecode_book.html">작성글 관리</a></li>
+      <li><a href="one_to_one_list.html">1:1 문의</a></li>
     </ul>
   </div>
+
   <div class="content">
     <h2>주문/배송내역</h2>
-    <div class="filter-box">
-      <label>조회기간:</label>
-      <input type="date" />
-      <span>~</span>
-      <input type="date" />
-      <button class="search-btn">조회</button>
+
+    <div class="order-card-list">
+
+      <!-- 카드 항목 1 -->
+      <div class="order-card">
+        <div class="order-thumb">
+          <img src="image/이미지 샘플.png" alt="상품 이미지">
+        </div>
+        <div class="order-info">
+          <div class="order-title">방구석 미술관 3</div>
+          <div class="order-detail">주문일시: 2025.05.01 16:25</div>
+          <div class="order-number">주문번호: 550026226057</div>
+          <div class="order-status">배송상태: 배송중</div>
+          <button class="detail-btn">상세보기</button>
+        </div>
+      </div>
+
+      <!-- 카드 항목 2 -->
+      <div class="order-card">
+        <div class="order-thumb">
+          <img src="image/이미지 샘플.png" alt="상품 이미지">
+        </div>
+        <div class="order-info">
+          <div class="order-title">트렌드 코리아 2025</div>
+          <div class="order-detail">주문일시: 2025.05.02 10:12</div>
+          <div class="order-number">주문번호: 550026226058</div>
+          <div class="order-status">배송상태: 배송완료</div>
+          <button class="detail-btn">상세보기</button>
+        </div>
+      </div>
+
     </div>
-    <table class="order-table">
-      <thead>
-        <tr>
-          <th>주문일시</th>
-          <th>주문번호</th>
-          <th>상품명</th>
-          <th>배송상태</th>
-          <th>상세보기</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>2025.05.01 16:25</td>
-          <td>550026226057</td>
-          <td>방구석 미술관 3 외 2권</td>
-          <td>배송중</td>
-          <td><button class="detail-btn">상세보기</button></td>
-        </tr>
-      </tbody>
-    </table>
   </div>
 </div>
 
-<footer>
-  <div class="footer-top">
-    <div class="links-left">
-      <a href="#">사이트소개</a>
-      <a href="#">출판협동조합 사이트 바로가기</a>
-      <a href="#">서비스이용약관</a>
-      <a href="#">개인정보처리방침</a>
-      <a href="#">책임의 한계와 법적 고지</a>
-      <a href="#">이메일 무단수집거부</a>
-    </div>
-    <div class="links-right">
-      <a href="customer.html">고객센터</a>
-      <a href="inquiry.html">1:1문의</a>
-      <a href="favorites.html">나의 즐겨찾기</a>
-    </div>
-  </div>
-  <div class="footer-main">
-    <div class="left">
-      <strong>책광장모두</strong>
-      <span>Copyright (C) by 한국출판협동조합. All rights reserved.</span>
-    </div>
-    <div class="center">
-      서울특별시 마포구 토정로222 (한국출판협동조합)<br />
-      경기도 파주시 적성면 적성산단3로 10 (가월리)<br />
-      modoo@koreabook.or.kr<br />
-      02-701-0805 / 02-716-2999 / 031-944-8234~6
-    </div>
-    <div class="right">
-      대표자 | 주정관<br />
-      사업자등록번호 | 105-82-02347<br />
-      통신판매업신고번호 | 제2007-3130118-30206728<br />
-      부가통신사업신고번호 | 제2-01-0123호
-    </div>
-  </div>
-</footer>
-
 </body>
 </html>
-dd

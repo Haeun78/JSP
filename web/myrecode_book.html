@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>작성글 관리 - 독서기록</title>
+  <link rel="stylesheet" href="css/mypage_main.css">
+  <link rel="stylesheet" href="css/myrecode.css">
+</head>
+<body>
+
+<div class="top-bar">
+  <a href="#">로그아웃</a>
+  <a href="customer_service_main.html">고객센터</a>
+  <a href="mypage_main.html">마이페이지</a>
+</div>
+
+<div class="main-nav">
+  <a href="index.html" class="logo">책광장모두</a>
+  <div class="menu">
+    <a href="#">분야별 도서</a>
+    <a href="#">독서기록장</a>
+    <a href="#">역대수상작</a>
+    <a href="#">이벤트소식</a>
+    <a href="#">공지사항</a>
+  </div>
+  <div class="search">
+    <input type="text" placeholder="검색어를 입력하세요">
+    <button>검색</button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="sidebar">
+    <a href="mypage_main.html"><h3>마이페이지</h3></a>
+    <ul>
+      <li><a href="edit_profile_page.html">회원정보수정</a></li>
+      <li><a href="payment.html">적립금 내역</a></li>
+      <li><a href="cart_view.html">장바구니</a></li>
+      <li><a href="order_list.html">주문/배송내역</a></li>
+      <li><a href="address_manage.html">배송지 관리</a></li>
+      <li><a href="favorites.html">찜 목록</a></li>
+      <li><a href="myrecode_book.html">작성글 관리</a></li>
+      <li><a href="one_to_one_list.html">1:1 문의</a></li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <h2>작성글 관리</h2>
+
+    <!-- ✅ 탭 메뉴 -->
+    <div class="recode-tab">
+      <a href="myrecode_book.html" class="tab active">독서기록</a>
+      <a href="myrecode_review.html" class="tab">상품리뷰</a>
+    </div>
+
+    <!-- ✅ 카드형 리스트 -->
+    <div class="recode-card-list">
+
+      <!-- 카드 항목 1 -->
+      <div class="recode-card">
+        <div class="recode-thumb">
+          <img src="image/이미지 샘플.png" alt="책 이미지">
+        </div>
+        <div class="recode-body">
+          <div class="recode-title">도서명: 데미안</div>
+          <div class="recode-text">
+            <a href="#" style="color:blue;">이 책은 내게 질문을 던졌다</a>
+          </div>
+          <div class="recode-date">2025-05-24 · 조회수 89</div>
+          <div class="recode-actions">
+            <button class="edit-btn">수정</button>
+            <button class="delete-btn">삭제</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

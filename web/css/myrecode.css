@@ -1,0 +1,118 @@
+/* 탭 메뉴 */
+.recode-tab {
+  display: flex;
+  border-bottom: 2px solid #ccc;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.recode-tab .tab {
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  background-color: #f5f5f5;
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px 6px 0 0;
+  margin-right: 10px;
+}
+
+.recode-tab .tab.active {
+  background-color: #fff;
+  border-bottom: 2px solid white;
+  color: #000;
+}
+
+/* 카드 리스트 */
+.recode-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* 각 카드 항목 */
+.recode-card {
+  display: flex;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  align-items: center;
+  gap: 20px;
+}
+
+/* 이미지 썸네일 */
+.recode-thumb {
+  width: 80px;
+  height: 100px;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #f8f8f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.recode-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 1px solid #ccc;
+}
+
+/* 이미지 없을 때 텍스트로 대체 */
+.recode-thumb.no-image {
+  border: 1px dashed #aaa;
+  font-size: 13px;
+  color: #666;
+  text-align: center;
+  padding: 8px;
+}
+
+/* 오른쪽 텍스트 영역 */
+.recode-body {
+  flex: 1;
+}
+
+.recode-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.recode-text {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 4px;
+}
+
+.recode-date {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 6px;
+}
+
+/* 수정/삭제 버튼 영역 */
+.recode-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.edit-btn {
+  padding: 6px 10px;
+  border: 1px solid #333;
+  background-color: #fff;
+  color: #333;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-btn {
+  padding: 6px 10px;
+  border: none;
+  background-color: #d33;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}

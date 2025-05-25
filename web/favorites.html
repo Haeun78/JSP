@@ -8,21 +8,14 @@
 </head>
 <body>
 
-<script>
-  const isLoggedIn = true;
-  if (!isLoggedIn) {
-    alert("로그인 후 이용 가능한 서비스입니다.");
-    window.location.href = "login_form.html";
-  }
-</script>
-
+<!-- ✅ 상단바 -->
 <div class="top-bar">
   <a href="#">로그아웃</a>
-  <a href="#">회원가입</a>
-  <a href="customer.html">고객센터</a>
+  <a href="customer_service_main.html">고객센터</a>
   <a href="mypage_main.html">마이페이지</a>
 </div>
 
+<!-- ✅ 네비게이션 -->
 <div class="main-nav">
   <a href="index.html" class="logo">책광장모두</a>
   <div class="menu">
@@ -39,67 +32,256 @@
 </div>
 
 <div class="container">
+  <!-- ✅ 마이페이지 사이드바 -->
   <div class="sidebar">
     <a href="mypage_main.html"><h3>마이페이지</h3></a>
     <ul>
-      <li><a href="#">회원정보수정</a></li>
-      <li><a href="#">적립금 내역</a></li>
-      <li><a href="#">장바구니</a></li>
+      <li><a href="edit_profile_page.html">회원정보수정</a></li>
+      <li><a href="payment.html">적립금 내역</a></li>
+      <li><a href="cart_view.html">장바구니</a></li>
       <li><a href="order_list.html">주문/배송내역</a></li>
       <li><a href="address_manage.html">배송지 관리</a></li>
       <li><a href="favorites.html">찜 목록</a></li>
-      <li><a href="#">작성글 관리</a></li>
-      <li><a href="inquiry.html">1:1 문의</a></li>
+      <li><a href="myrecode_book.html">작성글 관리</a></li>
+      <li><a href="one_to_one_list.html">1:1 문의</a></li>
     </ul>
   </div>
+
+  <!-- ✅ 본문 콘텐츠 -->
   <div class="content">
-    <h2>나의 찜 목록</h2>
-    <div class="favorites-grid">
-      <div class="book-card">
-        <img src="img/sample_book.jpg" alt="책 이미지" />
-        <p class="title">방구석 미술관</p>
-        <p class="author">조원재</p>
+    <h2>찜 목록</h2>
+
+    <!-- ✅ 상단 전체선택/삭제/장바구니 영역 -->
+    <div class="favorites-actions">
+      <input type="checkbox" id="selectAll" />
+      <span id="selectedCount">0개 선택</span>
+      <button onclick="deleteSelected()">선택 삭제</button>
+      <button onclick="addToCart()">장바구니 담기</button>
+    </div>
+
+    <!-- ✅ 찜 목록 리스트 -->
+    <div class="favorites-list">
+
+      <!-- ✅ 항목 1 -->
+      <div class="favorite-item">
+        <input type="checkbox" class="item-check" />
+        <img src="image/이미지 샘플.png" alt="책 이미지" class="item-img" />
+        <div class="item-info">
+          <div class="item-title">빛과 실</div>
+          <div class="item-author">한강 | 문학과지성사</div>
+          <div class="item-price">13500원</div>
+        </div>
         <button class="delete-btn">삭제</button>
       </div>
+
+      <!-- ✅ 항목 2 -->
+      <div class="favorite-item">
+        <input type="checkbox" class="item-check" />
+        <img src="image/이미지 샘플.png" alt="책 이미지" class="item-img" />
+        <div class="item-info">
+          <div class="item-title">불편한 편의점</div>
+          <div class="item-author">김호연 | 나무옆의자</div>
+          <div class="item-price">13200원</div>
+        </div>
+        <button class="delete-btn">삭제</button>
+      </div>
+
+      <!-- ✅ 항목 3 -->
+      <div class="favorite-item">
+        <input type="checkbox" class="item-check" />
+        <img src="image/이미지 샘플.png" alt="책 이미지" class="item-img" />
+        <div class="item-info">
+          <div class="item-title">달러구트 꿈 백화점</div>
+          <div class="item-author">이미예 | 팩토리나인</div>
+          <div class="item-price">14500원</div>
+        </div>
+        <button class="delete-btn">삭제</button>
+      </div>
+
+      <!-- ✅ 항목 4 -->
+      <div class="favorite-item">
+        <input type="checkbox" class="item-check" />
+        <img src="image/이미지 샘플.png" alt="책 이미지" class="item-img" />
+        <div class="item-info">
+          <div class="item-title">작별인사</div>
+          <div class="item-author">김영하 | 복복서가</div>
+          <div class="item-price">12500원</div>
+        </div>
+        <button class="delete-btn">삭제</button>
+      </div>
+
+      <!-- ✅ 항목 5 -->
+      <div class="favorite-item">
+        <input type="checkbox" class="item-check" />
+        <img src="image/이미지 샘플.png" alt="책 이미지" class="item-img" />
+        <div class="item-info">
+          <div class="item-title">작별인사</div>
+          <div class="item-author">김영하 | 복복서가</div>
+          <div class="item-price">12500원</div>
+        </div>
+        <button class="delete-btn">삭제</button>
+      </div>
+
+      <!-- ✅ 항목 6 -->
+      <div class="favorite-item">
+        <input type="checkbox" class="item-check" />
+        <img src="image/이미지 샘플.png" alt="책 이미지" class="item-img" />
+        <div class="item-info">
+          <div class="item-title">작별인사</div>
+          <div class="item-author">김영하 | 복복서가</div>
+          <div class="item-price">12500원</div>
+        </div>
+        <button class="delete-btn">삭제</button>
+      </div>
+
+      <!-- ✅ 항목 7 -->
+      <div class="favorite-item">
+        <input type="checkbox" class="item-check" />
+        <img src="image/이미지 샘플.png" alt="책 이미지" class="item-img" />
+        <div class="item-info">
+          <div class="item-title">작별인사</div>
+          <div class="item-author">김영하 | 복복서가</div>
+          <div class="item-price">12500원</div>
+        </div>
+        <button class="delete-btn">삭제</button>
+      </div>
+
+      <!-- ✅ 항목 8 -->
+      <div class="favorite-item">
+        <input type="checkbox" class="item-check" />
+        <img src="image/이미지 샘플.png" alt="책 이미지" class="item-img" />
+        <div class="item-info">
+          <div class="item-title">작별인사</div>
+          <div class="item-author">김영하 | 복복서가</div>
+          <div class="item-price">12500원</div>
+        </div>
+        <button class="delete-btn">삭제</button>
+      </div>
+
+      <!-- ✅ 항목 9 -->
+      <div class="favorite-item">
+        <input type="checkbox" class="item-check" />
+        <img src="image/이미지 샘플.png" alt="책 이미지" class="item-img" />
+        <div class="item-info">
+          <div class="item-title">작별인사</div>
+          <div class="item-author">김영하 | 복복서가</div>
+          <div class="item-price">12500원</div>
+        </div>
+        <button class="delete-btn">삭제</button>
+      </div>
+
+      <!-- ✅ 항목 10 -->
+      <div class="favorite-item">
+        <input type="checkbox" class="item-check" />
+        <img src="image/이미지 샘플.png" alt="책 이미지" class="item-img" />
+        <div class="item-info">
+          <div class="item-title">작별인사</div>
+          <div class="item-author">김영하 | 복복서가</div>
+          <div class="item-price">12500원</div>
+        </div>
+        <button class="delete-btn">삭제</button>
+      </div>
+
+      <!-- ✅ 항목 11 -->
+      <div class="favorite-item">
+        <input type="checkbox" class="item-check" />
+        <img src="image/이미지 샘플.png" alt="책 이미지" class="item-img" />
+        <div class="item-info">
+          <div class="item-title">작별인사</div>
+          <div class="item-author">김영하 | 복복서가</div>
+          <div class="item-price">12500원</div>
+        </div>
+        <button class="delete-btn">삭제</button>
+      </div>
+
     </div>
   </div>
 </div>
 
-<footer>
-  <div class="footer-top">
-    <div class="links-left">
-      <a href="#">사이트소개</a>
-      <a href="#">출판협동조합 사이트 바로가기</a>
-      <a href="#">서비스이용약관</a>
-      <a href="#">개인정보처리방침</a>
-      <a href="#">책임의 한계와 법적 고지</a>
-      <a href="#">이메일 무단수집거부</a>
-    </div>
-    <div class="links-right">
-      <a href="customer.html">고객센터</a>
-      <a href="inquiry.html">1:1문의</a>
-      <a href="favorites.html">나의 즐겨찾기</a>
-    </div>
-  </div>
-  <div class="footer-main">
-    <div class="left">
-      <strong>책광장모두</strong>
-      <span>Copyright (C) by 한국출판협동조합. All rights reserved.</span>
-    </div>
-    <div class="center">
-      서울특별시 마포구 토정로222 (한국출판협동조합)<br />
-      경기도 파주시 적성면 적성산단3로 10 (가월리)<br />
-      modoo@koreabook.or.kr<br />
-      02-701-0805 / 02-716-2999 / 031-944-8234~6
-    </div>
-    <div class="right">
-      대표자 | 주정관<br />
-      사업자등록번호 | 105-82-02347<br />
-      통신판매업신고번호 | 제2007-3130118-30206728<br />
-      부가통신사업신고번호 | 제2-01-0123호
-    </div>
-  </div>
-</footer>
+<!-- ✅ 선택 기능 스크립트 -->
+<script>
+  const selectAll = document.getElementById("selectAll");
+  const selectedCount = document.getElementById("selectedCount");
+  let allItems = Array.from(document.querySelectorAll(".favorite-item"));
+  const itemsPerPage = 10;
+  let currentPage = 1;
+
+  // 페이지 하단에 네비게이션 추가
+  const paginationContainer = document.createElement("div");
+  paginationContainer.className = "favorites-pagination";
+  const prevBtn = document.createElement("button");
+  prevBtn.textContent = "이전";
+  const nextBtn = document.createElement("button");
+  nextBtn.textContent = "다음";
+  const pageInfo = document.createElement("span");
+  paginationContainer.appendChild(prevBtn);
+  paginationContainer.appendChild(pageInfo);
+  paginationContainer.appendChild(nextBtn);
+  document.querySelector(".content").appendChild(paginationContainer);
+
+  function updateCount() {
+    const count = Array.from(document.querySelectorAll(".favorite-item input:checked")).length;
+    selectedCount.textContent = `${count}개 선택`;
+  }
+
+  selectAll.addEventListener("change", function () {
+    const currentVisible = document.querySelectorAll(".favorite-item");
+    currentVisible.forEach(c => c.querySelector("input").checked = this.checked);
+    updateCount();
+  });
+
+  function renderPage(page) {
+    const start = (page - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
+    allItems.forEach((item, idx) => {
+      item.style.display = (idx >= start && idx < end) ? "flex" : "none";
+    });
+    pageInfo.textContent = ` ${page} / ${Math.ceil(allItems.length / itemsPerPage)} `;
+    prevBtn.disabled = page === 1;
+    nextBtn.disabled = page === Math.ceil(allItems.length / itemsPerPage);
+    updateCount();
+  }
+
+  prevBtn.addEventListener("click", () => {
+    if (currentPage > 1) {
+      currentPage--;
+      renderPage(currentPage);
+    }
+  });
+
+  nextBtn.addEventListener("click", () => {
+    if (currentPage < Math.ceil(allItems.length / itemsPerPage)) {
+      currentPage++;
+      renderPage(currentPage);
+    }
+  });
+
+  checkboxes.forEach(chk => {
+    chk.addEventListener("change", updateCount);
+  });
+
+  function deleteSelected() {
+    allItems.forEach(item => {
+      if (item.querySelector("input").checked) {
+        item.remove();
+      }
+    });
+    allItems = Array.from(document.querySelectorAll(".favorite-item"));
+    renderPage(currentPage);
+  }
+
+  function addToCart() {
+    const selected = Array.from(document.querySelectorAll(".favorite-item input:checked"));
+    if (selected.length === 0) {
+      alert("선택된 항목이 없습니다.");
+    } else {
+      alert(`${selected.length}개 항목이 장바구니에 담겼습니다. (DB 연동 예정)`);
+    }
+  }
+
+  renderPage(currentPage);
+</script>
+
 
 </body>
 </html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>작성글 관리 - 상품리뷰</title>
+  <link rel="stylesheet" href="css/mypage_main.css">
+  <link rel="stylesheet" href="css/myrecode.css">
+</head>
+<body>
+
+<div class="top-bar">
+  <a href="#">로그아웃</a>
+  <a href="customer_service_main.html">고객센터</a>
+  <a href="mypage_main.html">마이페이지</a>
+</div>
+
+<div class="main-nav">
+  <a href="index.html" class="logo">책광장모두</a>
+  <div class="menu">
+    <a href="#">분야별 도서</a>
+    <a href="#">독서기록장</a>
+    <a href="#">역대수상작</a>
+    <a href="#">이벤트소식</a>
+    <a href="#">공지사항</a>
+  </div>
+  <div class="search">
+    <input type="text" placeholder="검색어를 입력하세요">
+    <button>검색</button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="sidebar">
+    <a href="mypage_main.html"><h3>마이페이지</h3></a>
+    <ul>
+      <li><a href="edit_profile_page.html">회원정보수정</a></li>
+      <li><a href="payment.html">적립금 내역</a></li>
+      <li><a href="cart_view.html">장바구니</a></li>
+      <li><a href="order_list.html">주문/배송내역</a></li>
+      <li><a href="address_manage.html">배송지 관리</a></li>
+      <li><a href="favorites.html">찜 목록</a></li>
+      <li><a href="myrecode_book.html">작성글 관리</a></li>
+      <li><a href="one_to_one_list.html">1:1 문의</a></li>
+    </ul>
+  </div>
+
+  <!-- 콘텐츠 -->
+  <div class="content">
+    <h2>작성글 관리</h2>
+
+    <!-- 탭 -->
+    <div class="recode-tab">
+      <a href="myrecode_book.html" class="tab">독서기록</a>
+      <a href="myrecode_review.html" class="tab active">상품리뷰</a>
+    </div>
+
+    <!-- 카드형 리스트 -->
+    <div class="recode-card-list">
+
+      <!-- 항목 1 (이미지 있음) -->
+      <div class="recode-card">
+        <div class="recode-thumb">
+          <img src="image/이미지 샘플.png" alt="상품 이미지">
+        </div>
+        <div class="recode-body">
+          <div class="recode-title">상품명: 무선 독서등</div>
+          <div class="recode-text">디자인도 깔끔하고 빛 조절이 잘 돼서 만족합니다.</div>
+          <div class="recode-date">2025-05-24 · 조회수 51</div>
+          <div class="recode-actions">
+            <button class="edit-btn">수정</button>
+            <button class="delete-btn">삭제</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 항목 2 (이미지 없음) -->
+      <div class="recode-card">
+        <div class="recode-body">
+          <div class="recode-title">상품명: 책상 정리함 오거나이저</div>
+          <div class="recode-text">깔끔하게 정리돼서 만족합니다. 추천해요!</div>
+          <div class="recode-date">2025-05-23 · 조회수 42</div>
+          <div class="recode-actions">
+            <button class="edit-btn">수정</button>
+            <button class="delete-btn">삭제</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
