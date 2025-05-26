@@ -11,14 +11,21 @@
 <body>
 
   <!-- 헤더 -->
-  <header>
-    <div class="top-bar">
-      <a href="index.html" class="logo-icon">
+  <header class="top-bar">
+    <!-- 헤더 로고 부분 -->
+    <div class="header-left">
+      <a href="index.html" class="logo-link">
         <img src="./image/책광장모두.png" alt="로고" class="logo">
       </a>
-      <div class="top-links">
-        <a href="help.html">고객센터</a>
-      </div>
+      <button class="org-btn">한국출판협동조합</button>
+    </div>
+    <!-- 헤더 로그인 박스 부분 -->
+    <div class="header-right">
+      <a href="login_form.html">로그인</a>
+      <span class="divider">|</span>
+      <a href="signup.html">회원가입</a>
+      <span class="divider">|</span>
+      <a href="./customer_service_main.html">고객센터</a>
     </div>
   </header>
 
@@ -38,7 +45,7 @@
       </p>
       <p>비밀번호 재확인 *<br>
         <input type="password" id="confirmPassword" name="repassword" placeholder="비밀번호를 한 번 더 입력해주세요.">
-        <button type="button">비밀번호 확인</button>
+        <button type="button" id="checkPasswordBtn">비밀번호 확인</button>
       </p>
     </section>
 
@@ -82,12 +89,13 @@
     <section>
       <h3>소속기관·단체</h3>
       <p>
-        <input type="text" placeholder="소속기관·단체를 입력해주세요.">
-        <input type="text" placeholder="인증번호를 입력해주세요.">
+        <input type="text" id="orgName" placeholder="소속기관·단체를 입력해주세요.">
+        <input type="text" id="orgCode" placeholder="인증번호를 입력해주세요.">
       </p>
     </section>
 
     <!-- 약관 동의 -->
+
 <section>
   <label>
     <input type="checkbox" id="agreeAll"> <strong>전체 동의합니다.</strong>
@@ -97,13 +105,27 @@
   <br><br>
   <label>
     <input type="checkbox" class="terms" id="privacy"> 개인정보 처리방침
-    <button type="button" onclick="alert('개인정보 처리방침 내용입니다.')">내용보기</button>
+    <button type="button" onclick="openModal('privacy')">내용보기</button>
   </label><br>
   <label>
     <input type="checkbox" class="terms" id="commerce"> 전자상거래(인터넷사이버몰) 표준약관
-    <button type="button" onclick="alert('전자상거래 표준약관 내용입니다.')">내용보기</button>
+    <button type="button" onclick="openModal('commerce')">내용보기</button>
   </label>
 </section>
+
+<!-- 약관 모달 -->
+<div id="termsModal" class="modal hidden">
+  <div class="modal-content">
+    <h3 id="modalTitle">약관 내용</h3>
+    <div id="modalText" class="modal-text">
+      <!-- 여기에 약관 내용이 들어갑니다 -->
+    </div>
+    <div class="modal-buttons">
+      <button onclick="closeModal()">닫기</button>
+      <button id="agreeButton">동의</button>
+    </div>
+  </div>
+</div>
 
 
     <!-- 버튼 영역 -->

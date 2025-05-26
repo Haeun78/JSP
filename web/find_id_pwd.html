@@ -4,52 +4,57 @@
   <meta charset="UTF-8">
   <title>아이디/비밀번호 찾기</title>
   <link rel="stylesheet" href="./css/find_id_pwd.css">
+  <link rel="stylesheet" href="./css/index.css">
   <script defer src="./js/find_id_pwd.js"></script>
 </head>
 <body>
 
-  <!-- 헤더 -->
-  <header>
-    <div class="top-bar">
-      <a href="index.html" class="logo-icon">
+  <header class="top-bar">
+    <div class="header-left">
+      <a href="index.html" class="logo-link">
         <img src="./image/책광장모두.png" alt="로고" class="logo">
       </a>
-      <div class="top-links">
-        <a href="login_form.html">로그인</a>
-        <a href="signup.html">회원가입</a>
-        <a href="help.html">고객센터</a>
-      </div>
+      <button class="org-btn">한국출판협동조합</button>
+    </div>
+    <div class="header-right">
+      <a href="login_form.html">로그인</a>
+      <span class="divider">|</span>
+      <a href="signup.html">회원가입</a>
+      <span class="divider">|</span>
+      <a href="customer_service_main.html">고객센터</a>
     </div>
   </header>
 
-  <!-- 메인 -->
   <main>
     <div class="form-container">
       <h2>아이디/비밀번호 찾기</h2>
 
-      <div class="tab-section">
-        <input type="radio" id="find-id" name="findTab" checked>
-        <label for="find-id">아이디 찾기</label>
-        <input type="radio" id="find-pw" name="findTab">
-        <label for="find-pw">비밀번호 찾기</label>
+      <div class="tab-buttons">
+        <button id="tab-id" class="tab active" onclick="showTab('id')">아이디 찾기</button>
+        <button id="tab-pw" class="tab" onclick="showTab('pw')">비밀번호 찾기</button>
       </div>
 
       <div class="method-section">
-        <label><input type="radio" name="method" value="phone" checked> 휴대폰 번호</label>
-        <label><input type="radio" name="method" value="email"> 이메일</label>
+        <p id="method-title">아이디 찾기 방법 선택</p>
+        <label><input type="radio" name="method" value="phone" checked onchange="toggleInputFields()"> 휴대폰 번호</label>
+        <label><input type="radio" name="method" value="email" onchange="toggleInputFields()"> 이메일</label>
       </div>
 
       <form id="findForm">
-        <div class="input-group" id="id-input" style="display: none;">
-          <input type="text" placeholder="아이디를 입력해 주세요.">
-        </div>
-
-        <div class="input-group">
+        <div class="input-group" id="usernameInput">
           <input type="text" placeholder="이름을 입력해 주세요.">
         </div>
 
-        <div class="input-group" id="contact-input">
+        <div class="input-group" id="useridInput" style="display: none;">
+          <input type="text" placeholder="아이디를 입력해 주세요.">
+        </div>
+
+        <div class="input-group" id="phoneInput">
           <input type="text" placeholder="휴대폰 번호('-'없이 입력)">
+        </div>
+
+        <div class="input-group" id="emailInput" style="display: none;">
+          <input type="text" placeholder="이메일을 입력해 주세요">
         </div>
 
         <button type="submit">인증번호 받기</button>
@@ -57,42 +62,60 @@
     </div>
   </main>
 
-  <!-- 푸터 -->
   <footer>
-  <div class="footer-top">
-    <div class="links-left">
-      <a href="#">사이트소개</a>
-      <a href="#">출판협동조합 사이트 바로가기</a>
-      <a href="#">서비스이용약관</a>
-      <a href="#">개인정보처리방침</a>
-      <a href="#">책임의 한계와 법적 고지</a>
-      <a href="#">이메일 무단수집거부</a>
+    <div class="footer-top">
+      <div class="links-left">
+        <a href="#">사이트소개</a>
+        <a href="#">출판협동조합 사이트 바로가기</a>
+        <a href="#">서비스이용약관</a>
+        <a href="#">개인정보처리방침</a>
+        <a href="#">책임의 한계와 법적 고지</a>
+        <a href="#">이메일 무단수집거부</a>
+      </div>
+      <div class="links-right">
+        <a href="customer.html">고객센터</a>
+        <a href="inquiry.html">1:1문의</a>
+        <a href="favorites.html">나의 즐겨찾기</a>
+      </div>
     </div>
-    <div class="links-right">
-      <a href="customer.html">고객센터</a>
-      <a href="inquiry.html">1:1문의</a>
-      <a href="favorites.html">나의 즐겨찾기</a>
+    <div class="footer-main">
+      <div class="left">
+        <strong>책광장모두</strong>
+        <span>Copyright (C) by 한국출판협동조합. All rights reserved.</span>
+      </div>
+      <div class="center">
+        서울특별시 마포구 토정로222 (한국출판협동조합)<br />
+        경기도 파주시 적성면 적성산단3로 10 (가월리)<br />
+        modoo@koreabook.or.kr<br />
+        02-701-0805 / 02-716-2999 / 031-944-8234~6
+      </div>
+      <div class="right">
+        대표자 | 주정관<br />
+        사업자등록번호 | 105-82-02347<br />
+        통신판매업신고번호 | 제2007-3130118-30206728<br />
+        부가통신사업신고번호 | 제2-01-0123호
+      </div>
     </div>
-  </div>
-  <div class="footer-main">
-    <div class="left">
-      <strong>책광장모두</strong>
-      <span>Copyright (C) by 한국출판협동조합. All rights reserved.</span>
-    </div>
-    <div class="center">
-      서울특별시 마포구 토정로222 (한국출판협동조합)<br />
-      경기도 파주시 적성면 적성산단3로 10 (가월리)<br />
-      modoo@koreabook.or.kr<br />
-      02-701-0805 / 02-716-2999 / 031-944-8234~6
-    </div>
-    <div class="right">
-      대표자 | 주정관<br />
-      사업자등록번호 | 105-82-02347<br />
-      통신판매업신고번호 | 제2007-3130118-30206728<br />
-      부가통신사업신고번호 | 제2-01-0123호
-    </div>
-  </div>
-</footer>
+  </footer>
 
+  <script>
+    function showTab(type) {
+      document.getElementById('tab-id').classList.remove('active');
+      document.getElementById('tab-pw').classList.remove('active');
+      if (type === 'id') {
+        document.getElementById('tab-id').classList.add('active');
+      } else {
+        document.getElementById('tab-pw').classList.add('active');
+      }
+    }
+
+    function toggleInputFields() {
+      const selectedMethod = document.querySelector('input[name="method"]:checked').value;
+      document.getElementById('phoneInput').style.display = (selectedMethod === 'phone') ? 'block' : 'none';
+      document.getElementById('emailInput').style.display = (selectedMethod === 'email') ? 'block' : 'none';
+    }
+
+    window.onload = toggleInputFields;
+  </script>
 </body>
 </html>
