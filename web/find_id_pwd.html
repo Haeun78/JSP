@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>아이디/비밀번호 찾기</title>
+  <link rel="stylesheet" href="./css/header.css">
   <link rel="stylesheet" href="./css/find_id_pwd.css">
-  <link rel="stylesheet" href="./css/index.css">
+  <script defer src="./js/header.js"></script>
   <script defer src="./js/find_id_pwd.js"></script>
 </head>
 <body>
-
   <header class="top-bar">
     <div class="header-left">
       <a href="index.html" class="logo-link">
@@ -16,6 +16,84 @@
       </a>
       <button class="org-btn">한국출판협동조합</button>
     </div>
+
+    <div class="header-center">
+      <input type="text" class="search-input" placeholder="한 권만 사도 무료배송">
+      <button class="detail-search-btn" onclick="toggleSearchPanel()">상세검색</button>
+
+      <div class="search-panel" id="searchPanel">
+        <div class="search-inner">
+          <button class="close-btn" onclick="toggleSearchPanel()">✕</button>
+          <h3 class="panel-title">도서 상세검색</h3>
+          <p class="guide-text">* 도서명/저자/출판사/검색키워드(주제어) 중 하나 이상을 입력해주세요</p>
+
+          <form action="search_result.html" method="GET" id="detailSearchForm">
+            <div class="form-line">
+              <select name="category" class="scroll-select">
+                <option value="">전체</option>
+                <option>문학</option>
+                <option>경제/경영</option>
+                <option>자기계발</option>
+                <option>인문학</option>
+                <option>종교</option>
+                <option>역사</option>
+                <option>예술</option>
+                <option>사회과학</option>
+                <option>자연과학</option>
+                <option>기술/공학</option>
+                <option>컴퓨터/IT</option>
+                <option>유아</option>
+                <option>어린이</option>
+                <option>청소년</option>
+                <option>초등 학습서</option>
+                <option>중/고등 학습서</option>
+                <option>대학교재</option>
+                <option>취업/수험서</option>
+                <option>외국어</option>
+                <option>가정/살림</option>
+                <option>건강/레저</option>
+                <option>여행</option>
+                <option>잡지</option>
+                <option>만화</option>
+              </select>
+              <input type="text" name="title" placeholder="도서명 입력">
+              <input type="text" name="isbn" placeholder="ISBN 입력">
+              <input type="text" name="author" placeholder="저자/역자 입력">
+              <input type="text" name="publisher" placeholder="출판사 입력">
+              <input type="text" name="keyword" placeholder="주제어 입력">
+            </div>
+
+            <div class="form-line publish-line">
+              <div class="date-buttons-group">
+                <label>출간일</label>
+                <button type="button" class="filter-btn active" onclick="selectDateRange(this)">전체</button>
+                <button type="button" class="filter-btn" onclick="selectDateRange(this)">1개월</button>
+                <button type="button" class="filter-btn" onclick="selectDateRange(this)">3개월</button>
+                <button type="button" class="filter-btn" onclick="selectDateRange(this)">6개월</button>
+                <button type="button" class="filter-btn" onclick="selectDateRange(this)">1년</button>
+                <button type="button" class="filter-btn" onclick="selectDateRange(this, true)">직접입력</button>
+
+                <div id="date-range" style="display: none; margin-left: 10px;">
+                  <input type="date" id="start-date">
+                  <span>-</span>
+                  <input type="date" id="end-date">
+                </div>
+              </div>
+              <div class="exclude-checkbox">
+                <input type="checkbox" name="exclude_soldout" id="exclude_soldout">
+                <label for="exclude_soldout">품절/절판 제외</label>
+              </div>
+            </div>
+
+            <div class="form-line">
+              <button type="reset" class="submit-btn white">초기화</button>
+              <button type="submit" class="submit-btn blue">검색</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
     <div class="header-right">
       <a href="login_form.html">로그인</a>
       <span class="divider">|</span>
@@ -28,37 +106,38 @@
   <main>
     <div class="form-container">
       <h2>아이디/비밀번호 찾기</h2>
-
+  
       <div class="tab-buttons">
         <button id="tab-id" class="tab active" onclick="showTab('id')">아이디 찾기</button>
         <button id="tab-pw" class="tab" onclick="showTab('pw')">비밀번호 찾기</button>
       </div>
-
-      <div class="method-section">
-        <p id="method-title">아이디 찾기 방법 선택</p>
-        <label><input type="radio" name="method" value="phone" checked onchange="toggleInputFields()"> 휴대폰 번호</label>
-        <label><input type="radio" name="method" value="email" onchange="toggleInputFields()"> 이메일</label>
+  
+      <div class="form-body">
+        <div class="method-section">
+          <p id="method-title">아이디 찾기 방법 선택</p>
+          <label><input type="radio" name="method" value="phone" checked onchange="toggleInputFields()"> 휴대폰 번호</label>
+          <label><input type="radio" name="method" value="email" onchange="toggleInputFields()"> 이메일</label>
+        </div>
+  
+        <form id="findForm">
+          <div class="input-group" id="usernameInput">
+            <input type="text" class="user-input" placeholder="이름을 입력해 주세요.">
+          </div>
+          <div class="input-group" id="useridInput" style="display: none;">
+            <input type="text" class="id-input" placeholder="아이디를 입력해 주세요.">
+          </div>
+          <div class="input-group" id="phoneInput">
+            <input type="text" class="number-input" placeholder="휴대폰 번호('-'없이 입력)">
+          </div>
+          <div class="input-group" id="emailInput" style="display: none;">
+            <input type="text" class="email-input" placeholder="이메일을 입력해 주세요">
+          </div>
+        </form>
       </div>
-
-      <form id="findForm">
-        <div class="input-group" id="usernameInput">
-          <input type="text" placeholder="이름을 입력해 주세요.">
-        </div>
-
-        <div class="input-group" id="useridInput" style="display: none;">
-          <input type="text" placeholder="아이디를 입력해 주세요.">
-        </div>
-
-        <div class="input-group" id="phoneInput">
-          <input type="text" placeholder="휴대폰 번호('-'없이 입력)">
-        </div>
-
-        <div class="input-group" id="emailInput" style="display: none;">
-          <input type="text" placeholder="이메일을 입력해 주세요">
-        </div>
-
-        <button type="submit">인증번호 받기</button>
-      </form>
+  
+      <div class="form-footer">
+        <button type="submit" class="user-button">인증번호 받기</button>
+      </div>
     </div>
   </main>
 
@@ -97,25 +176,5 @@
       </div>
     </div>
   </footer>
-
-  <script>
-    function showTab(type) {
-      document.getElementById('tab-id').classList.remove('active');
-      document.getElementById('tab-pw').classList.remove('active');
-      if (type === 'id') {
-        document.getElementById('tab-id').classList.add('active');
-      } else {
-        document.getElementById('tab-pw').classList.add('active');
-      }
-    }
-
-    function toggleInputFields() {
-      const selectedMethod = document.querySelector('input[name="method"]:checked').value;
-      document.getElementById('phoneInput').style.display = (selectedMethod === 'phone') ? 'block' : 'none';
-      document.getElementById('emailInput').style.display = (selectedMethod === 'email') ? 'block' : 'none';
-    }
-
-    window.onload = toggleInputFields;
-  </script>
 </body>
 </html>
