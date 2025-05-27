@@ -5,6 +5,7 @@ body {
   background: #fff;
   color: #333;
 }
+
 /* 출간일 라인에서 품절/절판 제외 정렬용 래퍼 */
 .publish-line {
   display: flex;
@@ -28,8 +29,6 @@ body {
   gap: 4px;
   white-space: nowrap;
 }
-
-
 
 /* 메뉴 */
 .main-menu {
@@ -64,79 +63,196 @@ body {
   line-height: 1.6;
 }
 
-/* 슬라이더 */
-.book-slider-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 30px 0;
-  position: relative;
+body {
+  font-family: '맑은 고딕', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: #333;
 }
 
-.arrow {
-  font-size: 30px;
-  color: #666;
-  cursor: pointer;
-  padding: 10px;
-  user-select: none;
+/* 슬라이더 영역 */
+.book-slider-wrapper {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  padding: 60px 0;
+  overflow: hidden;
+  background-color: #fff;
+  position: relative;  /* ✅ 추가: 화살표의 기준 부모 */
 }
 
 .slider-container {
-  width: 85%;
+  width: 100%;
   overflow: hidden;
 }
 
 .book-slider {
   display: flex;
-  gap: 20px;
-  transition: transform 0.4s ease;
+  flex-wrap: nowrap;
+  transition: transform 0.5s ease;
+  width: max-content; /* 슬라이드 길이만큼 확장 */
 }
 
 .mbook-card {
-  width: 180px;
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
-  transition: transform 0.3s ease;
-  flex-shrink: 0;
+  flex: 0 0 calc(100vw / 3);  /* 한 화면에 3개 카드 */
+  height: 680px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  padding: 40px;
+  box-sizing: border-box;
 }
-
-.mbook-card:hover {
-  transform: translateY(-6px);
-}
-
 .mbook-img {
-  width: 100%;
-  height: 270px;
-  object-fit: cover;
-  display: block;
+  width: 280px;
+  height: 380px;
+  object-fit: contain;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
 }
 
-.mbook-info {
-  padding: 10px 10px 16px;
-  background: #fff;
+.mbook-card:nth-child(1) {
+  background-color: #d9d8d7; /* 노란 배경 */
 }
+.mbook-card:nth-child(2) {
+  background-color: #88b8c3; /* 파란 배경 */
+}
+.mbook-card:nth-child(2) .mbook-title {
+  color: #ffffff;
+}
+.mbook-card:nth-child(2) .mbook-author {
+  color: #484747;
+}
+.mbook-card:nth-child(3) {
+  background-color: #492f1d; /* 파란 배경 */
+}
+.mbook-card:nth-child(3) .mbook-title {
+  color: #ffffff;
+}
+.mbook-card:nth-child(3) .mbook-author {
+  color: #a5a5a5;
+}
+.mbook-card:nth-child(4) {
+  background-color: #293a4f; /* 파란 배경 */
+}
+.mbook-card:nth-child(4) .mbook-title {
+  color: #ffffff;
+}
+.mbook-card:nth-child(4) .mbook-author {
+  color: #8d8d8d;
+}
+.mbook-card:nth-child(5) {
+  background-color: #3d3354; /* 파란 배경 */
+}
+.mbook-card:nth-child(5) .mbook-title {
+  color: #ffffff;
+}
+.mbook-card:nth-child(5) .mbook-author {
+  color: #8d8d8d;
+}
+.mbook-card:nth-child(6) {
+  background-color: #943834; /* 파란 배경 */
+}
+.mbook-card:nth-child(6) .mbook-title {
+  color: #ffffff;
+}
+.mbook-card:nth-child(6) .mbook-author {
+  color: #a5a4a4;
+}
+.mbook-card:nth-child(7) {
+  background-color: #2a1c13; /* 파란 배경 */
+}
+.mbook-card:nth-child(7) .mbook-title {
+  color: #ffffff;
+}
+.mbook-card:nth-child(7) .mbook-author {
+  color: #a5a4a4;
+}
+.mbook-card:nth-child(8) {
+  background-color: #916341; /* 파란 배경 */
+}
+.mbook-card:nth-child(8) .mbook-title {
+  color: #ffffff;
+}
+.mbook-card:nth-child(8) .mbook-author {
+  color: #9b9a9a;
+}
+.mbook-card:nth-child(9) {
+  background-color: #901e1e; /* 파란 배경 */
+}
+.mbook-card:nth-child(9) .mbook-title {
+  color: #ffffff;
+}
+.mbook-card:nth-child(9) .mbook-author {
+  color: #9b9a9a;
+}
+.mbook-card:nth-child(10) {
+  background-color: #265654; /* 파란 배경 */
+}
+.mbook-card:nth-child(10) .mbook-title {
+  color: #ffffff;
+}
+.mbook-card:nth-child(10) .mbook-author {
+  color: #9b9a9a;
+}
+
+
 
 .mbook-title {
-  font-size: 15px;
+  font-size: 18px;
   font-weight: bold;
-  color: #111;
-  margin-bottom: 4px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  color: #222;
+  margin-bottom: 8px;
 }
 
 .mbook-author {
-  font-size: 13px;
-  color: #777;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  font-size: 14px;
+  color: #555;
 }
 
+/* 슬라이드 화살표 위치 고정 */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.4);
+  border: none;
+  font-size: 50px;           /* ✅ 적절한 크기로 줄임 */
+  font-weight: 300;          /* ✅ 얇게 */
+  line-height: 1;            /* ✅ 세로 중앙 맞춤 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  cursor: pointer;
+  color: black;
+  pointer-events: auto;
+  padding: 0;                /* ✅ 불필요한 여백 제거 */
+}
+
+/* 중앙 기준에서 안쪽으로 살짝 */
+.arrow.left {
+  left: 10px;        /* ← 위치 조정 (ex. 10px 또는 20px 정도) */
+}
+
+.arrow.right {
+  right: 10px;       /* → 위치 조정 */
+}
+
+/* 클릭 시 스타일 유지 */
+.arrow:hover,
+.arrow:active,
+.arrow:focus {
+  background-color: rgba(255, 255, 255, 0.4);
+  color: black;
+  outline: none;
+  box-shadow: none;
+}
 
   
   /*나눔*/

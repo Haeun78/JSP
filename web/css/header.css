@@ -1,5 +1,6 @@
 /* 헤더 전체 영역 */
 .top-bar {
+    height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -16,7 +17,8 @@
   }
   
   .logo {
-    height: 40px;
+    height: 42px;
+    width: 74px;
   }
   
   .org-btn {
