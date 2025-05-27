@@ -4,8 +4,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>독서기록장 뷰</title>
+    <link rel="stylesheet" href="./css/reading_record_view.css">
 </head>
 <body>
-    <h1>독서기록장 뷰 페이지 입니다.</h1>
+    <header>
+        <h1>헤더영역</h1>
+    </header>
+
+  <div class="reading-record-container">
+    
+    <!-- 왼쪽 책 이미지 -->
+    <div class="reading-thumbnail">
+      <img id="readingImage" src="./image/음악을 한다는 것은.jpg" alt="책 표지">
+    </div>
+
+    <!-- 오른쪽 콘텐츠 -->
+    <div class="reading-content">
+
+      <div class="reading-meta-wrap">
+        <div id="readingDate" class="reading-date">2025년 6월 1일</div>
+        <div id="readingCategory" class="reading-category">· 독서 기록</div>
+      </div>
+
+      <div class="reading-title-wrap">
+        <div id="readingTitle" class="reading-title">『책 제목』 독서 기록</div>
+      </div>
+
+      <div id="readingPeriod" class="reading-period">2025.05.25 ~ 2025.05.30</div>
+
+      <div class="reading-divider"></div>
+
+      <div class="reading-body-wrap">
+        <div id="readingContent" class="reading-body">
+          책 내용을 여기에 출력합니다.
+        </div>
+      </div>
+
+      <div id="readingTags" class="reading-tags">
+        #인문 #역사
+      </div>
+
+      <div class="reading-review-wrap">
+        <div class="reading-review-title">📌 독서 소감</div>
+        <div id="readingReview" class="reading-review-text">
+          이 책을 읽고 느낀 점을 여기에 표시합니다.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores necessitatibus a repellat consequuntur qui sed, libero repellendus ducimus enim id itaque aliquid eveniet quia doloremque ad molestias, quis quaerat pariatur.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores necessitatibus a repellat consequuntur qui sed, libero repellendus ducimus enim id itaque aliquid eveniet quia doloremque ad molestias, quis quaerat pariatur.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores necessitatibus a repellat consequuntur qui sed, libero repellendus ducimus enim id itaque aliquid eveniet quia doloremque ad molestias, quis quaerat pariatur.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores necessitatibus a repellat consequuntur qui sed, libero repellendus ducimus enim id itaque aliquid eveniet quia doloremque ad molestias, quis quaerat pariatur.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores necessitatibus a repellat consequuntur qui sed, libero repellendus ducimus enim id itaque aliquid eveniet quia doloremque ad molestias, quis quaerat pariatur.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores necessitatibus a repellat consequuntur qui sed, libero repellendus ducimus enim id itaque aliquid eveniet quia doloremque ad molestias, quis quaerat pariatur.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores necessitatibus a repellat consequuntur qui sed, libero repellendus ducimus enim id itaque aliquid eveniet quia doloremque ad molestias, quis quaerat pariatur.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores necessitatibus a repellat consequuntur qui sed, libero repellendus ducimus enim id itaque aliquid eveniet quia doloremque ad molestias, quis quaerat pariatur.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores necessitatibus a repellat consequuntur qui sed, libero repellendus ducimus enim id itaque aliquid eveniet quia doloremque ad molestias, quis quaerat pariatur.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores necessitatibus a repellat consequuntur qui sed, libero repellendus ducimus enim id itaque aliquid eveniet quia doloremque ad molestias, quis quaerat pariatur.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores necessitatibus a repellat consequuntur qui sed, libero repellendus ducimus enim id itaque aliquid eveniet quia doloremque ad molestias, quis quaerat pariatur.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores necessitatibus a repellat consequuntur qui sed, libero repellendus ducimus enim id itaque aliquid eveniet quia doloremque ad molestias, quis quaerat pariatur.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores necessitatibus a repellat consequuntur qui sed, libero repellendus ducimus enim id itaque aliquid eveniet quia doloremque ad molestias, quis quaerat pariatur.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores necessitatibus a repellat consequuntur qui sed, libero repellendus ducimus enim id itaque aliquid eveniet quia doloremque ad molestias, quis quaerat pariatur.
+        </div>
+      </div>
+
+      <div class="reading-footer">
+        <a href="./reading_record_main.html" class="btn-list">기록 목록으로</a>
+      </div>
+
+    </div>
+  </div>
+
+    <!-- 좋아요 & 공유 버튼 영역 -->
+    <div class="reading-action-bar">
+        <div class="action-wrap">
+            <div class="icon-wrap">
+                <div class="icon-heart icon-wrap-heart"></div>
+            </div>
+            <div class="like-count" id="likeCount">58</div>
+        </div>
+        <div class="action-wrap">
+            <div class="icon-wrap icon-wrap-share">
+                <div class="icon-share"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 공유 모달 -->
+    <div class="share-modal" id="shareModal">
+        <div class="share-modal-content">
+            <p>링크가 클립보드에 복사되었습니다 📎</p>
+            <button id="closeModal">닫기</button>
+        </div>
+    </div>
+
+    <!-- <footer><h1>푸터영역 빼기</h1></footer> -->
+    <script src="./js/reading_record_view.js"></script>
 </body>
 </html>

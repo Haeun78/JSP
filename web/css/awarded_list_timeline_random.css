@@ -1,0 +1,159 @@
+body {
+  background-color: #ffffff;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+header{
+    background-color: #f0f8ff;
+    height: 200px;
+}
+
+.book-list {
+  column-count: 5;
+  column-gap: 10px;
+  padding: 30px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.book-card {
+  break-inside: avoid;
+  background: #ffffff;
+  /* border-radius: px; */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.16);
+  margin-bottom: 24px;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.book-card:hover {
+  /* transform: translateY(-4px); */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transform: scale(1.1);       
+  transition: transform 0.4s ease, opacity 0.3s ease;
+}
+
+.info {
+  padding: 16px;
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.desc {
+  font-size: 13px;
+  color: #777;
+}
+
+/* 모달 */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  width: 90%;
+  max-width: 520px; /* 더 작게 줄이려면 480px */
+  max-height: 90vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.modal-scroll {
+  overflow-y: auto;
+  flex-grow: 1;
+  padding-right: 4px;
+}
+
+.modal-content img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.image-wrapper {
+  padding: 12px;
+  background-color: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+
+.modal-text .modal-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.modal-author,
+.modal-prize {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.modal-summary {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.modal-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.modal-buttons button {
+  flex: 1;
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-cart {
+  background-color: #f0f0f0;
+}
+
+.btn-buy {
+  background-color: #1e76af;
+  color: white;
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 20px;
+  cursor: pointer;
+}

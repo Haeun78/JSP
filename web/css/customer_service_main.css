@@ -46,6 +46,7 @@
 
 /* 구분선 */
 .divisor-sub-menu {
+  width: 120px;
   height: 1px;
   background-color: #e0e0e0;
   margin: 24px 0;

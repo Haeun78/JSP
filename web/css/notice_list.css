@@ -1,11 +1,157 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1:1 문의사항</title>
-</head>
-<body>
-    
-</body>
-</html>
+body {
+margin: 0;
+/* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+background-color: #ffffff;
+color: #333;
+}
+
+header{
+    border: 1px solid black;
+    height: 200px;
+    margin: auto;
+}
+
+/* 공지사항 메인 서브메뉴+컨테이너 */
+.notice-main {
+display: flex;
+max-width: 1200px;
+margin: 0 auto;
+padding: 20px;
+}
+
+/* 공지사항 메인 서브메뉴+컨테이너 */
+.notice-container {
+flex: 1;
+padding: 20px;
+background-color: #fff;
+border-radius: 10px;
+box-shadow: 0 2px 8px rgba(0,0,0,0.11);
+}
+
+/* 공지사항 헤더 */
+.notice-container h1 {
+font-size: 24px;
+margin-bottom: 25px;
+}
+
+/* 공지사항 총 수 */
+.notice-count {
+font-weight: bold;
+font-size: 14px;
+margin-bottom: 10px;
+}
+
+.notice-search {
+display: flex;
+gap: 10px;
+margin-bottom: 20px;
+}
+
+#searchType {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+#searchInput {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid rgba(204, 204, 204, 0.44);
+    border-radius: 6px;
+    max-width: 400px;
+}
+
+.search-button {
+    padding: 8px 16px;
+    background-color: #1e76af;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* .notice-search button:hover {
+  background-color: #f0f8ff;
+  color: #1e76af;
+} */
+
+.notice-list {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+.notice-list li {
+display: flex;
+align-items: center;
+gap: 20px;
+padding: 12px 0;
+border-bottom: 1px solid #ddd;
+cursor: pointer;
+}
+
+.notice-list li:hover {
+    background-color: #f0f8ff;
+}
+
+.notice-number {
+    padding-left: 20px;
+    width: 40px;
+    text-align: center;
+    color: #666;
+}
+
+.notice-date {
+    color: #888;
+    font-size: 13px;
+    width: 100px;
+}
+
+.notice-title {
+    color: #333;
+    font-weight: 500;
+    font-size: 15px;
+    flex: 1;
+    margin-left: 30px;
+}
+
+.notice-list a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.notice-list a:hover {
+  color: #007acc;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.pagination button {
+    min-width: 32px;
+    height: 32px;
+    padding: 0 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.pagination button:hover {
+    background-color: #007acca2;
+}
+
+footer{
+    border: 1px solid #f0f8ff ;
+    background-color: #f0f8ff;
+    height: 200px;
+}
