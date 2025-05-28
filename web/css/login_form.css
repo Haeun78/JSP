@@ -33,8 +33,7 @@ main h2 {
 }
 
 /* 입력창 */
-input[type="text"],
-input[type="password"] {
+.l1 {
   width: 100%;
   padding: 12px;
   margin-bottom: 12px;

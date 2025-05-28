@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>문학상 수상작 갤러리</title>
+  <link rel="stylesheet" href="./css/awarded_list_timeline_random.css" />
+</head>
+<body>
+  <header></header>
+  <h1 style="text-align:center; margin: 30px 0;">📚 문학상 수상작 갤러리</h1>
+  <div class="book-list"></div>
+
+  <!-- 모달 -->
+  <div id="bookModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="modalClose">&times;</span>
+      <div class="image-wrapper">
+        <img id="modalImage" src="" alt="책 표지" />
+      </div>
+      <div class="modal-text">
+        <div id="modalTitle" class="modal-title"></div>
+        <div id="modalAuthor" class="modal-author"></div>
+        <div id="modalPrize" class="modal-prize"></div>
+        <div id="modalSummary" class="modal-summary"></div>
+        <div class="modal-buttons">
+          <button class="btn-cart">🛒 장바구니</button>
+          <button class="btn-buy">⚡ 바로구매</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/awarded_list_timeline_random.js"></script>
+</body>
+</html>
+
