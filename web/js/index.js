@@ -5,7 +5,7 @@ const slider = document.getElementById('bookSlider');
 const container = document.querySelector('.slider-container');
 
 let currentIndex = 0;
-const cardWidth = 200; // 카드 width + gap
+const cardWidth = window.innerWidth / 3; // 카드 width + gap
 
 function slideLeft() {
   if (currentIndex > 0) {
