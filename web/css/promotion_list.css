@@ -1,0 +1,82 @@
+/* 배너 영역 */
+.promo-banner img {
+  width: 100%;
+  height: auto;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  border-radius: 8px;
+}
+
+/* 탭 버튼 영역 정렬 */
+.promo-tab-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+/* 탭 버튼 스타일 */
+.promo-tab {
+  display: flex;
+  gap: 12px;
+}
+
+.promo-tab-btn {
+  min-width: 550px;
+  padding: 10px 24px;
+  border: 1px solid #000000;
+  background-color: #fff;
+  color: #000000;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.promo-tab-btn.active {
+  border: 2.5px solid #1e76af;
+  background-color: #fff;
+  color: #1e76af;
+}
+
+/* 카드 리스트 영역 */
+.promo-section {
+  margin-bottom: 40px;
+}
+
+.promo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* 카드 스타일 */
+.promo-card {
+  width: calc(33.333% - 20px);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  background-color: #fff;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease;
+}
+
+.promo-card:hover {
+  transform: translateY(-3px);
+}
+
+.promo-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.promo-title {
+  font-size: 15px;
+  font-weight: bold;
+  padding: 12px;
+  color: #333;
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>기획전 · 이벤트</title>
+  <link rel="stylesheet" href="css/mypage_main.css" />
+  <link rel="stylesheet" href="css/promotion_list.css" />
+  <link rel="stylesheet" href="css/index.css" />
+</head>
+<body style="background-color: #ffffff;">
+
+<!-- 상단바 -->
+<div class="top-bar">
+  <a href="#">로그아웃</a>
+  <a href="#">고객센터</a>
+  <a href="mypage_main.html">마이페이지</a>
+</div>
+
+<!-- 네비게이션 -->
+<div class="main-nav">
+  <a href="index.html" class="logo">책광장모두</a>
+  <div class="menu">
+    <a href="#">분야별 도서</a>
+    <a href="#">독서기록장</a>
+    <a href="#">역대수상작</a>
+    <a href="promotion_list.html" style="color:#1e76af; font-weight:bold;">기획전 · 이벤트</a>
+    <a href="#">공지사항</a>
+  </div>
+  <div class="search" style="background-color:#f0f8ff;">
+    <input type="text" placeholder="검색어를 입력하세요" />
+    <button>검색</button>
+  </div>
+</div>
+
+<!-- 콘텐츠 -->
+<div class="container">
+  <div class="content">
+
+    <!-- 배너 -->
+    <div class="promo-banner">
+      <img src="image/banner.jpg" alt="기획/이벤트 배너">
+    </div>
+
+    <!-- 탭 -->
+    <div class="promo-tab-wrapper">
+      <div class="promo-tab">
+        <button class="promo-tab-btn active" onclick="showTab('event')">이벤트</button>
+        <button class="promo-tab-btn" onclick="showTab('plan')">기획전</button>
+      </div>
+    </div>
+
+    <!-- 이벤트 목록 -->
+    <div id="event" class="promo-section">
+      <div class="promo-grid">
+        <!-- 총 9개 (3줄 × 3칸) -->
+        <a href="event_view.html" class="promo-card"><img src="image/promotion.jpg" alt="이벤트1"><div class="promo-title">가정의 달 할인전</div></a>
+        <a href="event_view.html" class="promo-card"><img src="image/promotion.jpg" alt="이벤트2"><div class="promo-title">회원전용 할인 이벤트</div></a>
+        <a href="event_view.html" class="promo-card"><img src="image/promotion.jpg" alt="이벤트3"><div class="promo-title">5월 신간 사은품 증정</div></a>
+        <a href="event_view.html" class="promo-card"><img src="image/promotion.jpg" alt="이벤트4"><div class="promo-title">출간기념 특별전</div></a>
+        <a href="event_view.html" class="promo-card"><img src="image/promotion.jpg" alt="이벤트5"><div class="promo-title">역대 베스트 재조명</div></a>
+        <a href="event_view.html" class="promo-card"><img src="image/promotion.jpg" alt="이벤트6"><div class="promo-title">5월 독서 챌린지</div></a>
+        <a href="event_view.html" class="promo-card"><img src="image/promotion.jpg" alt="이벤트7"><div class="promo-title">리뷰 이벤트</div></a>
+        <a href="event_view.html" class="promo-card"><img src="image/promotion.jpg" alt="이벤트8"><div class="promo-title">신학기 추천도서 할인</div></a>
+        <a href="event_view.html" class="promo-card"><img src="image/promotion.jpg" alt="이벤트9"><div class="promo-title">선착순 사은품 이벤트</div></a>
+      </div>
+    </div>
+
+    <!-- 기획전 목록 -->
+    <div id="plan" class="promo-section" style="display: none;">
+      <div class="promo-grid">
+        <a href="promotion_view.html" class="promo-card"><img src="image/promotion.jpg" alt="기획1"><div class="promo-title">베스트셀러 기획전</div></a>
+        <a href="promotion_view.html" class="promo-card"><img src="image/promotion.jpg" alt="기획2"><div class="promo-title">신인 작가 기획 소개</div></a>
+        <a href="promotion_view.html" class="promo-card"><img src="image/promotion.jpg" alt="기획3"><div class="promo-title">출판사 공동 기획전</div></a>
+        <a href="promotion_view.html" class="promo-card"><img src="image/promotion.jpg" alt="기획4"><div class="promo-title">여름방학 추천 도서</div></a>
+        <a href="promotion_view.html" class="promo-card"><img src="image/promotion.jpg" alt="기획5"><div class="promo-title">고전 재출간 프로젝트</div></a>
+        <a href="promotion_view.html" class="promo-card"><img src="image/promotion.jpg" alt="기획6"><div class="promo-title">역사기획 테마전</div></a>
+        <a href="promotion_view.html" class="promo-card"><img src="image/promotion.jpg" alt="기획7"><div class="promo-title">추천 작가 릴레이전</div></a>
+        <a href="promotion_view.html" class="promo-card"><img src="image/promotion.jpg" alt="기획8"><div class="promo-title">올해의 추천 기획</div></a>
+        <a href="promotion_view.html" class="promo-card"><img src="image/promotion.jpg" alt="기획9"><div class="promo-title">문학상 수상 기획전</div></a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ✅ 푸터 -->
+  <footer>
+    <!-- 푸터 메인 컨테이너 -->
+    <div class="footer-container">
+        <!-- 푸터 메인 컨테이너 첫번째 줄-->
+        <div class="first-line-container">
+            <div class="first-line-left">
+                <button>사이트소개</button>
+                <button>출판협동조합 사이트 바로가기</button>
+                <div class="divisor1"></div>
+                <button>서비스이용약관</button>
+                <button>개인정보처리방침</button>
+                <button>책임의 한계와 법적 고지</button>
+                <button>이메일 무단수집거부</button>
+            </div>
+            <div class="first-line-right">
+                <button>고객센터</button>
+                <button>1:1문의</button>
+                <button>나의 즐겨찾기</button>
+            </div>
+        </div>
+
+        <div class="divisor2"></div> <!-- 푸터 메인 컨테이너 구부선-->
+
+        <!-- 푸터 메인 컨테이너 두번째 줄-->
+        <div class="second-line-container">
+            <div class="second-line-left">
+                <div class="title">책광장모두</div>
+                <div class="copyright">
+                    Copyright (C) by 한국출판협동조합. All rights reserved.
+                </div>
+            </div>
+            <div class="second-line-right">
+                <div class="first">
+                    <div><img src="./image/geo-alt.svg" alt="">서울특별시 마포구 토정로222 (한국출판협동조합)</div>
+                    <div>경기도 파주시 적성면 적성산단3로 10 (가월리)</div>
+                    <div><img src="./image/envelope.svg" alt="">modoo@koreabook.or.kr</div>
+                </div>
+                <div class="second">
+                    <div><img src="./image/telephone.svg" alt="">02-701-0805</div>
+                    <div><img src="./image/newspaper.svg" alt="">02-716-2999</div>
+                    <div>031-944-8234~6</div>
+                    <div style="cursor: pointer; margin-top: 10px;">한국출판협동조합 플러스친구</div>
+                </div>
+                <div class="third">
+                    <div>대표자 | 주정관 | 사업자등록번호 | 105-82-02347</div>
+                    <div>통신판매업신고번호 | 제2007-3130118-30206728</div>
+                    <div>부가통신사업신고번호 | 제2-01-0123호</div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </footer>
+<!-- 탭 전환 스크립트 -->
+<script>
+  function showTab(tab) {
+    document.getElementById("event").style.display = tab === "event" ? "block" : "none";
+    document.getElementById("plan").style.display = tab === "plan" ? "block" : "none";
+
+    const buttons = document.querySelectorAll(".promo-tab-btn");
+    buttons.forEach(btn => btn.classList.remove("active"));
+    if (tab === "event") {
+      buttons[0].classList.add("active");
+    } else {
+      buttons[1].classList.add("active");
+    }
+  }
+</script>
+
+</body>
+</html>
+
+

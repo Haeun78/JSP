@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>주문취소 신청</title>
+  <link rel="stylesheet" href="css/mypage_main.css" />
+  <link rel="stylesheet" href="css/order_list_cancle.css" />
+</head>
+<body>
+
+<!-- ✅ 상단바 -->
+<div class="top-bar">
+  <a href="#">로그아웃</a>
+  <a href="#">고객센터</a>
+  <a href="mypage_main.html">마이페이지</a>
+</div>
+
+<!-- ✅ 네비게이션 -->
+<div class="main-nav">
+  <a href="index.html" class="logo">책광장모두</a>
+  <div class="menu">
+    <a href="#">분야별 도서</a>
+    <a href="#">독서기록장</a>
+    <a href="#">역대수상작</a>
+    <a href="#">이벤트소식</a>
+    <a href="#">공지사항</a>
+  </div>
+  <div class="search">
+    <input type="text" placeholder="검색어를 입력하세요" />
+    <button>검색</button>
+  </div>
+</div>
+
+<!-- ✅ 마이페이지 구조 -->
+<div class="container">
+  <div class="sidebar">
+    <a href="mypage_main.html"><h3>마이페이지</h3></a>
+    <ul>
+      <li><a href="#">회원정보수정</a></li>
+      <li><a href="#">적립금 내역</a></li>
+      <li><a href="#">장바구니</a></li>
+      <li><a href="order_list.html">주문/배송내역</a></li>
+      <li><a href="#">배송지 관리</a></li>
+      <li><a href="#">찜 목록</a></li>
+      <li><a href="#">작성글 관리</a></li>
+      <li><a href="#">1:1 문의</a></li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <h2>주문취소 신청</h2>
+
+    <p>주문취소 사유를 선택해주세요.</p>
+
+    <form id="cancelForm">
+      <label><input type="radio" name="reason" value="단순 변심" /> 단순 변심</label><br/>
+      <label><input type="radio" name="reason" value="배송 지연" /> 배송 지연</label><br/>
+      <label><input type="radio" name="reason" value="상품 정보 상이" /> 상품 정보 상이</label><br/>
+      <label><input type="radio" name="reason" value="기타" /> 기타</label><br/>
+
+      <div class="buttons">
+        <button type="button" onclick="goBack()">취소</button>
+        <button type="submit">신청</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ✅ 스크립트 -->
+<script>
+function goBack() {
+  window.history.back();
+}
+
+document.getElementById("cancelForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  const selected = document.querySelector('input[name="reason"]:checked');
+  if (!selected) {
+    alert("사유를 선택해주세요.");
+    return;
+  }
+
+  // 주문 상태를 localStorage로 저장 (가상 처리)
+  localStorage.setItem('canceledOrderStatus', '주문취소신청');
+
+  alert(`"${selected.value}" 사유로 주문취소 신청되었습니다.`);
+  window.location.href = "order_list.html"; // 주문 목록으로 이동
+});
+</script>
+
+</body>
+</html>
