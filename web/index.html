@@ -9,6 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/header.css">
     <script defer src="./js/index.js"></script>
 </head>
 
@@ -133,7 +134,11 @@
     </section>
 
 <section class="book-slider-wrapper">
-  <div class="arrow left" onclick="slideLeft()">&#8249;</div>
+  <div class="arrow left" onclick="slideLeft()">
+  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="15 18 9 12 15 6"></polyline>
+  </svg>
+</div>
   <div class="slider-container">
     <div class="book-slider" id="bookSlider">
       <div class="mbook-card">
@@ -208,80 +213,133 @@
       </div>
     </div>
   </div>
-  <div class="arrow right" onclick="slideRight()">&#8250;</div>
+  <div class="arrow right" onclick="slideRight()">
+  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="9 6 15 12 9 18"></polyline>
+  </svg>
+</div>
 </section>
 
-    <!-- 키워드 -->
-    <h2 class="text-center fw-bold">BOOK KEYWORD</h2>
-    <p class="text-center text-muted">키워드로 분류된 다양한 도서</p>
+<!-- 새로 나온 책 영역 -->
+<section class="renew-new-books">
+    <div class="renew-header">
+  <h2>새로 나온 책</h2>
+  <div class="renew-term-tabs">
+    <button class="active" onclick="switchTerm('weekly')">주간</button>
+    <button onclick="switchTerm('monthly')">월간</button>
+  </div>
+</div>
 
-    <div class="grid-container mt-4">
-      <% for (int i = 1; i <= 24; i++) { %>
-        <a href="#" class="keyword-box">키워드 <%=i%></a>
-      <% } %>
-    </div> 
-
-    <!-- 탭: 새로 나온 책 / 베스트셀러 -->
-    <div class="mt-5 d-flex gap-2">
-      <button id="btn-new" class="tab-btn active" onclick="showTab('new')">새로 나온 책</button>
-      <button id="btn-best" class="tab-btn" onclick="showTab('best')">베스트셀러</button>
-    </div>
-
-    <!-- 새로 나온 책 키워드 탭 -->
-    <div id="category-tabs" class="scroll-wrapper">
-      <button class="scroll-arrow left" onclick="scrollCategory(-1)">&lt;</button>
-      <div class="scroll-container">
-        <% String[] categories = {"전체", "문학", "경제/경영", "자기계발", "인문학", "종교", "역사", "예술", "사회과학", "자연과학", "기술/공학", "컴퓨터/IT", "유아", "어린이", "청소년", "학습서", "외국어", "여행", "잡지", "만화", "기타"};
-           for (int i = 0; i < categories.length; i++) { %>
-          <button class="sub-tab-btn <%= (i == 0 ? "active" : "") %>" onclick="showCategory(event, 'cat<%=i%>')"><%= categories[i] %></button>
-        <% } %>
-      </div>
-      <button class="scroll-arrow right" onclick="scrollCategory(1)">&gt;</button>
-    </div>
-
-    <!-- 베스트셀러 주간/월간 탭 -->
-    <div id="bestseller-tabs" class="sub-tabs" style="display:none; margin-top: 20px;">
-      <button class="sub-tab-btn active" onclick="showCategory(event, 'best-week')">주간</button>
-      <button class="sub-tab-btn" onclick="showCategory(event, 'best-month')">월간</button>
-    </div>
-
-    <!-- 도서 그리드 출력 -->
-    <% for (int i = 0; i < 21; i++) { %>
-      <div id="cat-cat<%=i%>" class="book-grid <%= (i == 0 ? "active" : "") %>">
-        <% for (int j = 1; j <= 10; j++) { %>
-          <div class="book-card">
-            <a href="#"><img src="./image/index_book1.jpg" alt="book"></a>
-            <a href="#" class="book-title">키워드 <%= categories[i] %> 도서 <%=j%></a>
-            <div class="book-author">작가 이름</div>
-            <div class="book-price">₩<%= 10000 + j * 1000 %></div>
-          </div>
-        <% } %>
-      </div>
-    <% } %>
-
-    <!-- 베스트셀러 주간 -->
-    <div id="cat-best-week" class="book-grid">
-      <% for (int i = 1; i <= 10; i++) { %>
-        <div class="book-card">
-          <a href="#"><img src="./image/index_book1.jpg" alt="book"></a>
-          <a href="#" class="book-title">[주간] 도서 <%=i%></a>
-          <div class="book-author">작가 이름</div>
-          <div class="book-price">₩<%= 10000 + i * 1000 %></div>
+    <div class="renew-category-slider">
+      <button class="slider-arrow left" onclick="slideCategory(-1)">&#10094;</button>
+      <div class="category-slider-viewport">
+        <div class="category-slider" id="categorySlider">
+          <button class="active">전체</button>
+          <button>문학</button>
+          <button>경제/경영</button>
+          <button>자기계발</button>
+          <button>인문학</button>
+          <button>종교</button>
+          <button>역사</button>
+          <button>예술</button>
+          <button>사회과학</button>
+          <button>자연과학</button>
+          <button>기술/공학</button>
+          <button>컴퓨터/IT</button>
+          <button>유아</button>
+          <button>어린이</button>
+          <button>청소년</button>
+          <button>초등 학습서</button>
+          <button>중/고등 학습서</button>
+          <button>대학교재</button>
+          <button>취업/수험서</button>
+          <button>외국어</button>
+          <button>가정/살림</button>
+          <button>건강/레저</button>
+          <button>여행</button>
+          <button>잡지</button>
+          <button>만화</button>
         </div>
-      <% } %>
+      </div>
+      <button class="slider-arrow right" onclick="slideCategory(1)">&#10095;</button>
     </div>
 
-    <!-- 베스트셀러 월간 -->
-    <div id="cat-best-month" class="book-grid">
-      <% for (int i = 11; i <= 20; i++) { %>
+    <div class="renew-book-slider">
+      <button class="nav-arrow left" onclick="slideBooksRenew(-1)">&#10094;</button>
+      <div class="book-list" id="renewBookList">
+        <!-- 도서 카드 예시 -->
         <div class="book-card">
-          <a href="#"><img src="./image/index_book1.jpg" alt="book"></a>
-          <a href="#" class="book-title">[월간] 도서 <%=i%></a>
-          <div class="book-author">작가 이름</div>
-          <div class="book-price">₩<%= 10000 + i * 1000 %></div>
+          <img src="./image/index_book1.jpg" alt="도서 이미지">
+          <div class="book-title">국경일에 숨은 우리나라 역사 이야기</div>
+          <div class="book-author">조혜영 | 다락원</div>
+          <div class="book-price"><span class="discount">10%</span> <span class="price">15,120원</span></div>
         </div>
-      <% } %> 
+        <div class="book-card">
+          <img src="./image/index_book1.jpg" alt="도서 이미지">
+          <div class="book-title">국경일에 숨은 우리나라 역사 이야기</div>
+          <div class="book-author">조혜영 | 다락원</div>
+          <div class="book-price"><span class="discount">10%</span> <span class="price">15,120원</span></div>
+        </div>
+        <div class="book-card">
+          <img src="./image/index_book1.jpg" alt="도서 이미지">
+          <div class="book-title">국경일에 숨은 우리나라 역사 이야기</div>
+          <div class="book-author">조혜영 | 다락원</div>
+          <div class="book-price"><span class="discount">10%</span> <span class="price">15,120원</span></div>
+        </div>
+        <div class="book-card">
+          <img src="./image/index_book1.jpg" alt="도서 이미지">
+          <div class="book-title">국경일에 숨은 우리나라 역사 이야기</div>
+          <div class="book-author">조혜영 | 다락원</div>
+          <div class="book-price"><span class="discount">10%</span> <span class="price">15,120원</span></div>
+        </div>
+        <div class="book-card">
+          <img src="./image/index_book1.jpg" alt="도서 이미지">
+          <div class="book-title">국경일에 숨은 우리나라 역사 이야기</div>
+          <div class="book-author">조혜영 | 다락원</div>
+          <div class="book-price"><span class="discount">10%</span> <span class="price">15,120원</span></div>
+        </div>
+        <div class="book-card">
+          <img src="./image/index_book1.jpg" alt="도서 이미지">
+          <div class="book-title">국경일에 숨은 우리나라 역사 이야기</div>
+          <div class="book-author">조혜영 | 다락원</div>
+          <div class="book-price"><span class="discount">10%</span> <span class="price">15,120원</span></div>
+        </div>
+        <div class="book-card">
+          <img src="./image/index_book1.jpg" alt="도서 이미지">
+          <div class="book-title">국경일에 숨은 우리나라 역사 이야기</div>
+          <div class="book-author">조혜영 | 다락원</div>
+          <div class="book-price"><span class="discount">10%</span> <span class="price">15,120원</span></div>
+        </div>
+        <div class="book-card">
+          <img src="./image/index_book1.jpg" alt="도서 이미지">
+          <div class="book-title">국경일에 숨은 우리나라 역사 이야기</div>
+          <div class="book-author">조혜영 | 다락원</div>
+          <div class="book-price"><span class="discount">10%</span> <span class="price">15,120원</span></div>
+        </div>
+        <div class="book-card">
+          <img src="./image/index_book1.jpg" alt="도서 이미지">
+          <div class="book-title">국경일에 숨은 우리나라 역사 이야기</div>
+          <div class="book-author">조혜영 | 다락원</div>
+          <div class="book-price"><span class="discount">10%</span> <span class="price">15,120원</span></div>
+        </div>
+        <div class="book-card">
+          <img src="./image/index_book1.jpg" alt="도서 이미지">
+          <div class="book-title">국경일에 숨은 우리나라 역사 이야기</div>
+          <div class="book-author">조혜영 | 다락원</div>
+          <div class="book-price"><span class="discount">10%</span> <span class="price">15,120원</span></div>
+        </div>
+        
+      </div>
+      <button class="nav-arrow right" onclick="slideBooksRenew(1)">&#10095;</button>
     </div>
+
+    <div class="pagination-dots" id="renewPagination">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </section>
+
 
     <!-- 하은 -->
     <!-- 독서기록 카드 -->

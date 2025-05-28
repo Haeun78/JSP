@@ -1,11 +1,10 @@
+// ✅ 최종 통합 JS
 
-//경현 - 자바 스크립트
-// 현재 보여주고 있는 슬라이드의 인덱스 (0부터 시작)
+// 주요 슬라이더 (메인 책 슬라이더)
 const slider = document.getElementById('bookSlider');
 const container = document.querySelector('.slider-container');
-
 let currentIndex = 0;
-const cardWidth = window.innerWidth / 3; // 카드 width + gap
+const cardWidth = window.innerWidth / 3; // 한 카드 폭
 
 function slideLeft() {
   if (currentIndex > 0) {
@@ -17,45 +16,68 @@ function slideLeft() {
 function slideRight() {
   const maxScroll = slider.scrollWidth - container.offsetWidth;
   const maxIndex = Math.ceil(maxScroll / cardWidth);
-
   if (currentIndex < maxIndex) {
     currentIndex++;
-    const scrollX = Math.min(cardWidth * currentIndex, maxScroll); // 너무 넘지 않도록
+    const scrollX = Math.min(cardWidth * currentIndex, maxScroll);
     slider.style.transform = `translateX(-${scrollX}px)`;
   }
 }
 
-    //나눔 - 자바스크립트
-    function showTab(tab) {
-      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-      document.getElementById('btn-' + tab).classList.add('active');
-      document.getElementById('bestseller-tabs').style.display = (tab === 'best') ? 'flex' : 'none';
-      document.getElementById('category-tabs').style.display = (tab === 'new') ? 'block' : 'none';
-      document.querySelectorAll('.book-grid').forEach(grid => grid.classList.remove('active'));
+// 새로 나온 책 카테고리 슬라이더
+document.addEventListener("DOMContentLoaded", () => {
+  initRenewBookSlider();
+});
 
-      if (tab === 'new') {
-        document.querySelectorAll('#category-tabs .sub-tab-btn').forEach(btn => btn.classList.remove('active'));
-        document.querySelector('#category-tabs .sub-tab-btn:nth-child(1)').classList.add('active');
-        document.getElementById('cat-cat0').classList.add('active');
-      } else {
-        document.querySelectorAll('#bestseller-tabs .sub-tab-btn').forEach(btn => btn.classList.remove('active'));
-        document.querySelector('#bestseller-tabs .sub-tab-btn:nth-child(1)').classList.add('active');
-        document.getElementById('cat-best-week').classList.add('active');
-      }
-    }
+function switchTerm(term) {
+  document.querySelectorAll(".renew-term-tabs button").forEach(btn => {
+    btn.classList.toggle("active", btn.textContent.includes(term === 'weekly' ? '주간' : '월간'));
+  });
+}
 
-    function showCategory(event, categoryId) {
-      document.querySelectorAll('.sub-tab-btn').forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
-      document.querySelectorAll('.book-grid').forEach(grid => grid.classList.remove('active'));
-      document.getElementById('cat-' + categoryId).classList.add('active');
-    }
+function filterCategoryRenew(category) {
+  document.querySelectorAll("#categorySlider button").forEach(btn => {
+    btn.classList.toggle("active", btn.textContent === category);
+  });
+}
 
-    function scrollCategory(direction) {
-      const container = document.querySelector('.scroll-container');
-      container.scrollLeft += direction * 200;
-    }
+function slideCategory(dir) {
+  const viewport = document.querySelector(".category-slider-viewport");
+  const amount = 200 * dir;
+  viewport.scrollBy({ left: amount, behavior: "smooth" });
+}
 
-    window.onload = function () {
-      showTab('new');
-    }
+let renewCurrentPage = 0;
+const renewPerPage = 5;
+
+function slideBooksRenew(direction) {
+  const bookList = document.getElementById('renewBookList');
+  const cards = bookList.querySelectorAll('.book-card');
+  const cardWidth = cards[0].offsetWidth + 16; // margin 포함
+  const visibleWidth = cardWidth * renewPerPage;
+  const maxPage = Math.ceil(cards.length / renewPerPage) - 1;
+
+  renewCurrentPage += direction;
+  if (renewCurrentPage < 0) renewCurrentPage = 0;
+  if (renewCurrentPage > maxPage) renewCurrentPage = maxPage;
+
+  const moveX = renewCurrentPage * visibleWidth;
+  bookList.style.transform = `translateX(-${moveX}px)`;
+
+  document.querySelectorAll('#renewPagination .dot').forEach((dot, idx) => {
+    dot.classList.toggle('active', idx === renewCurrentPage);
+  });
+}
+
+function initRenewBookSlider() {
+  const bookList = document.getElementById('renewBookList');
+  const cards = bookList.querySelectorAll('.book-card');
+  const pagination = document.getElementById('renewPagination');
+
+  const totalPages = Math.ceil(cards.length / renewPerPage);
+  pagination.innerHTML = '';
+  for (let i = 0; i < totalPages; i++) {
+    const dot = document.createElement('span');
+    dot.className = 'dot' + (i === 0 ? ' active' : '');
+    pagination.appendChild(dot);
+  }
+}
