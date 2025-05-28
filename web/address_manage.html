@@ -5,15 +5,18 @@
   <title>배송지 관리</title>
   <link rel="stylesheet" href="css/mypage_main.css" />
   <link rel="stylesheet" href="css/address_manage.css" />
+  <link rel="stylesheet" href="css/address_manage_modal.css" />
 </head>
 <body>
 
+<!-- 상단바 -->
 <div class="top-bar">
   <a href="#">로그아웃</a>
   <a href="customer_service_main.html">고객센터</a>
   <a href="mypage_main.html">마이페이지</a>
 </div>
 
+<!-- 네비게이션 -->
 <div class="main-nav">
   <a href="index.html" class="logo">책광장모두</a>
   <div class="menu">
@@ -29,6 +32,7 @@
   </div>
 </div>
 
+<!-- 본문 -->
 <div class="container">
   <div class="sidebar">
     <a href="mypage_main.html"><h3>마이페이지</h3></a>
@@ -47,44 +51,35 @@
   <div class="content">
     <h2>배송지 관리</h2>
 
-    <div class="address-card-list">
+    <div class="address-card-list" id="addressList">
+      <!-- 동적으로 주소 카드가 추가됨 -->
+    </div>
 
-      <!-- 주소 카드 1 -->
-      <div class="address-card">
-        <div class="address-header">
-          <span class="address-name">우리집</span>
-          <span class="address-default">기본배송지</span>
-        </div>
-        <div class="address-detail">
-          <div><strong>수령인:</strong> 전나눔</div>
-          <div><strong>연락처:</strong> 010-1234-5678</div>
-          <div><strong>주소:</strong> 서울시 마포구 토정로 222</div>
-        </div>
-        <div class="address-actions">
-          <button class="edit-btn">수정</button>
-          <button class="delete-btn">삭제</button>
-        </div>
-      </div>
-
-      <!-- 주소 카드 2 -->
-      <div class="address-card">
-        <div class="address-header">
-          <span class="address-name">회사</span>
-        </div>
-        <div class="address-detail">
-          <div><strong>수령인:</strong> 전나눔</div>
-          <div><strong>연락처:</strong> 010-8888-9999</div>
-          <div><strong>주소:</strong> 경기도 파주시 적성면 적성산단3로 10</div>
-        </div>
-        <div class="address-actions">
-          <button class="edit-btn">수정</button>
-          <button class="delete-btn">삭제</button>
-        </div>
-      </div>
-
+    <!-- 추가 버튼은 목록 하단에 배치 -->
+    <div class="add-address-container">
+      <button id="addAddressBtn">+ 배송지 추가</button>
     </div>
   </div>
 </div>
 
+<!-- 배송지 추가/수정 모달 -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <h3 id="modalTitle">배송지 추가</h3>
+    <label>수령인 <input type="text" id="recipient" placeholder="이름" /></label>
+    <label>배송지 별명 <input type="text" id="nickname" maxlength="10" placeholder="10자 이내" /></label>
+    <label>연락처 <input type="text" id="phone" placeholder="010-0000-0000" /></label>
+    <label>우편번호 <input type="text" id="zipcode" placeholder="우편번호" /></label>
+    <label>기본주소 <input type="text" id="address1" placeholder="기본주소" /></label>
+    <label>상세주소 <input type="text" id="address2" placeholder="상세주소" /></label>
+    <button id="searchAddressBtn">주소 검색</button>
+    <div class="modal-actions">
+      <button id="cancelBtn">취소</button>
+      <button id="submitBtn">확인</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/address_manage_modal.js"></script>
 </body>
 </html>

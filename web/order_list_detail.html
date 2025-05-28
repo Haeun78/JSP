@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>주문 상세내역</title>
+  <link rel="stylesheet" href="css/mypage_main.css" />
+  <link rel="stylesheet" href="css/order_list_detail.css" />
+</head>
+<body>
+
+<!-- ✅ 상단바 -->
+<div class="top-bar">
+  <a href="#">로그아웃</a>
+  <a href="#">고객센터</a>
+  <a href="mypage_main.html">마이페이지</a>
+</div>
+
+<!-- ✅ 네비게이션 -->
+<div class="main-nav">
+  <a href="index.html" class="logo">책광장모두</a>
+  <div class="menu">
+    <a href="#">분야별 도서</a>
+    <a href="#">독서기록장</a>
+    <a href="#">역대수상작</a>
+    <a href="#">이벤트소식</a>
+    <a href="#">공지사항</a>
+  </div>
+  <div class="search">
+    <input type="text" placeholder="검색어를 입력하세요" />
+    <button>검색</button>
+  </div>
+</div>
+
+<!-- ✅ 마이페이지 구조 -->
+<div class="container">
+  <div class="sidebar">
+    <a href="mypage_main.html"><h3>마이페이지</h3></a>
+    <ul>
+      <li><a href="#">회원정보수정</a></li>
+      <li><a href="#">적립금 내역</a></li>
+      <li><a href="#">장바구니</a></li>
+      <li><a href="order_list.html">주문/배송내역</a></li>
+      <li><a href="#">배송지 관리</a></li>
+      <li><a href="#">찜 목록</a></li>
+      <li><a href="#">작성글 관리</a></li>
+      <li><a href="#">1:1 문의</a></li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <h2>주문/배송내역</h2>
+
+    <!-- ✅ 주문정보 -->
+    <div class="order-info">
+      <span>2025.05.01 16:25 주문</span> |
+      <span>주문번호 <strong>550026226057</strong></span>
+    </div>
+
+    <!-- ✅ 기능 버튼 -->
+    <div class="order-actions">
+      <button class="cancel-btn" onclick="handleCancel()">주문취소</button>
+      <button class="exchange-btn" onclick="handleExchange()">교환/환불 요청</button>
+    </div>
+
+    <!-- ✅ 주문 항목 1 (결제완료) -->
+    <div class="order-item">
+      <input type="checkbox" class="order-check" data-status="결제완료" />
+      <img src="image/이미지 샘플.png" alt="도서 이미지" />
+      <div class="item-info">
+        <div class="item-title">방구석 미술관 3</div>
+        <div class="item-status">결제완료</div>
+      </div>
+      <div class="item-price">18,960원</div>
+    </div>
+
+    <!-- ✅ 주문 항목 2 (배송중) -->
+    <div class="order-item">
+      <input type="checkbox" class="order-check" data-status="배송중" />
+      <img src="image/이미지 샘플.png" alt="도서 이미지" />
+      <div class="item-info">
+        <div class="item-title">방구석 미술관 2</div>
+        <div class="item-status">배송중 | 송장번호: 123456789</div>
+      </div>
+      <div class="item-price">18,960원</div>
+    </div>
+
+    <!-- ✅ 총 결제 -->
+    <div class="order-total">
+      총 <strong>37,920원</strong>
+    </div>
+  </div>
+</div>
+
+<!-- ✅ 스크립트 -->
+<script>
+function getCheckedStatuses() {
+  const checked = Array.from(document.querySelectorAll('.order-check:checked'));
+  return checked.map(box => box.dataset.status);
+}
+
+function handleCancel() {
+  const statuses = getCheckedStatuses();
+  if (statuses.length === 0) {
+    alert("선택된 항목이 없습니다.");
+    return;
+  }
+
+  if (statuses.every(st => st === '결제완료' || st === '상품준비')) {
+    // ✅ 주문취소 페이지로 이동
+    window.location.href = "order_list_cancle.html";
+  } else {
+    alert("결제완료 또는 상품준비 상태에서만 주문취소가 가능합니다.");
+  }
+}
+
+function handleExchange() {
+  const statuses = getCheckedStatuses();
+  if (statuses.length === 0) {
+    alert("선택된 항목이 없습니다.");
+    return;
+  }
+
+  if (statuses.every(st => st === '배송중' || st === '배송완료')) {
+    alert("교환/환불 요청 페이지로 이동합니다.");
+    // 추후: window.location.href = "order_list_exchange.html";
+  } else {
+    alert("배송중 또는 배송완료 상태에서만 교환/환불 요청이 가능합니다.");
+  }
+}
+</script>
+
+</body>
+</html>

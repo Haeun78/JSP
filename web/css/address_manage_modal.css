@@ -1,0 +1,143 @@
+/* 모달 기본 구조 */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  /* box-shadow: 0 4px 10px rgba(0,0,0,0.2); */
+}
+
+.modal h3 {
+  /* margin-top: 0; */
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.modal label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.modal input {
+  width: 100%;
+  padding: 6px;
+  margin-top: 4px;
+  border-radius: 5px;
+  border: solid 1px black;
+  /* margin-bottom: 10px; */
+  box-sizing: border-box;
+}
+
+.modal-actions {
+  /* display: flex;
+  justify-content: flex-end;
+  gap: 10px; */
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.modal-actions button {
+  /* padding: 6px 12px;
+  cursor: pointer; */
+  flex: 1;
+  padding: 10px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#cancelBtn {
+  background: #ccc;
+}
+
+#submitBtn {
+  background: #1e76af;
+  color: #fff;
+}
+
+.deleteAddress{
+  background-color: red;
+}
+
+/* 주소 카드 관련 */
+.address-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: #fff;
+}
+
+
+/* 기본배송지 버튼 스타일 */
+.default-btn {
+  background: #ccc;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 13px;
+  border: solid 1px;
+  /* cursor: pointer; */
+}
+
+.default-btn.active {
+  background-color: #1e76af;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+/* 기본배송지 카드 강조 */
+.address-card.default {
+  border: 2px solid #1e76af;
+  /* border: 2px solid #007bff; */
+}
+
+.add-address-container {
+  text-align: right;
+  margin-top: 20px;
+}
+
+#addAddressBtn {
+  background: #1e76af;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#searchAddressBtn{
+  width: 100%;
+  padding: 6px;
+  margin-top: 4px;
+  box-sizing: border-box;
+}
+
+.setDefault {
+  background-color: #1e76af;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.address-card.selected {
+  background-color: #e0f0ff;
+}
