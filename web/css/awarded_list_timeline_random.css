@@ -9,7 +9,7 @@ header{
 }
 
 .book-list {
-  column-count: 5;
+  column-count: 6;
   column-gap: 10px;
   padding: 30px;
   max-width: 1440px;

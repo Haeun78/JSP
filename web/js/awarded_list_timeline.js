@@ -45,22 +45,40 @@ function scrollToYear(year) {
     const scrollX = column.offsetLeft - 60;
     timeline.scrollTo({ left: scrollX, behavior: 'smooth' });
 
+    // 연도 버튼 스타일 리셋 및 활성화
     ticks.forEach(t => t.classList.remove("active"));
     const selected = [...ticks].find(t => t.innerText === year);
     if (selected) {
       selected.classList.add("active");
       marker.style.left = `${selected.offsetLeft + selected.offsetWidth / 2}px`;
     }
+
+    // ✅ (추가) 강조 효과를 위해 다른 column의 클래스 제거 후 현재 연도 강조
+    document.querySelectorAll('.year-column').forEach(col => col.classList.remove("highlighted"));
+    column.classList.add("highlighted");
+
+    // (선택사항) 몇 초 뒤 강조 해제하고 싶다면 아래 주석 해제
+    // setTimeout(() => {
+    //   column.classList.remove("highlighted");
+    // }, 2000);
   }
 }
 
-// 모달 열기/닫기 함수
+// 모달 열기 함수
 function openModal(contentHtml) {
   const modal = document.getElementById("bookModal");
   const modalBody = document.getElementById("modal-body");
   modalBody.innerHTML = contentHtml;
   modal.style.display = "block";
 }
+
+// 모달 닫기 함수
 function closeModal() {
   document.getElementById("bookModal").style.display = "none";
 }
+
+// ✅ (추가) 모달 외부 클릭 시 닫기 기능
+window.addEventListener("click", (e) => {
+  const modal = document.getElementById("bookModal");
+  if (e.target === modal) closeModal();
+});

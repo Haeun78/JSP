@@ -4,122 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>역대 수상작 목록</title>
-    <link rel="stylesheet" href="./css/index.css">
+    
     <link rel="stylesheet" href="./css/awarded_list_timeline.css">
 </head>
 <body>
-    <header class="top-bar">
-    <!-- 헤더 로고 부분 -->
-    <div class="header-left">
-      <a href="index.html" class="logo-link">
-        <img src="./image/책광장모두.png" alt="로고" class="logo">
-      </a>
-      <button class="org-btn">한국출판협동조합</button>
-    </div>
-    
-    <!--  헤더 검색 부분 -->
-    <div class="header-center">
-      <input type="text" class="search-input" placeholder="한 권만 사도 무료배송">
-      <!-- 상세검색 버튼 -->
-      <button class="detail-search-btn" onclick="toggleSearchPanel()">상세검색</button>
+  <header>
 
-      <!-- 상세검색 패널 -->
-      <div class="search-panel" id="searchPanel">
-        <div class="search-inner">
-          <button class="close-btn" onclick="toggleSearchPanel()">✕</button>
-          <h3 class="panel-title">도서 상세검색</h3>
-          <p class="guide-text">* 도서명/저자/출판사/검색키워드(주제어) 중 하나 이상을 입력해주세요</p>
-
-          <!-- 실제 form 시작 -->
-          <form action="search_result.html" method="GET" id="detailSearchForm">
-            <!-- 1줄: 분야 + 입력창들 -->
-            <div class="form-line">
-              <select name="category" id="category-select" class="scroll-select">
-                <option value="">전체</option>
-                <option>문학</option>
-                <option>경제/경영</option>
-                <option>자기계발</option>
-                <option>인문학</option>
-                <option>종교</option>
-                <option>역사</option>
-                <option>예술</option>
-                <option>사회과학</option>
-                <option>자연과학</option>
-                <option>기술/공학</option>
-                <option>컴퓨터/IT</option>
-                <option>유아</option>
-                <option>어린이</option>
-                <option>청소년</option>
-                <option>초등 학습서</option>
-                <option>중/고등 학습서</option>
-                <option>대학교재</option>
-                <option>취업/수험서</option>
-                <option>외국어</option>
-                <option>가정/살림</option>
-                <option>건강/레저</option>
-                <option>여행</option>
-                <option>잡지</option>
-                <option>만화</option>
-              </select>
-              <input type="text" name="title" placeholder="도서명을 입력해주세요.">
-              <input type="text" name="isbn" placeholder="ISBN을 입력해주세요.">
-              <input type="text" name="author" placeholder="저자/역자를 입력해주세요.">
-              <input type="text" name="publisher" placeholder="출판사를 입력해주세요.">
-              <input type="text" name="keyword" placeholder="주제어를 입력해주세요.">
-            </div>
-
-            <!-- 2줄: 출간일 -->
-            <div class="form-line publish-line">
-              <div class="date-buttons-group">
-                <label>출간일</label>
-                <button type="button" class="filter-btn active" onclick="selectDateRange(this)">전체</button>
-                <button type="button" class="filter-btn" onclick="selectDateRange(this)">최근 1개월</button>
-                <button type="button" class="filter-btn" onclick="selectDateRange(this)">3개월</button>
-                <button type="button" class="filter-btn" onclick="selectDateRange(this)">6개월</button>
-                <button type="button" class="filter-btn" onclick="selectDateRange(this)">1년</button>
-                <button type="button" class="filter-btn" onclick="selectDateRange(this, true)">직접입력</button>
-
-                <div id="date-range" style="display: none; margin-left: 10px;">
-                  <input type="date" id="start-date">
-                  <span>-</span>
-                  <input type="date" id="end-date">
-                </div>
-              </div>
-
-              <div class="exclude-checkbox">
-                <input type="checkbox" name="exclude_soldout" id="exclude_soldout">
-                <label for="exclude_soldout">품절/절판 제외</label>
-              </div>
-            </div>
-
-            <!-- 버튼 -->
-            <div class="form-line">
-              <button type="button" class="submit-btn white" onclick="resetSearchForm()">초기화</button>
-              <button type="button" class="submit-btn blue" onclick="validateAndSubmit()">검색</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <!-- 헤더 로그인 박스 부분 -->
-    <div class="header-right">
-      <a href="login_form.html">로그인</a>
-      <span class="divider">|</span>
-      <a href="signup.html">회원가입</a>
-      <span class="divider">|</span>
-      <a href="help.html">고객센터</a>
-    </div>
-    </header>
-
-  <nav class="main-menu">
-    <a href="./book_field_page.html">분야별 도서</a>
-    <a href="./reading_record_main.html">독서기록장</a>
-    <a href="./awarded_list_timeline.html">역대수상작</a>
-    <a href="#">이벤트소식</a>
-    <a href="./notice_list.html">공지사항</a>
-  </nav>
-
+  </header>
     <!-- 타임라인 영역 -->
     <div class="timeline-wrapper">
       <div class="timeline-track">
@@ -130,7 +21,7 @@
 
             <div class="award-card">
               <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
+                <img src="./image/40세 정신과 영수증.jpg" alt="노벨문학상">
               </div>
               <div class="card-info">
                 <h3>대표작 2024A</h3>
@@ -141,7 +32,7 @@
 
             <div class="award-card">
               <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
+                <img src="./image/book_field_book1.jpg" alt="노벨문학상">
               </div>
               <div class="card-info">
                 <h3>대표작 2024A</h3>
@@ -152,7 +43,7 @@
 
             <div class="award-card">
               <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
+                <img src="./image/나에게만 보이는 살인.jpg" alt="노벨문학상">
               </div>
               <div class="card-info">
                 <h3>대표작 2024A</h3>
@@ -171,7 +62,7 @@
 
             <div class="award-card">
               <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
+                <img src="./image/미안해하지 말자.jpg" alt="노벨문학상">
               </div>
               <div class="card-info">
                 <h3>대표작 2023</h3>

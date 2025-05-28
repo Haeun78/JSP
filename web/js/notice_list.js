@@ -1,9 +1,12 @@
-// 공지사항 더미 데이터 (예: 25건)
-const notices = Array.from({ length: 25 }, (_, i) => ({
-  number: 25 - i,
-  date: `2025-05-${(25 - i).toString().padStart(2, '0')}`,
-  title: `공지사항 제목 ${25 - i}`
+// 공지사항 더미 데이터 (1부터 시작, 최신 글이 number 가장 큼)
+const notices = Array.from({ length: 3 }, (_, i) => ({
+  number: i + 1,
+  date: `2025-05-${(i + 1).toString().padStart(2, '0')}`,
+  title: `공지사항 제목 ${i + 1}`
 }));
+
+// 최신순 정렬 (번호 큰 게 위로)
+notices.sort((a, b) => b.number - a.number);
 
 // DOM 요소
 const noticeList = document.getElementById("noticeList");
@@ -59,7 +62,6 @@ function renderPagination() {
   pagination.innerHTML = "";
   const totalPages = Math.ceil(filteredNotices.length / itemsPerPage);
 
-  // 이전 버튼
   const prevBtn = document.createElement("button");
   prevBtn.textContent = "«";
   prevBtn.disabled = currentPage === 1;
@@ -69,13 +71,10 @@ function renderPagination() {
   };
   pagination.appendChild(prevBtn);
 
-  // 페이지 번호
   for (let i = 1; i <= totalPages; i++) {
     const pageBtn = document.createElement("button");
     pageBtn.textContent = i;
-    if (i === currentPage) {
-      pageBtn.style.fontWeight = "bold";
-    }
+    if (i === currentPage) pageBtn.style.fontWeight = "bold";
     pageBtn.onclick = () => {
       currentPage = i;
       renderNotices(currentPage);
@@ -83,7 +82,6 @@ function renderPagination() {
     pagination.appendChild(pageBtn);
   }
 
-  // 다음 버튼
   const nextBtn = document.createElement("button");
   nextBtn.textContent = "»";
   nextBtn.disabled = currentPage === totalPages;
@@ -118,6 +116,9 @@ function searchNotices() {
 
 // 이벤트
 searchBtn.addEventListener("click", searchNotices);
+searchInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") searchNotices();
+});
 
 // 초기 렌더링
 renderNotices(currentPage);
