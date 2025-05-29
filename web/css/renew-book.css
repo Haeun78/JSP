@@ -1,0 +1,118 @@
+.renew-new-books {
+    max-width: 1280px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  .renew-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap; /* 필요 시 줄바꿈 허용 */
+    margin-bottom: 10px;
+  }
+  .renew-term-tabs button.active {
+    background: black;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    margin-left: 8px;
+  }
+  .renew-book-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .renew-category-slider {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+  }
+  .category-slider-viewport {
+    overflow-x: auto;
+    white-space: nowrap;
+    flex-grow: 1;
+  }
+  .category-slider {
+    display: flex;
+    gap: 24px;
+    padding: 8px;
+    white-space: nowrap;
+  }
+  .category-btn {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: #333;
+  }
+  .category-btn.active {
+    font-weight: bold;
+    border-bottom: 2px solid black;
+  }
+  
+  .book-slider-container {
+    position: relative;
+    overflow: hidden;
+  }
+  .book-slider {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 10px 0;
+  }
+  .book-card {
+    flex: 0 0 auto;
+    width: 160px;
+    background: #fffbe6;
+    padding: 12px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  .book-card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 8px;
+  }
+  .book-title {
+    font-weight: bold;
+    font-size: 14px;
+    margin: 4px 0;
+  }
+  .book-author {
+    font-size: 13px;
+    color: #555;
+  }
+  .book-price {
+    margin-top: 6px;
+    font-size: 14px;
+  }
+  .discount {
+    color: #0066cc;
+    margin-right: 4px;
+  }
+  .slider-arrow {
+    background: rgba(255,255,255,0.9);
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+  }
+  .book-left {
+    position: absolute;
+    top: 40%;
+    left: -12px;
+  }
+  .book-right {
+    position: absolute;
+    top: 40%;
+    right: -12px;
+  }

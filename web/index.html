@@ -10,7 +10,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/renew-book.css">
     <script defer src="./js/index.js"></script>
+    <script defer src="./js/header.js"></script>
+    <script defer src="./js/renew-book.js"></script>
 </head>
 
 <body>
@@ -220,125 +223,79 @@
 </div>
 </section>
 
-<!-- 새로 나온 책 영역 -->
+<!-- ✅ 최종 새로 나온 책 섹션 (modoobook 스타일 반영) -->
 <section class="renew-new-books">
-    <div class="renew-header">
-  <h2>새로 나온 책</h2>
-  <div class="renew-term-tabs">
-    <button class="active" onclick="switchTerm('weekly')">주간</button>
-    <button onclick="switchTerm('monthly')">월간</button>
-  </div>
-</div>
+  <div class="renew-header">
+    <div class="title-with-tabs">
+      <h2>새로 나온 책</h2>
+      <div class="renew-term-tabs">
+        <button class="active" onclick="switchTerm('weekly')">주간</button>
+        <button onclick="switchTerm('monthly')">월간</button>
+      </div>
+    </div>
 
     <div class="renew-category-slider">
       <button class="slider-arrow left" onclick="slideCategory(-1)">&#10094;</button>
       <div class="category-slider-viewport">
         <div class="category-slider" id="categorySlider">
-          <button class="active">전체</button>
-          <button>문학</button>
-          <button>경제/경영</button>
-          <button>자기계발</button>
-          <button>인문학</button>
-          <button>종교</button>
-          <button>역사</button>
-          <button>예술</button>
-          <button>사회과학</button>
-          <button>자연과학</button>
-          <button>기술/공학</button>
-          <button>컴퓨터/IT</button>
-          <button>유아</button>
-          <button>어린이</button>
-          <button>청소년</button>
-          <button>초등 학습서</button>
-          <button>중/고등 학습서</button>
-          <button>대학교재</button>
-          <button>취업/수험서</button>
-          <button>외국어</button>
-          <button>가정/살림</button>
-          <button>건강/레저</button>
-          <button>여행</button>
-          <button>잡지</button>
-          <button>만화</button>
+          <button type="button" class="category-btn active" data-category="전체">전체</button>
+          <button type="button" class="category-btn" data-category="경제/경영">경제/경영</button>
+          <button type="button" class="category-btn" data-category="자기계발">자기계발</button>
+          <button type="button" class="category-btn" data-category="문학">문학</button>
+          <button type="button" class="category-btn" data-category="예술">예술</button>
+          <button type="button" class="category-btn" data-category="역사">역사</button>
+          <button type="button" class="category-btn" data-category="컴퓨터/IT">컴퓨터/IT</button>
         </div>
       </div>
       <button class="slider-arrow right" onclick="slideCategory(1)">&#10095;</button>
     </div>
+  </div>
 
-    <div class="renew-book-slider">
-      <button class="nav-arrow left" onclick="slideBooksRenew(-1)">&#10094;</button>
-      <div class="book-list" id="renewBookList">
-        <!-- 도서 카드 예시 -->
-        <div class="book-card">
-          <img src="./image/index_book1.jpg" alt="도서 이미지">
-          <div class="book-title">국경일에 숨은 우리나라 역사 이야기</div>
-          <div class="book-author">조혜영 | 다락원</div>
-          <div class="book-price"><span class="discount">10%</span> <span class="price">15,120원</span></div>
-        </div>
-        <div class="book-card">
-          <img src="./image/index_book1.jpg" alt="도서 이미지">
-          <div class="book-title">국경일에 숨은 우리나라 역사 이야기</div>
-          <div class="book-author">조혜영 | 다락원</div>
-          <div class="book-price"><span class="discount">10%</span> <span class="price">15,120원</span></div>
-        </div>
-        <div class="book-card">
-          <img src="./image/index_book1.jpg" alt="도서 이미지">
-          <div class="book-title">국경일에 숨은 우리나라 역사 이야기</div>
-          <div class="book-author">조혜영 | 다락원</div>
-          <div class="book-price"><span class="discount">10%</span> <span class="price">15,120원</span></div>
-        </div>
-        <div class="book-card">
-          <img src="./image/index_book1.jpg" alt="도서 이미지">
-          <div class="book-title">국경일에 숨은 우리나라 역사 이야기</div>
-          <div class="book-author">조혜영 | 다락원</div>
-          <div class="book-price"><span class="discount">10%</span> <span class="price">15,120원</span></div>
-        </div>
-        <div class="book-card">
-          <img src="./image/index_book1.jpg" alt="도서 이미지">
-          <div class="book-title">국경일에 숨은 우리나라 역사 이야기</div>
-          <div class="book-author">조혜영 | 다락원</div>
-          <div class="book-price"><span class="discount">10%</span> <span class="price">15,120원</span></div>
-        </div>
-        <div class="book-card">
-          <img src="./image/index_book1.jpg" alt="도서 이미지">
-          <div class="book-title">국경일에 숨은 우리나라 역사 이야기</div>
-          <div class="book-author">조혜영 | 다락원</div>
-          <div class="book-price"><span class="discount">10%</span> <span class="price">15,120원</span></div>
-        </div>
-        <div class="book-card">
-          <img src="./image/index_book1.jpg" alt="도서 이미지">
-          <div class="book-title">국경일에 숨은 우리나라 역사 이야기</div>
-          <div class="book-author">조혜영 | 다락원</div>
-          <div class="book-price"><span class="discount">10%</span> <span class="price">15,120원</span></div>
-        </div>
-        <div class="book-card">
-          <img src="./image/index_book1.jpg" alt="도서 이미지">
-          <div class="book-title">국경일에 숨은 우리나라 역사 이야기</div>
-          <div class="book-author">조혜영 | 다락원</div>
-          <div class="book-price"><span class="discount">10%</span> <span class="price">15,120원</span></div>
-        </div>
-        <div class="book-card">
-          <img src="./image/index_book1.jpg" alt="도서 이미지">
-          <div class="book-title">국경일에 숨은 우리나라 역사 이야기</div>
-          <div class="book-author">조혜영 | 다락원</div>
-          <div class="book-price"><span class="discount">10%</span> <span class="price">15,120원</span></div>
-        </div>
-        <div class="book-card">
-          <img src="./image/index_book1.jpg" alt="도서 이미지">
-          <div class="book-title">국경일에 숨은 우리나라 역사 이야기</div>
-          <div class="book-author">조혜영 | 다락원</div>
-          <div class="book-price"><span class="discount">10%</span> <span class="price">15,120원</span></div>
-        </div>
-        
+  <!-- 도서 슬라이드 영역 -->
+  <div class="book-slider-container">
+    <button class="slider-arrow book-left" onclick="slideBooksRenew(-1)">&#10094;</button>
+    <div class="book-slider" id="renewBookList">
+      <!-- 예시 카드 여러 개 넣기 -->
+      <div class="book-card" data-category="경제/경영">
+        <img src="./image/index_book1.jpg" alt="책 이미지">
+        <p class="book-title">두 얼굴의 신기술: AI 딜레마</p>
+        <p class="book-author">케일럽 브릭스 | 예미콘온</p>
+        <p class="book-price"><span class="discount">2%</span> 21,560원</p>
       </div>
-      <button class="nav-arrow right" onclick="slideBooksRenew(1)">&#10095;</button>
+      <div class="book-card" data-category="경제/경영">
+        <img src="./image/index_book1.jpg" alt="책 이미지">
+        <p class="book-title">10배 버는 힘</p>
+        <p class="book-author">박서윤 | 라온북</p>
+        <p class="book-price"><span class="discount">2%</span> 20,580원</p>
+      </div>
+      <div class="book-card" data-category="자기계발">
+        <img src="./image/index_book1.jpg" alt="책 이미지">
+        <p class="book-title">생초보 이베이 하루만에 끝장내기</p>
+        <p class="book-author">금교성 | 라온북</p>
+        <p class="book-price"><span class="discount">2%</span> 18,130원</p>
+      </div>
+      <div class="book-card" data-category="문학">
+        <img src="./image/index_book1.jpg" alt="책 이미지">
+        <p class="book-title">삼십세</p>
+        <p class="book-author">잉게보르크 바흐만 | 문예출판사</p>
+        <p class="book-price"><span class="discount">2%</span> 22,000원</p>
+      </div>
+      <div class="book-card" data-category="예술">
+        <img src="./image/index_book1.jpg" alt="책 이미지">
+        <p class="book-title">음악을 한다는 것은</p>
+        <p class="book-author">고레에다 히로카즈 | 비채</p>
+        <p class="book-price"><span class="discount">2%</span> 24,400원</p>
+      </div>
+      <div class="book-card" data-category="컴퓨터/IT">
+        <img src="./image/index_book1.jpg" alt="책 이미지">
+        <p class="book-title">파이썬 머신러닝 완벽 가이드</p>
+        <p class="book-author">권철민 | 위키북스</p>
+        <p class="book-price"><span class="discount">2%</span> 36,000원</p>
+      </div>
     </div>
-
-    <div class="pagination-dots" id="renewPagination">
-      <span class="dot active"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-    </div>
-  </section>
+    <button class="slider-arrow book-right" onclick="slideBooksRenew(1)">&#10095;</button>
+  </div>
+</section>
 
 
     <!-- 하은 -->
