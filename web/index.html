@@ -223,77 +223,203 @@
 </div>
 </section>
 
-<!-- ✅ 최종 새로 나온 책 섹션 (modoobook 스타일 반영) -->
-<section class="renew-new-books">
-  <div class="renew-header">
-    <div class="title-with-tabs">
-      <h2>새로 나온 책</h2>
-      <div class="renew-term-tabs">
-        <button class="active" onclick="switchTerm('weekly')">주간</button>
-        <button onclick="switchTerm('monthly')">월간</button>
+<!-- 새로 나온 책 섹션 (modoobook 스타일) -->
+<section class="renew-v2-wrapper">
+  <div class="renew-v2-header">
+    <div class="renew-v2-title-line"></div>
+    <h2 class="renew-v2-title">새로 나온 책</h2>
+      <div class="renew-v2-tabs">
+        <button class="renew-v2-tab active" onclick="switchRenewTerm('weekly')">주간</button>
+        <button class="renew-v2-tab" onclick="switchRenewTerm('monthly')">월간</button>
       </div>
     </div>
-
-    <div class="renew-category-slider">
-      <button class="slider-arrow left" onclick="slideCategory(-1)">&#10094;</button>
-      <div class="category-slider-viewport">
-        <div class="category-slider" id="categorySlider">
-          <button type="button" class="category-btn active" data-category="전체">전체</button>
-          <button type="button" class="category-btn" data-category="경제/경영">경제/경영</button>
-          <button type="button" class="category-btn" data-category="자기계발">자기계발</button>
-          <button type="button" class="category-btn" data-category="문학">문학</button>
-          <button type="button" class="category-btn" data-category="예술">예술</button>
-          <button type="button" class="category-btn" data-category="역사">역사</button>
-          <button type="button" class="category-btn" data-category="컴퓨터/IT">컴퓨터/IT</button>
+    
+    <div class="renew-v2-category-wrapper">
+      <button class="renew-v2-cat-arrow left" onclick="slideCategoryV2(-1)">&#10094;</button>
+      <div class="renew-v2-category-viewport">
+        <div class="renew-v2-categories">
+          <!-- 기존 버튼들 -->
+          <button class="renew-v2-cat active" data-category="전체">전체</button>
+          <button class="renew-v2-cat" data-category="문학">문학</button>
+          <button class="renew-v2-cat" data-category="경제/경영">경제/경영</button>
+          <button class="renew-v2-cat" data-category="자기계발">자기계발</button>
+          <button class="renew-v2-cat" data-category="인문학">인문학</button>
+          <button class="renew-v2-cat" data-category="종교">종교</button>
+          <button class="renew-v2-cat" data-category="역사">역사</button>
+          <button class="renew-v2-cat" data-category="예술">예술</button>
+          <button class="renew-v2-cat" data-category="사회과학">사회과학</button>
+          <button class="renew-v2-cat" data-category="자연과학">자연과학</button>
+          <button class="renew-v2-cat" data-category="기술/공학">기술/공학</button>
+          <button class="renew-v2-cat" data-category="컴퓨터/IT">컴퓨터/IT</button>
+          <button class="renew-v2-cat" data-category="유아">유아</button>
+          <button class="renew-v2-cat" data-category="어린이">어린이</button>
+          <button class="renew-v2-cat" data-category="청소년">청소년</button>
+          <button class="renew-v2-cat" data-category="초등 학습서">초등 학습서</button>
+          <button class="renew-v2-cat" data-category="중고등 학습서">중고등 학습서</button>
+          <button class="renew-v2-cat" data-category="대학교재">대학교재</button>
+          <button class="renew-v2-cat" data-category="취업/수험서">취업/수험서</button>
+          <button class="renew-v2-cat" data-category="외국어">외국어</button>
+          <button class="renew-v2-cat" data-category="가정/살림">가정/살림</button>
+          <button class="renew-v2-cat" data-category="건강/레저">건강/레저</button>
+          <button class="renew-v2-cat" data-category="여행">여행</button>
+          <button class="renew-v2-cat" data-category="잡지">잡지</button>
+          <button class="renew-v2-cat" data-category="만화">만화</button>
         </div>
       </div>
-      <button class="slider-arrow right" onclick="slideCategory(1)">&#10095;</button>
+      <button class="renew-v2-cat-arrow right" onclick="slideCategoryV2(1)">&#10095;</button>
     </div>
   </div>
-
-  <!-- 도서 슬라이드 영역 -->
-  <div class="book-slider-container">
-    <button class="slider-arrow book-left" onclick="slideBooksRenew(-1)">&#10094;</button>
-    <div class="book-slider" id="renewBookList">
-      <!-- 예시 카드 여러 개 넣기 -->
-      <div class="book-card" data-category="경제/경영">
+  <div class="renew-v2-slider-container">
+    <button class="renew-v2-arrow left" onclick="slideRenewBooks(-1)">&#10094;</button>
+    <div class="renew-v2-slider" id="renewV2BookList">
+      <!-- 카드 예시 -->
+      <a href="./book_detail.html" class="renew-v2-card" data-category="문학">
         <img src="./image/index_book1.jpg" alt="책 이미지">
-        <p class="book-title">두 얼굴의 신기술: AI 딜레마</p>
-        <p class="book-author">케일럽 브릭스 | 예미콘온</p>
-        <p class="book-price"><span class="discount">2%</span> 21,560원</p>
+        <div class="renew-v2-info">
+          <p class="renew-v2-book-title">멀티 에디셔널솔루션(개정-15판)</p>
+          <p class="renew-v2-book-author">월드해피북스 편집부 | 월드해피북스</p>
+          <p class="renew-v2-book-price"><span class="renew-v2-discount">2%</span>97,020원</p>
+        </div>
+      </a>
+      <div class="renew-v2-card" data-category="문학">  <!--여기가 카테고리 변경 하는 코드-->
+        <img src="./image/index_book1.jpg" alt="책 이미지">
+        <div class="renew-v2-info">
+          <p class="renew-v2-book-title">멀티 에디셔널솔루션(개정-15판)</p>
+          <p class="renew-v2-book-author">월드해피북스 편집부 | 월드해피북스</p>
+          <p class="renew-v2-book-price"><span class="renew-v2-discount">2%</span>97,020원</p>
+        </div>
       </div>
-      <div class="book-card" data-category="경제/경영">
+      <div class="renew-v2-card" data-category="경제/경영">
         <img src="./image/index_book1.jpg" alt="책 이미지">
-        <p class="book-title">10배 버는 힘</p>
-        <p class="book-author">박서윤 | 라온북</p>
-        <p class="book-price"><span class="discount">2%</span> 20,580원</p>
+        <div class="renew-v2-info">
+          <p class="renew-v2-book-title">멀티 에디셔널솔루션(개정-15판)</p>
+          <p class="renew-v2-book-author">월드해피북스 편집부 | 월드해피북스</p>
+          <p class="renew-v2-book-price"><span class="renew-v2-discount">2%</span>97,020원</p>
+        </div>
       </div>
-      <div class="book-card" data-category="자기계발">
+      <div class="renew-v2-card" data-category="문학">
         <img src="./image/index_book1.jpg" alt="책 이미지">
-        <p class="book-title">생초보 이베이 하루만에 끝장내기</p>
-        <p class="book-author">금교성 | 라온북</p>
-        <p class="book-price"><span class="discount">2%</span> 18,130원</p>
+        <div class="renew-v2-info">
+          <p class="renew-v2-book-title">멀티 에디셔널솔루션(개정-15판)</p>
+          <p class="renew-v2-book-author">월드해피북스 편집부 | 월드해피북스</p>
+          <p class="renew-v2-book-price"><span class="renew-v2-discount">2%</span>97,020원</p>
+        </div>
       </div>
-      <div class="book-card" data-category="문학">
+      <div class="renew-v2-card" data-category="문학">
         <img src="./image/index_book1.jpg" alt="책 이미지">
-        <p class="book-title">삼십세</p>
-        <p class="book-author">잉게보르크 바흐만 | 문예출판사</p>
-        <p class="book-price"><span class="discount">2%</span> 22,000원</p>
+        <div class="renew-v2-info">
+          <p class="renew-v2-book-title">멀티 에디셔널솔루션(개정-15판)</p>
+          <p class="renew-v2-book-author">월드해피북스 편집부 | 월드해피북스</p>
+          <p class="renew-v2-book-price"><span class="renew-v2-discount">2%</span>97,020원</p>
+        </div>
       </div>
-      <div class="book-card" data-category="예술">
+      <div class="renew-v2-card" data-category="문학">
         <img src="./image/index_book1.jpg" alt="책 이미지">
-        <p class="book-title">음악을 한다는 것은</p>
-        <p class="book-author">고레에다 히로카즈 | 비채</p>
-        <p class="book-price"><span class="discount">2%</span> 24,400원</p>
+        <div class="renew-v2-info">
+          <p class="renew-v2-book-title">멀티 에디셔널솔루션(개정-15판)</p>
+          <p class="renew-v2-book-author">월드해피북스 편집부 | 월드해피북스</p>
+          <p class="renew-v2-book-price"><span class="renew-v2-discount">2%</span>97,020원</p>
+        </div>
       </div>
-      <div class="book-card" data-category="컴퓨터/IT">
+      <div class="renew-v2-card" data-category="문학">
         <img src="./image/index_book1.jpg" alt="책 이미지">
-        <p class="book-title">파이썬 머신러닝 완벽 가이드</p>
-        <p class="book-author">권철민 | 위키북스</p>
-        <p class="book-price"><span class="discount">2%</span> 36,000원</p>
+        <div class="renew-v2-info">
+          <p class="renew-v2-book-title">멀티 에디셔널솔루션(개정-15판)</p>
+          <p class="renew-v2-book-author">월드해피북스 편집부 | 월드해피북스</p>
+          <p class="renew-v2-book-price"><span class="renew-v2-discount">2%</span>97,020원</p>
+        </div>
+      </div>
+      <div class="renew-v2-card" data-category="문학">
+        <img src="./image/index_book1.jpg" alt="책 이미지">
+        <div class="renew-v2-info">
+          <p class="renew-v2-book-title">멀티 에디셔널솔루션(개정-15판)</p>
+          <p class="renew-v2-book-author">월드해피북스 편집부 | 월드해피북스</p>
+          <p class="renew-v2-book-price"><span class="renew-v2-discount">2%</span>97,020원</p>
+        </div>
+      </div>
+      <div class="renew-v2-card" data-category="문학">
+        <img src="./image/index_book1.jpg" alt="책 이미지">
+        <div class="renew-v2-info">
+          <p class="renew-v2-book-title">멀티 에디셔널솔루션(개정-15판)</p>
+          <p class="renew-v2-book-author">월드해피북스 편집부 | 월드해피북스</p>
+          <p class="renew-v2-book-price"><span class="renew-v2-discount">2%</span>97,020원</p>
+        </div>
+      </div>
+      <div class="renew-v2-card" data-category="문학">
+        <img src="./image/index_book1.jpg" alt="책 이미지">
+        <div class="renew-v2-info">
+          <p class="renew-v2-book-title">멀티 에디셔널솔루션(개정-15판)</p>
+          <p class="renew-v2-book-author">월드해피북스 편집부 | 월드해피북스</p>
+          <p class="renew-v2-book-price"><span class="renew-v2-discount">2%</span>97,020원</p>
+        </div>
+      </div>
+      <div class="renew-v2-card" data-category="문학">
+        <img src="./image/index_book1.jpg" alt="책 이미지">
+        <div class="renew-v2-info">
+          <p class="renew-v2-book-title">멀티 에디셔널솔루션(개정-15판)</p>
+          <p class="renew-v2-book-author">월드해피북스 편집부 | 월드해피북스</p>
+          <p class="renew-v2-book-price"><span class="renew-v2-discount">2%</span>97,020원</p>
+        </div>
+      </div>
+      <div class="renew-v2-card" data-category="문학">
+        <img src="./image/index_book1.jpg" alt="책 이미지">
+        <div class="renew-v2-info">
+          <p class="renew-v2-book-title">멀티 에디셔널솔루션(개정-15판)</p>
+          <p class="renew-v2-book-author">월드해피북스 편집부 | 월드해피북스</p>
+          <p class="renew-v2-book-price"><span class="renew-v2-discount">2%</span>97,020원</p>
+        </div>
+      </div>
+      <div class="renew-v2-card" data-category="문학">
+        <img src="./image/index_book1.jpg" alt="책 이미지">
+        <div class="renew-v2-info">
+          <p class="renew-v2-book-title">멀티 에디셔널솔루션(개정-15판)</p>
+          <p class="renew-v2-book-author">월드해피북스 편집부 | 월드해피북스</p>
+          <p class="renew-v2-book-price"><span class="renew-v2-discount">2%</span>97,020원</p>
+        </div>
+      </div>
+      <div class="renew-v2-card" data-category="문학">
+        <img src="./image/index_book1.jpg" alt="책 이미지">
+        <div class="renew-v2-info">
+          <p class="renew-v2-book-title">멀티 에디셔널솔루션(개정-15판)</p>
+          <p class="renew-v2-book-author">월드해피북스 편집부 | 월드해피북스</p>
+          <p class="renew-v2-book-price"><span class="renew-v2-discount">2%</span>97,020원</p>
+        </div>
+      </div>
+      <div class="renew-v2-card" data-category="문학">
+        <img src="./image/index_book1.jpg" alt="책 이미지">
+        <div class="renew-v2-info">
+          <p class="renew-v2-book-title">멀티 에디셔널솔루션(개정-15판)</p>
+          <p class="renew-v2-book-author">월드해피북스 편집부 | 월드해피북스</p>
+          <p class="renew-v2-book-price"><span class="renew-v2-discount">2%</span>97,020원</p>
+        </div>
+      </div>
+      <div class="renew-v2-card" data-category="문학">
+        <img src="./image/index_book1.jpg" alt="책 이미지">
+        <div class="renew-v2-info">
+          <p class="renew-v2-book-title">멀티 에디셔널솔루션(개정-15판)</p>
+          <p class="renew-v2-book-author">월드해피북스 편집부 | 월드해피북스</p>
+          <p class="renew-v2-book-price"><span class="renew-v2-discount">2%</span>97,020원</p>
+        </div>
+      </div>
+      <div class="renew-v2-card" data-category="문학">
+        <img src="./image/index_book1.jpg" alt="책 이미지">
+        <div class="renew-v2-info">
+          <p class="renew-v2-book-title">멀티 에디셔널솔루션(개정-15판)</p>
+          <p class="renew-v2-book-author">월드해피북스 편집부 | 월드해피북스</p>
+          <p class="renew-v2-book-price"><span class="renew-v2-discount">2%</span>97,020원</p>
+        </div>
+      </div>
+      <div class="renew-v2-card" data-category="문학">
+        <img src="./image/index_book1.jpg" alt="책 이미지">
+        <div class="renew-v2-info">
+          <p class="renew-v2-book-title">멀티 에디셔널솔루션(개정-15판)</p>
+          <p class="renew-v2-book-author">월드해피북스 편집부 | 월드해피북스</p>
+          <p class="renew-v2-book-price"><span class="renew-v2-discount">2%</span>97,020원</p>
+        </div>
       </div>
     </div>
-    <button class="slider-arrow book-right" onclick="slideBooksRenew(1)">&#10095;</button>
+    <div class="renew-v2-pagination" id="renewV2Pagination"></div>
+    <button class="renew-v2-arrow right" onclick="slideRenewBooks(1)">&#10095;</button>
   </div>
 </section>
 

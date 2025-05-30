@@ -1,118 +1,214 @@
-.renew-new-books {
-    max-width: 1280px;
-    margin: 40px auto;
-    padding: 0 20px;
-  }
-  .renew-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap; /* 필요 시 줄바꿈 허용 */
-    margin-bottom: 10px;
-  }
-  .renew-term-tabs button.active {
-    background: black;
-    color: white;
-    padding: 6px 12px;
-    border-radius: 4px;
-    margin-left: 8px;
-  }
-  .renew-book-section {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .renew-category-slider {
-    display: flex;
-    align-items: center;
-    margin: 20px 0;
-  }
-  .category-slider-viewport {
-    overflow-x: auto;
-    white-space: nowrap;
-    flex-grow: 1;
-  }
-  .category-slider {
-    display: flex;
-    gap: 24px;
-    padding: 8px;
-    white-space: nowrap;
-  }
-  .category-btn {
-    background: none;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-    color: #333;
-  }
-  .category-btn.active {
-    font-weight: bold;
-    border-bottom: 2px solid black;
-  }
-  
-  .book-slider-container {
-    position: relative;
-    overflow: hidden;
-  }
-  .book-slider {
-    display: flex;
-    gap: 20px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    padding: 10px 0;
-  }
-  .book-card {
-    flex: 0 0 auto;
-    width: 160px;
-    background: #fffbe6;
-    padding: 12px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  }
-  .book-card img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 8px;
-  }
-  .book-title {
-    font-weight: bold;
-    font-size: 14px;
-    margin: 4px 0;
-  }
-  .book-author {
-    font-size: 13px;
-    color: #555;
-  }
-  .book-price {
-    margin-top: 6px;
-    font-size: 14px;
-  }
-  .discount {
-    color: #0066cc;
-    margin-right: 4px;
-  }
-  .slider-arrow {
-    background: rgba(255,255,255,0.9);
-    border: 1px solid #ccc;
-    border-radius: 50%;
-    width: 32px;
-    height: 32px;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 2;
-  }
-  .book-left {
-    position: absolute;
-    top: 40%;
-    left: -12px;
-  }
-  .book-right {
-    position: absolute;
-    top: 40%;
-    right: -12px;
-  }
+.renew-v2-wrapper {
+  max-width: 1280px;
+  margin: 60px auto;
+  padding: 0 20px;
+  font-family: '맑은 고딕', sans-serif;
+}
+
+.renew-v2-header {
+  margin-bottom: 20px;
+}
+.renew-v2-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.renew-v2-title {
+  font-size: 24px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+.renew-v2-title-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.renew-v2-tabs {
+  display: flex;
+  gap: 10px;
+}
+
+.renew-v2-tab {
+  background: #f5f5f5;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.renew-v2-tab.active {
+  background: black;
+  color: white;
+}
+
+.renew-v2-category-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.renew-v2-category-viewport {
+  overflow-x: hidden;
+  flex: 1;
+}
+
+.renew-v2-categories {
+  display: flex;
+  gap: 24px;
+  padding: 6px 0;
+  white-space: nowrap;
+  transition: transform 0.3s ease;
+}
+
+.renew-v2-cat-arrow {
+  background: #f2f2f2;
+  border: none;
+  border-radius: 4px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  z-index: 5;
+  padding: 0;
+  margin: 0 4px;
+}
+.renew-v2-cat-arrow.left {
+  margin-right: 24px;
+}
+
+.renew-v2-cat-arrow.right {
+  margin-left: 24px;
+}
+
+
+.renew-v2-cat {
+  background: none;
+  border: none;
+  font-size: 15px;
+  color: #333;
+  cursor: pointer;
+  padding-bottom: 4px;
+}
+
+.renew-v2-cat.active {
+  font-weight: bold;
+  border-bottom: 2px solid black;
+}
+
+.renew-v2-slider-container {
+  position: relative;
+  overflow: visible; /* ✅ 중요: 내부 요소가 밖으로 나올 수 있게 */
+}
+
+.renew-v2-slider {
+  display: flex;
+  gap: 32px;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.renew-v2-card {
+  flex: 0 0 auto;
+  width: 180px;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s;
+}
+.renew-v2-card:hover {
+  transform: translateY(-4px); /* 살짝 올라가는 느낌 */
+}
+
+.renew-v2-card img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.1); /* 기존 */
+  transition: box-shadow 0.3s ease;
+}
+.renew-v2-card img:hover {
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.2);
+}
+
+.renew-v2-book-title {
+  font-weight: bold;
+  font-size: 15px;
+  margin: 8px 0 4px;
+}
+
+.renew-v2-book-author {
+  font-size: 13px;
+  color: #666;
+}
+
+.renew-v2-book-price {
+  margin-top: 6px;
+  font-size: 14px;
+}
+
+.renew-v2-discount {
+  background-color: #0073e9;
+  color: white;
+  font-size: 12px;
+  padding: 2px 4px;
+  border-radius: 4px;
+  margin-right: 6px;
+}
+
+.renew-v2-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #f2f2f2;
+  border: none;
+  border-radius: 4px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  cursor: pointer;
+  z-index: 10;
+  padding: 0;
+}
+
+.renew-v2-arrow.left {
+  left: -60px; /* 기존 -18px → 바깥으로 더 빼기 */
+}
+
+.renew-v2-arrow.right {
+  right: -60px; /* 기존 -18px → 바깥으로 더 빼기 */
+}
+
+.renew-v2-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.renew-v2-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #ccc;
+  transition: all 0.3s ease;
+}
+
+
+.renew-v2-dot.active {
+  width: 20px;        
+  height: 8px;
+  border-radius: 10px; 
+  background-color: black;
+}
