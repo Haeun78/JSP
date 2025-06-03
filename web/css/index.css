@@ -53,39 +53,61 @@ body {
 }
 
 .mbook-card {
-  flex: 0 0 calc(100vw / 3);  /* 한 화면에 3개 카드 */
+  flex: 0 0 calc(100vw / 3);  /* 슬라이드 3개 구조 유지 */
   height: 680px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 40px;
+  padding: 0;                /* ✅ 여백 제거 */
   box-sizing: border-box;
+  background-color: transparent;
+  overflow: hidden;          /* ✅ 삐져나오는 줄 방지 */
 }
+
 .mbook-img {
   width: 280px;
-  height: 380px;
-  object-fit: contain;
-  margin-bottom: 20px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  height: 420px;
+  object-fit: cover;  /* 핵심 */
   border-radius: 12px;
+  margin: 0;
+  box-shadow: 20px 0px 25px rgba(0, 0, 0, 0.28);
+}
+a {
+  text-decoration: none;
+  color: inherit; /* 링크 색상도 상속 */
 }
 
 .mbook-card:nth-child(1) {
-  background-color: #d9d8d7; /* 노란 배경 */
+  background: linear-gradient(to bottom,
+    #dbdbdb 0%,      /* 어두운 회색 시작 */
+    #dbdbdb 60%,   /* 어두운 회색 3/2까지 유지 */
+    #f0f0f0 60%,   /* 밝은 회색 시작 */
+    #dbdbdb 100%   
+  );
 }
 .mbook-card:nth-child(2) {
-  background-color: #88b8c3; /* 파란 배경 */
+  background: linear-gradient(to bottom,
+    #a0bac0 0%,      /* 어두운 회색 시작 */
+    #a0bac0 60%,   /* 어두운 회색 3/2까지 유지 */
+    #b3dbe5 60%,   /* 밝은 회색 시작 */
+    #a0bac0 100%    
+  );
 }
 .mbook-card:nth-child(2) .mbook-title {
-  color: #ffffff;
+  color: #484747;
 }
 .mbook-card:nth-child(2) .mbook-author {
   color: #484747;
 }
 .mbook-card:nth-child(3) {
-  background-color: #492f1d; /* 파란 배경 */
+  background: linear-gradient(to bottom,
+    #492f1d 0%,      /* 어두운 회색 시작 */
+    #492f1d 60%,   /* 어두운 회색 3/2까지 유지 */
+    #774d2f 60%,   /* 밝은 회색 시작 */
+    #492f1d 100%  
+  );
 }
 .mbook-card:nth-child(3) .mbook-title {
   color: #ffffff;
@@ -94,7 +116,12 @@ body {
   color: #a5a5a5;
 }
 .mbook-card:nth-child(4) {
-  background-color: #293a4f; /* 파란 배경 */
+  background: linear-gradient(to bottom,
+    #293a4f 0%,      /* 어두운 회색 시작 */
+    #293a4f 60%,   /* 어두운 회색 3/2까지 유지 */
+    #3a526e 60%,   /* 밝은 회색 시작 */
+    #293a4f 100%    
+  );
 }
 .mbook-card:nth-child(4) .mbook-title {
   color: #ffffff;
@@ -103,6 +130,12 @@ body {
   color: #8d8d8d;
 }
 .mbook-card:nth-child(5) {
+  background: linear-gradient(to bottom,
+    #3d3354 0%,      /* 어두운 회색 시작 */
+    #3d3354 60%,   /* 어두운 회색 3/2까지 유지 */
+    #5d4e80 60%,   /* 밝은 회색 시작 */
+    #3d3354 100%    
+  );
   background-color: #3d3354; /* 파란 배경 */
 }
 .mbook-card:nth-child(5) .mbook-title {
@@ -112,7 +145,12 @@ body {
   color: #8d8d8d;
 }
 .mbook-card:nth-child(6) {
-  background-color: #943834; /* 파란 배경 */
+  background: linear-gradient(to bottom,
+    #943834 0%,      /* 어두운 회색 시작 */
+    #943834 60%,   /* 어두운 회색 3/2까지 유지 */
+    #b64842 60%,   /* 밝은 회색 시작 */
+    #943834 100%    
+  );
 }
 .mbook-card:nth-child(6) .mbook-title {
   color: #ffffff;
@@ -121,7 +159,12 @@ body {
   color: #a5a4a4;
 }
 .mbook-card:nth-child(7) {
-  background-color: #2a1c13; /* 파란 배경 */
+  background: linear-gradient(to bottom,
+    #2a1c13 0%,      /* 어두운 회색 시작 */
+    #2a1c13 60%,   /* 어두운 회색 3/2까지 유지 */
+    #422c1e 60%,   /* 밝은 회색 시작 */
+    #2a1c13 100%    
+  );
 }
 .mbook-card:nth-child(7) .mbook-title {
   color: #ffffff;
@@ -130,7 +173,12 @@ body {
   color: #a5a4a4;
 }
 .mbook-card:nth-child(8) {
-  background-color: #916341; /* 파란 배경 */
+  background: linear-gradient(to bottom,
+    #916341 0%,      /* 어두운 회색 시작 */
+    #916341 60%,   /* 어두운 회색 3/2까지 유지 */
+    #c58558 60%,   /* 밝은 회색 시작 */
+    #916341 100%   
+  );
 }
 .mbook-card:nth-child(8) .mbook-title {
   color: #ffffff;
@@ -139,7 +187,12 @@ body {
   color: #9b9a9a;
 }
 .mbook-card:nth-child(9) {
-  background-color: #901e1e; /* 파란 배경 */
+  background: linear-gradient(to bottom,
+    #901e1e 0%,      /* 어두운 회색 시작 */
+    #901e1e 60%,   /* 어두운 회색 3/2까지 유지 */
+    #be2828 60%,   /* 밝은 회색 시작 */
+    #901e1e 100%     
+  );
 }
 .mbook-card:nth-child(9) .mbook-title {
   color: #ffffff;
@@ -148,7 +201,12 @@ body {
   color: #9b9a9a;
 }
 .mbook-card:nth-child(10) {
-  background-color: #265654; /* 파란 배경 */
+  background: linear-gradient(to bottom,
+    #265654 0%,      /* 어두운 회색 시작 */
+    #265654 60%,   /* 어두운 회색 3/2까지 유지 */
+    #387c79 60%,   /* 밝은 회색 시작 */
+    #265654 100%    
+  );
 }
 .mbook-card:nth-child(10) .mbook-title {
   color: #ffffff;
