@@ -392,25 +392,33 @@
                             </div>
 
                             <div class="button-container">
-                                <!-- 장바구니 버튼 -->
-                                <button class="cart-button">
-                                    <div class="button-text">
-                                        <div class="text">장바구니</div>
-                                        <div class="arrow-right-icon">
-                                            <img src="./icon/arrow_right_icon.svg" alt="">
-                                        </div>
+                            <!-- 장바구니 -->
+                            <form action="cartProc.jsp" method="post">
+                                <input type="hidden" name="book_id" value="<%= book.getId() %>">
+                                <input type="hidden" name="quantity" value="1">
+                                <button type="button" class="cart-button">
+                                <div class="button-text">
+                                    <div class="text">장바구니</div>
+                                    <div class="arrow-right-icon">
+                                    <img src="./icon/arrow_right_icon.svg" alt="">
                                     </div>
+                                </div>
                                 </button>
+                            </form>
 
-                                <!-- 바로구매 버튼 -->
-                                <button class="buy-button">
-                                    <div class="button-text">
-                                        <div class="text">바로구매</div>
-                                        <div class="arrow-right-icon">
-                                            <img src="./icon/arrow_right_icon.svg" alt="">
-                                        </div>
+                            <!-- 바로구매 -->
+                            <form action="payment.jsp" method="post">
+                                <input type="hidden" name="book_id" value="<%= book.getId() %>">
+                                <input type="hidden" name="quantity" value="1">
+                                <button type="button" class="buy-button">
+                                <div class="button-text">
+                                    <div class="text">바로구매</div>
+                                    <div class="arrow-right-icon">
+                                    <img src="./icon/arrow_right_icon.svg" alt="">
                                     </div>
+                                </div>
                                 </button>
+                            </form>
                             </div>
                         </div>
                     </div>

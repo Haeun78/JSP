@@ -1,99 +1,262 @@
+html{
+  background: 
+  linear-gradient(to top, #cae3f7, rgba(255, 255, 255, 0.6));
+  height: 100%;
+}
+
 body {
-  font-family: 'Noto Sans KR', sans-serif;
   margin: 0;
-  background-color: #fff;
-  padding-bottom: 140px;
+  font-family: 'Noto Sans KR', sans-serif;
+  
 }
 
-/* ==== 카드 영역 타임라인 ==== */
+/* ================= 공통 기본 ================= */
+body {
+  margin: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+  /* background: linear-gradient(to top, #fff3e0, rgba(255, 255, 255, 0.6)); */
+}
+
+/* ================= 헤더 ================= */
+/* 기본 헤더 설정 */
+header {
+  height: 80px;
+}
+
+/* 상단 메뉴 컨테이너 */
+.top-menu {
+  height: 100%;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 로고 */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img img {
+  height: 48px;
+  object-fit: contain;
+  display: block;
+}
+
+/* 타임라인 버튼 박스 */
+.timeline-btn-box {
+  display: flex;
+  align-items: center;
+}
+
+/* 각각의 타임라인 버튼 */
+.timeline-btn-default,
+.timeline-btn-random {
+  margin-right: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid rgba(224, 224, 224, 0.473); */
+}
+
+.timeline-btn-default a img,
+.timeline-btn-random a img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  display: block;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.timeline-btn-default a img:hover,
+.timeline-btn-random a img:hover {
+  transform: scale(1.1);
+}
+
+/* 사이드 메뉴 */
+.side-menu {
+  display: flex;
+  align-items: center;
+}
+
+.icon-box img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.icon-box img:hover {
+  transform: scale(1.1);
+}
+
+
+/* 🔲 사이드바: 오른쪽에서 슬라이드 */
+.side-drawer {
+  position: fixed;
+  top: 0;
+  right: -340px;
+  width: 300px;
+  height: 100vh;
+  background: #ffffff;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  transition: right 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+.side-drawer.open {
+  right: 0;
+}
+
+/* ❌ 닫기 버튼 */
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 50px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+/* 공통 메뉴 리스트 (user-menu + drawer-menu) */
+.user-menu,
+.drawer-menu {
+  list-style: none;
+  padding: 0;
+  margin-top: 100px;
+}
+
+.user-menu li,
+.drawer-menu li {
+  margin-bottom: 16px;
+}
+
+.user-menu li a,
+.drawer-menu li a {
+  display: block;
+  padding: 4px 0;
+  font-size: 30x;
+  font-weight: 600;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.user-menu li a:hover,
+.drawer-menu li a:hover {
+  color: #007acc;
+}
+
+
+/* ================= 타임라인 카드 ================= */
 .timeline-wrapper {
+  /* border: 1px solid black; */
+
   width: 100%;
-  overflow-x: auto;
+  margin-top: 50px;
+  padding: 0 40px 40px 40px;
+  
+  /* position: relative;
+  z-index: 300; */
+  
+  /*카드 수평정렬*/
   white-space: nowrap;
-  padding: 30px 40px;
+
+  /* 스크롤 관련 */
+  overflow-x: auto;
   scroll-behavior: smooth;
-
-  /* ✅ 스크롤바 숨김 */
-  scrollbar-width: none;        /* Firefox */
-  -ms-overflow-style: none;     /* IE */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
+
 .timeline-wrapper::-webkit-scrollbar {
-  display: none;                /* Chrome, Safari */
+  display: none;
 }
 
+/* 카드 3개 묶음 */
 .timeline-track {
+  /* border: 1px solid black; */
   display: flex;
   gap: 80px;
   align-items: flex-start;
+  margin-top: 10px;
 }
 
-/* ==== 연도별 묶음 ==== */
 .year-column {
+  /* border: 1px solid black; */
+  
   display: inline-block;
   position: relative;
-  min-width: 880px;  /* ✅ 60% 축소 */
+  min-width: 880px;
   padding-left: 40px;
   box-sizing: border-box;
 }
 
 .year-line {
+  /* border: 1px solid black; */
+
   position: absolute;
-  top: 0;
+  top: 15px;
   left: 0;
-  width: 2px;
+  width: 1px;
   height: 100%;
-  background-color: #ccc;
+  border-left: #8f8f8f48 dashed 2px;
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.09);
 }
 
 .year-label {
   position: absolute;
-  top: -40px;
-  left: 10px;
+  top: -20px;
+  left: 2px;
   transform: translateX(-50%);
-  background: white;
   padding: 6px 16px;
   font-weight: bold;
   font-size: 18px;
-  /* border: 2px solid #444; */
   border-radius: 20px;
   color: #444;
   z-index: 2;
+  /* background-color: #f9f7f3; */
 }
 
-/* ==== 카드 행 ==== */
 .card-row {
   display: flex;
-  gap: 40px;
+  gap: 50px;
   margin-top: 30px;
   justify-content: center;
-
+  align-items: flex-start;
 }
 
-/* ==== 도서 카드 ==== */
 .award-card {
-  width: 320px;       /* 기존보다 가로를 넓힘 */
-  min-height: 360px;  /* 세로는 비율 맞춰 최소 높이 지정 */
+  width: 400px;
+  min-height: 420px;
   padding: 16px;
-  border-radius: 6px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  background: #ffffff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
-
 .award-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+  transform: scale(1.1);
 }
 
 .award-card img {
   width: 100%;
-  height: auto;  /* ✅ 60% 축소 */
+  height: auto;
   object-fit: cover;
   margin-bottom: 12px;
-  box-shadow: 0 0 9px rgba(0, 0, 0, 0.2); 
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.2);
 }
 
 .card-info h3 {
@@ -105,7 +268,7 @@ body {
 .card-info .award {
   font-size: 13px;
   font-weight: bold;
-  color: #000000;
+  color: #000;
 }
 
 .card-info .author {
@@ -113,104 +276,119 @@ body {
   color: #555;
 }
 
-/* 3. 지그재그 배치 */
 .card-row .award-card:nth-child(odd) {
-  margin-top: 10px;
+  margin-top: 0px;
 }
 .card-row .award-card:nth-child(even) {
-  margin-top: 30px;
-}
-.card-row .award-card:nth-child(3n) {
-  margin-top: 20px;
-}
-.card-row .award-card:nth-child(4n) {
-  margin-top: 35px;
+  margin-top: 80px;
 }
 
-
-/* 4. 연도 클릭 시 해당 column 강조 */
-.year-column.highlighted {
-  transform: scale(1.02);
-  transition: transform 0.3s ease;
-  /* box-shadow: 0 0 12px rgba(0, 122, 204, 0.2); */
-  border-radius: 12px;
-  /* background-color: #f7faff; */
-}
-
-/* ==== 하단 연도 그래프 ==== */
-.timeline-graph {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  padding: 30px 60px;
-  background-color: #fff;
-  border-top: 2px solid #000;
-
+/* ================= 하단 연표 타임라인 ================= */
+.timeline-scale {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  z-index: 100;
-
-  overflow-x: auto;
-}
-
-/* 연도 뱃지 */
-.year-tick {
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(to right, #ffffff, #cae7ff);
+  padding: 20px 40px;
+  border-radius: 20px;
+  /* box-shadow: 0 4px 20px rgba(0,0,0,0.08); */
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  /* border-radius: 50%; */
-  background-color: #f0f0f0;
-  color: #555;
-  font-size: 14px;
+  gap: 16px;
+  z-index: 200;
+}
+
+.timeline-year {
   font-weight: 600;
-  cursor: pointer;
-  transition: all 0.25s ease;
+  font-size: 15px;
+  color: #444;
+}
+
+.timeline-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 3px;
+  background: #444;
   position: relative;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  width: 1300px;
+  border-radius: 10px;
 }
 
-.year-tick:hover {
-  background-color: #007acc;
-  color: #fff;
-  transform: scale(1.05);
+/* 🎯 기본 눈금 스타일 */
+.tick {
+  width: 4px;
+  height: 20px;
+  background: #444;
+  position: relative;
+  top: 9px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  border-radius: 6px;
+  transition: all 0.2s ease; /* 부드러운 hover 효과용 */
 }
 
-/* 선택된 연도 스타일 (선택 시 .active 클래스 붙이면 됨) */
-.year-tick.active {
-  background-color: #007acc;
-  color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 122, 204, 0.3);
+/* 🖱️ 마우스 오버 시 스타일 */
+.tick:hover {
+  cursor: pointer;
+  background-color: #266eff; /* 강조용 (원하는 색으로 변경 가능) */
 }
 
-/* 선 연결 느낌 (선택사항) */
-.year-tick::after {
-  content: "";
+/* 🔽 선택된 눈금 (active) */
+.tick.active {
+  width: 10px;
+  height: 35px;
+  background: radial-gradient(circle, #ffffff 0%, #1e88e5c6 60%, #1565c0 100%);
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(192, 192, 192, 0.373);
+
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+/* 🔽 선택된 눈금에 표시되는 마커와 연도 라벨 */
+.tick .marker,
+.tick .year-label {
+  display: none;
+}
+
+.tick.active .marker,
+.tick.active .year-label {
+  display: block;
+}
+
+/* ⬆️ 마커 (위쪽 삼각형 표시) */
+.tick .marker {
   position: absolute;
-  top: 50%;
-  right: -30px;
-  width: 20px;
-  height: 2px;
-  background: #ccc;
-  transform: translateY(-50%);
-}
-.year-tick:last-child::after {
-  display: none;
-}
-
-/* 마커는 뱃지 밑줄처럼 표현 (선택적) */
-.timeline-marker {
-  display: none;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  /* width: 10px;
+  height: 10px; */
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 10px solid #9e9e9e88;
 }
 
+/* ⬆️ 연도 라벨 텍스트 */
+.tick .year-label {
+  position: absolute;
+  top: -55px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 15px;
+  color: #000;
+}
 
-/*모달*/
+
+/* ================= 모달 ================= */
 .modal {
-  display: none; /* 처음에는 안 보임 */
+  display: none;
   position: fixed;
   z-index: 9999;
   left: 0;
@@ -239,4 +417,23 @@ body {
   font-weight: bold;
   color: #333;
   cursor: pointer;
+}
+
+.modal-content button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.modal-content .buy {
+  background-color: #007acc;
+  color: white;
+  margin-right: 10px;
+}
+
+.modal-content .cart {
+  background-color: #ccc;
+  color: #333;
 }

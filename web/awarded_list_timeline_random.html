@@ -3,12 +3,58 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>문학상 수상작 갤러리</title>
+  <title>책광장 모두</title>
   <link rel="stylesheet" href="./css/awarded_list_timeline_random.css" />
 </head>
 <body>
-  <header></header>
-  <h1 style="text-align:center; margin: 30px 0;">📚 문학상 수상작 갤러리</h1>
+  <header>
+    <!-- 로고 -->
+     <div class="top-menu">
+      <div class="logo">
+        <div class="logo-img">
+          <a href="./index.html">  <!-- index.jps -->
+            <img src="./image/책광장모두.png" alt="로고">
+          </a>
+        </div>
+      </div>
+
+      <!-- icon --> <!-- 메뉴icon -->
+      <div class="timeline-btn-box">
+        <div class="timeline-btn-default">
+          <a href="./awarded_list_timeline.html"> <!-- awarded_list_timeline.jps -->
+            <img src="./icon/distribute-horizontal.svg" alt="default">
+          </a>
+        </div>
+        <div class="timeline-btn-random">
+          <a href="./awarded_list_timeline_random.html"> <!-- awarded_list_timeline_random.jps -->
+            <img src="./icon/border-style.svg" alt="random">
+          </a>
+        </div>
+      </div>
+
+      <!-- 사이드 메뉴 -->
+      <div class="side-menu">
+        <div class="icon-box" id="menuToggle">
+          <img src="./icon/list.svg" alt="사이드 메뉴">
+        </div>
+      </div>
+      <!-- 숨겨진 사이드바 -->
+      <div class="side-drawer" id="sideDrawer">
+        <button class="close-btn" id="closeDrawer">&times;</button>
+
+        <!-- 로그인 상태별 메뉴가 들어갈 곳 -->
+        <ul class="user-menu" id="userMenu"></ul>
+
+        <!-- 고정 메뉴 -->
+        <ul class="drawer-menu" id="drawerMenu">
+          <li><a href="./book_field_page.html">분야별 도서</a></li> <!-- book_field_page.jps -->
+          <li><a href="./reading_record_main.html">독서 기록장</a></li>  <!-- reading_record_main.jps -->
+          <li><a href="./promotion_list.html">이벤트소식</a></li> <!-- promotion_list.jps -->
+          <li><a href="./notice_list.html">공지사항</a></li> <!-- notice_list.jps -->
+        </ul>
+      </div>
+     </div>
+  </header>
   <div class="book-list"></div>
 
   <!-- 모달 -->
@@ -24,8 +70,8 @@
         <div id="modalPrize" class="modal-prize"></div>
         <div id="modalSummary" class="modal-summary"></div>
         <div class="modal-buttons">
-          <button class="btn-cart">🛒 장바구니</button>
-          <button class="btn-buy">⚡ 바로구매</button>
+          <button class="btn-buy">바로구매</button>
+          <button class="btn-cart">장바구니</button>
         </div>
       </div>
     </div>
