@@ -271,7 +271,7 @@ a {
 
 /* ===== Footer Wrapper ===== */
 .footer-container {
-    /* border: 1px solid black; */
+    /* border: 1px solid black; */ 
     background-color: #f8f8f8;
     padding: 30px 40px;
     font-size: 14px;
@@ -363,6 +363,5 @@ a {
   flex-direction: column;
   gap: 6px;
 }
-
 
   
