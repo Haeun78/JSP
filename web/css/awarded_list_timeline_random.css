@@ -1,16 +1,147 @@
 body {
-  background-color: #ffffff;
+  background: 
+  linear-gradient(to top, #b5deff, rgba(255, 255, 255, 0.6));
   font-family: 'Noto Sans KR', sans-serif;
 }
 
 header{
-    background-color: #f0f8ff;
-    height: 200px;
+  height: 80px;
 }
 
+/* 상단 메뉴 컨테이너 */
+.top-menu {
+  height: 100%;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 로고 */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img img {
+  height: 48px;
+  object-fit: contain;
+  display: block;
+}
+
+/* 타임라인 버튼 박스 */
+.timeline-btn-box {
+  display: flex;
+  align-items: center;
+}
+
+/* 각각의 타임라인 버튼 */
+.timeline-btn-default,
+.timeline-btn-random {
+  margin-right: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid rgba(224, 224, 224, 0.473); */
+}
+
+.timeline-btn-default a img,
+.timeline-btn-random a img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  display: block;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.timeline-btn-default a img:hover,
+.timeline-btn-random a img:hover {
+  transform: scale(1.1);
+}
+
+/* 사이드 메뉴 */
+.side-menu {
+  display: flex;
+  align-items: center;
+}
+
+.icon-box img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.icon-box img:hover {
+  transform: scale(1.1);
+}
+
+
+/* 🔲 사이드바: 오른쪽에서 슬라이드 */
+.side-drawer {
+  position: fixed;
+  top: 0;
+  right: -340px;
+  width: 300px;
+  height: 100vh;
+  background: #ffffff;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  transition: right 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+.side-drawer.open {
+  right: 0;
+}
+
+/* ❌ 닫기 버튼 */
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 50px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+/* 공통 메뉴 리스트 (user-menu + drawer-menu) */
+.user-menu,
+.drawer-menu {
+  list-style: none;
+  padding: 0;
+  margin-top: 100px;
+}
+
+.user-menu li,
+.drawer-menu li {
+  margin-bottom: 16px;
+}
+
+.user-menu li a,
+.drawer-menu li a {
+  display: block;
+  padding: 4px 0;
+  font-size: 30x;
+  font-weight: 600;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.user-menu li a:hover,
+.drawer-menu li a:hover {
+  color: #007acc;
+}
+
+/* ===== 컨테이너 ===== */
 .book-list {
-  column-count: 6;
-  column-gap: 10px;
+  column-count: 5;
+  column-gap: 20px;
   padding: 30px;
   max-width: 1440px;
   margin: 0 auto;
@@ -100,7 +231,7 @@ header{
 }
 
 .image-wrapper img {
-  width: 100%;
+  width: 80%;
   height: auto;
   object-fit: contain;
   display: block;

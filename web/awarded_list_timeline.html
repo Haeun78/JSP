@@ -1,16 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>역대 수상작 목록</title>
-    
-    <link rel="stylesheet" href="./css/awarded_list_timeline.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>수상작 타임라인</title>
+  <link rel="stylesheet" href="./css/awarded_list_timeline.css">
 </head>
 <body>
   <header>
+    <!-- 로고 -->
+     <div class="top-menu">
+      <div class="logo">
+        <div class="logo-img">
+          <a href="./index.html">
+            <img src="./image/책광장모두.png" alt="로고">
+          </a>
+        </div>
+      </div>
 
+      <!-- icon --> <!-- 메뉴icon -->
+      <div class="timeline-btn-box">
+        <div class="timeline-btn-default">
+          <a href="./awarded_list_timeline.html">
+            <img src="./icon/distribute-horizontal.svg" alt="default">
+          </a>
+        </div>
+        <div class="timeline-btn-random">
+          <a href="./awarded_list_timeline_random.html">
+            <img src="./icon/border-style.svg" alt="random">
+          </a>
+        </div>
+      </div>
+
+      <!-- 사이드 메뉴 -->
+      <div class="side-menu">
+        <div class="icon-box" id="menuToggle">
+          <img src="./icon/list.svg" alt="사이드 메뉴">
+        </div>
+      </div>
+      <!-- 숨겨진 사이드바 -->
+      <div class="side-drawer" id="sideDrawer">
+        <button class="close-btn" id="closeDrawer">&times;</button>
+
+        <!-- 로그인 상태별 메뉴가 들어갈 곳 -->
+        <ul class="user-menu" id="userMenu"></ul>
+
+        <!-- 고정 메뉴 -->
+        <ul class="drawer-menu" id="drawerMenu">
+          <li><a href="./book_field_page.html">분야별 도서</a></li>
+          <li><a href="./reading_record_main.html">독서 기록장</a></li>
+          <li><a href="./promotion_list.html">이벤트소식</a></li>
+          <li><a href="./notice_list.html">공지사항</a></li>
+        </ul>
+      </div>
+     </div>
   </header>
+<<<<<<< HEAD
     <!-- 타임라인 영역 -->
     <div class="timeline-wrapper">
       <div class="timeline-track">
@@ -18,858 +63,52 @@
           <div class="year-line"></div>
           <div class="year-label">2024</div>
           <div class="card-row">
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/40세 정신과 영수증.jpg" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2024A</h3>
-                <p class="award">노벨문학상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/book_field_book1.jpg" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2024A</h3>
-                <p class="award">부커상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/나에게만 보이는 살인.jpg" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2024A</h3>
-                <p class="award">공쿠르상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="year-column" id="year-2023">
-          <div class="year-line"></div>
-          <div class="year-label">2023</div>
-          <div class="card-row">
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/미안해하지 말자.jpg" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2023</h3>
-                <p class="award">노벨문학상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2023</h3>
-                <p class="award">부커상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2023</h3>
-                <p class="award">공쿠르상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="year-column" id="year-2022">
-          <div class="year-line"></div>
-          <div class="year-label">2022</div>
-          <div class="card-row">
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2022</h3>
-                <p class="award">노벨문학상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2022</h3>
-                <p class="award">부커상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2022</h3>
-                <p class="award">공쿠르상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="year-column" id="year-2021">
-          <div class="year-line"></div>
-          <div class="year-label">2021</div>
-          <div class="card-row">
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2021</h3>
-                <p class="award">노벨문학상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2021</h3>
-                <p class="award">부커상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2021</h3>
-                <p class="award">공쿠르상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="year-column" id="year-2020">
-          <div class="year-line"></div>
-          <div class="year-label">2020</div>
-          <div class="card-row">
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2020</h3>
-                <p class="award">노벨문학상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2020</h3>
-                <p class="award">부커상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2020</h3>
-                <p class="award">공쿠르상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-        
-        <div class="year-column" id="year-2019">
-          <div class="year-line"></div>
-          <div class="year-label">2019</div>
-          <div class="card-row">
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2019</h3>
-                <p class="award">노벨문학상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="부커상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2019</h3>
-                <p class="award">부커상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="공쿠르상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2019</h3>
-                <p class="award">공쿠르상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-        
-        <div class="year-column" id="year-2018">
-          <div class="year-line"></div>
-          <div class="year-label">2018</div>
-          <div class="card-row">
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2018</h3>
-                <p class="award">노벨문학상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="부커상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2018</h3>
-                <p class="award">부커상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="공쿠르상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2018</h3>
-                <p class="award">공쿠르상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-        
-        <div class="year-column" id="year-2017">
-          <div class="year-line"></div>
-          <div class="year-label">2017</div>
-          <div class="card-row">
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2017</h3>
-                <p class="award">노벨문학상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="부커상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2017</h3>
-                <p class="award">부커상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="공쿠르상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2017</h3>
-                <p class="award">공쿠르상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-        
-        <div class="year-column" id="year-2016">
-          <div class="year-line"></div>
-          <div class="year-label">2016</div>
-          <div class="card-row">
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2016</h3>
-                <p class="award">노벨문학상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="부커상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2016</h3>
-                <p class="award">부커상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="공쿠르상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2016</h3>
-                <p class="award">공쿠르상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-        
-        <div class="year-column" id="year-2015">
-          <div class="year-line"></div>
-          <div class="year-label">2015</div>
-          <div class="card-row">
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2015</h3>
-                <p class="award">노벨문학상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="부커상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2015</h3>
-                <p class="award">부커상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2015</h3>
-                <p class="award">공쿠르상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-        
-        <div class="year-column" id="year-2014">
-          <div class="year-line"></div>
-          <div class="year-label">2014</div>
-          <div class="card-row">
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2014</h3>
-                <p class="award">노벨문학상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2014</h3>
-                <p class="award">부커상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2014</h3>
-                <p class="award">공쿠르상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-        
-        <div class="year-column" id="year-2013">
-          <div class="year-line"></div>
-          <div class="year-label">2013</div>
-          <div class="card-row">
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2013</h3>
-                <p class="award">노벨문학상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2013</h3>
-                <p class="award">부커상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2013</h3>
-                <p class="award">공쿠르상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-        
-        <div class="year-column" id="year-2012">
-          <div class="year-line"></div>
-          <div class="year-label">2012</div>
-          <div class="card-row">
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2012</h3>
-                <p class="award">노벨문학상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2012</h3>
-                <p class="award">부커상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2012</h3>
-                <p class="award">공쿠르상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-        
-        <div class="year-column" id="year-2011">
-          <div class="year-line"></div>
-          <div class="year-label">2011</div>
-          <div class="card-row">
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2011</h3>
-                <p class="award">노벨문학상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2011</h3>
-                <p class="award">부커상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2011</h3>
-                <p class="award">공쿠르상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-        
-        <div class="year-column" id="year-2010">
-          <div class="year-line"></div>
-          <div class="year-label">2010</div>
-          <div class="card-row">
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2010</h3>
-                <p class="award">노벨문학상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2010</h3>
-                <p class="award">부커상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2010</h3>
-                <p class="award">공쿠르상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-        
-        <div class="year-column" id="year-2009">
-          <div class="year-line"></div>
-          <div class="year-label">2009</div>
-          <div class="card-row">
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2009</h3>
-                <p class="award">노벨문학상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2009</h3>
-                <p class="award">부커상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2009</h3>
-                <p class="award">공쿠르상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-        
-        <div class="year-column" id="year-2008">
-          <div class="year-line"></div>
-          <div class="year-label">2008</div>
-          <div class="card-row">
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2008</h3>
-                <p class="award">노벨문학상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2008</h3>
-                <p class="award">부커상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2008</h3>
-                <p class="award">공쿠르상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-        
-        <div class="year-column" id="year-2007">
-          <div class="year-line"></div>
-          <div class="year-label">2007</div>
-          <div class="card-row">
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2007</h3>
-                <p class="award">노벨문학상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2007</h3>
-                <p class="award">부커상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2007</h3>
-                <p class="award">공쿠르상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-        
-        <div class="year-column" id="year-2006">
-          <div class="year-line"></div>
-          <div class="year-label">2006</div>
-          <div class="card-row">
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2006</h3>
-                <p class="award">노벨문학상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2006</h3>
-                <p class="award">부커상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2006</h3>
-                <p class="award">공쿠르상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-        
-        <div class="year-column" id="year-2005">
-          <div class="year-line"></div>
-          <div class="year-label">2005</div>
-          <div class="card-row">
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2005</h3>
-                <p class="award">노벨문학상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2005</h3>
-                <p class="award">부커상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-            <div class="award-card">
-              <div class="book-img-box">
-                <img src="./image/이미지 샘플.png" alt="노벨문학상">
-              </div>
-              <div class="card-info">
-                <h3>대표작 2005</h3>
-                <p class="award">공쿠르상</p>
-                <p class="author">작가 A</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      
+=======
+>>>>>>> b0a3ff86345cbfb41780f1884a6d8936df90d259
+
+
+  <div class="timeline-wrapper">
+    <div class="timeline-track" id="timeline-track">
+      <!-- JS에서 연도와 카드가 동적으로 생성됨 -->
+    </div>
+
+    <!-- 연도 슬라이더 바 -->
+    <div class="timeline-scale">
+      <span class="timeline-year left">2024</span>
+      <div class="timeline-bar" id="timelineBar">
+        <!-- JS로 눈금(tick) 생성됨 -->
       </div>
+      <span class="timeline-year right">2005</span>
     </div>
-    
-    <!-- 하당 연도 그래프 -->
-    <div class="timeline-graph">
-      <div class="year-tick active" onclick="scrollToYear('2024')">2024</div>
-      <div class="year-tick" onclick="scrollToYear('2023')">2023</div>
-      <div class="year-tick" onclick="scrollToYear('2022')">2022</div>
-      <div class="year-tick" onclick="scrollToYear('2021')">2021</div>
-      <div class="year-tick" onclick="scrollToYear('2020')">2020</div>
-      <div class="year-tick" onclick="scrollToYear('2019')">2019</div>
-      <div class="year-tick" onclick="scrollToYear('2018')">2018</div>
-      <div class="year-tick" onclick="scrollToYear('2017')">2017</div>
-      <div class="year-tick" onclick="scrollToYear('2016')">2016</div>
-      <div class="year-tick" onclick="scrollToYear('2015')">2015</div>
-      <div class="year-tick" onclick="scrollToYear('2014')">2014</div>
-      <div class="year-tick" onclick="scrollToYear('2013')">2013</div>
-      <div class="year-tick" onclick="scrollToYear('2012')">2012</div>
-      <div class="year-tick" onclick="scrollToYear('2011')">2011</div>
-      <div class="year-tick" onclick="scrollToYear('2010')">2010</div>
-      <div class="year-tick" onclick="scrollToYear('2009')">2009</div>
-      <div class="year-tick" onclick="scrollToYear('2008')">2008</div>
-      <div class="year-tick" onclick="scrollToYear('2007')">2007</div>
-      <div class="year-tick" onclick="scrollToYear('2006')">2006</div>
-      <div class="year-tick" onclick="scrollToYear('2005')">2005</div>
-      <div class="timeline-marker" id="marker"></div>
-    </div>
-    
-    <!-- 모달창 -->
-    <div class="modal" id="bookModal">
-      <div class="modal-content">
-        <span class="close-btn" onclick="closeModal()">&times;</span>
+  </div>
+
+
+  <!-- 모달창 -->
+  <div class="modal" id="bookModal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+
+      <!-- 주문결제 페이지 -> payment.html(jsp) -->
+      <form id="purchaseForm" method="post" action="./order_payment.jsp">
         <div id="modal-body"></div>
-      </div>
-    </div>
 
-    <script src="./js/awarded_list_timeline.js"></script>
+        <!-- 서버로 전송할 hidden input -->
+        <input type="hidden" name="title" id="bookTitle">
+        <input type="hidden" name="author" id="bookAuthor">
+        <input type="hidden" name="image" id="bookImage">
+        <input type="hidden" name="description" id="bookDesc">
+
+        <div style="margin-top: 16px;">
+          <button type="submit" class="buy">바로구매</button>
+          
+          <!-- 주문결제 페이지 -> cart_view.html(jsp) -->
+          <button type="submit" class="cart" formaction="./add_to_cart.jsp">장바구니</button>  
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <script src="./js/awarded_list_timeline.js"></script>
 </body>
 </html>

@@ -3,20 +3,19 @@
   display: flex;
   gap: 32px;
   padding: 40px 24px;
-  max-width: 1200px;
+  width: 1440px;
   margin: 0 auto;
   box-sizing: border-box;
 }
 
 /* === 사이드 메뉴 영역 === */
 .side-menu {
-  width: 200px;
+  width: 130px;
+  margin-right: 30px;
   flex-shrink: 0;
-  background-color: #f9f9f9;
   padding: 20px;
   border-radius: 8px;
   height: fit-content;
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06);
 }
 
 .classification-book-title {
@@ -29,13 +28,13 @@
 .menu {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 
 .menu-item,
 .menu-item-selected {
   padding: 8px 12px;
-  font-size: 14px;
+  font-size: 13px;
   border-radius: 6px;
   cursor: pointer;
 }
@@ -57,7 +56,6 @@
   flex-direction: column;
 }
 
-/* 제목 및 서브타이틀 */
 .title-container .title {
   font-size: 24px;
   font-weight: bold;
@@ -71,35 +69,56 @@
   margin-bottom: 24px;
 }
 
-.divisor-long{
-    width: 100%;
-    border: 1px solid rgba(179, 179, 179, 0.325);
-    margin-bottom: 20px;
+.divisor-long {
+  width: 100%;
+  height: 1px;
+  background: rgba(179, 179, 179, 0.325);
+  margin-bottom: 10px;
 }
 
 /* === 상단 정렬바 및 체크박스 === */
 .field-top-bar {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.left-tools,
+.sort-button-wrapper {
+  display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 20px;
 }
 
 .select-checkbox {
   width: 18px;
   height: 18px;
   cursor: pointer;
+  position: absolute;
+  top: 10px;
+  left: 10px;
 }
 
-.button.cart img {
-  width: 88px;
-  height: 32px;
+.button-cart button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #ffffff;
+  color: rgb(102, 102, 102);
+  border: 1px solid rgba(136, 136, 136, 0.685);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 12px;
   cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
 .sort-button {
   padding: 6px 12px;
   font-size: 14px;
+  color: #999;
   background-color: white;
   border: none;
   border-radius: 6px;
@@ -112,56 +131,46 @@
 }
 
 .sort-button.selected {
-  background-color: #007acc;
-  color: white;
+  color: rgb(0, 0, 0);
   font-weight: bold;
 }
 
-.divider {
+.divisor {
   width: 1px;
-  height: 16px;
+  height: 20px;
   background-color: #ccc;
 }
 
 /* === 도서 리스트 한 줄 === */
-.list-row-container {
-  position: relative;
+  .list-row-container {
   display: flex;
+  justify-content: space-between; /* ✅ 추가 */
+  align-items: flex-start;
   gap: 20px;
-  padding: 24px;
+  /* padding: 24px 0; */
   border-bottom: 1px solid #eee;
-  background-color: #fff;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  transition: box-shadow 0.2s;
+  position: relative;
 }
 
-.list-row-container:hover {
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-}
-
-/* 이미지 + 찜 하트 */
 .book-image {
   position: relative;
   width: 120px;
   height: 170px;
+  padding: 0 100px 50px 30px;
   flex-shrink: 0;
 }
 
 .book-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 .wishlist-icon {
   position: absolute;
-  top: 8px;
-  left: 8px;
-  width: 24px;
-  height: 24px;
+  top: 150px;
+  left: 140px;
+  width: 22px;
+  height: 22px;
   cursor: pointer;
 }
 
@@ -175,7 +184,6 @@
   transform: scale(1.2);
 }
 
-/* 책 정보 본문 */
 .book-info {
   flex: 1;
 }
@@ -188,7 +196,7 @@
 
 .book-title-section {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
 }
 
@@ -199,8 +207,9 @@
 }
 
 .more-icon img {
-  width: 18px;
-  height: 18px;
+  margin: 5px 0 0 5px;
+  width: 20px;
+  height: 20px;
 }
 
 .book-meta {
@@ -213,11 +222,10 @@
 
 .divisor {
   width: 1px;
-  height: 10px;
+  height: 12px;
   background-color: #ccc;
 }
 
-/* 책 설명 */
 .book-description {
   font-size: 14px;
   color: #444;
@@ -231,7 +239,6 @@
   margin-bottom: 12px;
 }
 
-/* 가격 정보 */
 .book-price {
   display: flex;
   align-items: baseline;
@@ -255,24 +262,49 @@
   font-size: 13px;
 }
 
-/* 장바구니 버튼 */
-.cart-button-container {
-  position: absolute;
-  right: 24px;
-  bottom: 24px;
-  font-size: 13px;
-  color: #007acc;
-  cursor: pointer;
+.book-action-button-group {
+  display: flex;
+  gap: 10px;
+  /* justify-content: flex-end; */
+  margin-top: 10px;
+}
+
+.btn-cart,
+.btn-buy {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
+  padding: 8px 16px;
+  font-size: 12px;
+  height: 40px; /* 버튼 높이 통일 */
+  min-width: 130px;
+  border-radius: 4px;
+  cursor: pointer;
+  /* white-space: nowrap; */
 }
 
-.cart-button-container img {
-  width: 20px;
-  height: 20px;
+.btn-cart {
+  background-color: white;
+  color: #007acc;
+  border: 1px solid #007acc;
 }
 
+.btn-cart:hover {
+  background-color: #f0faff;
+}
+
+.btn-buy {
+  background-color: #007acc;
+  color: white;
+  border: none;
+}
+
+.btn-buy:hover {
+  background-color: #005fa3;
+}
+
+/*-------------------------------*/
 .pagination {
   display: flex;
   justify-content: center;
@@ -296,7 +328,6 @@
   justify-content: center;
 }
 
-/* 버튼 내부 아이콘 이미지 크기 */
 .page-btn img {
   width: 18px;
   height: 18px;

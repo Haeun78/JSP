@@ -158,516 +158,108 @@
 
             <!-- 분야별 도서 목록 -->
             <div class="detail-container">
-                <div class="title-container">
-                    <div class="title">문학</div>
-                </div>
+            <div class="title-container"><div class="title">문학</div></div>
+            <div class="sub-title-container"><div class="sub-title">한국 소설</div></div>
+            <div class="divisor-long"></div>
 
-                <div class="sub-title-container">
-                    <div class="sub-title">한국 소설</div>
+            <!-- form 시작 -->
+            <form id="bulk-cart-form" action="cartProc.jsp" method="post">
+                <input type="hidden" name="action" value="bulkAddToCart" />
+
+                <div class="field-body">
+                <!-- 상단 바: 왼쪽 선택/버튼 + 오른쪽 정렬 -->
+                <div class="field-top-bar">
+                    <div class="left-tools">
+                    <input type="checkbox" id="select-all-checkbox" class="select-checkbox" />
+                    <!-- <label for="select-all-checkbox"></label> -->
+                    <div class="button-cart">
+                        <button type="submit">
+                        <img src="./icon/cart.svg" alt="장바구니" /> 장바구니
+                        </button>
+                    </div>
+                    </div>
+
+                    <div class="sort-button-wrapper">
+                        <button class="sort-button selected" data-sort="new">최신순</button>
+                        <div class="divisor"></div>
+                        <button class="sort-button" data-sort="title-asc">도서명 순(ㄱ~ㅎ)</button>
+                        <div class="divisor"></div>
+                        <button class="sort-button" data-sort="title-desc">도서명 순(ㅎ~ㄱ)</button>
+                        <div class="divisor"></div>
+                        <button class="sort-button" data-sort="price-desc">높은 가격 순</button>
+                        <div class="divisor"></div>
+                        <button class="sort-button" data-sort="price-asc">낮은 가격 순</button>
+                    </div>
                 </div>
 
                 <div class="divisor-long"></div>
 
-                <div class="field-body">
-                    <!-- 장바구니,정렬 버튼 구간 -->
-                    <div class="field-top-bar">
-                        <input type="checkbox" class="select-checkbox" />
-                        <!-- 장바구니 버튼 -->
-                        <div class="button-cart">
-                            <button> <img src="./icon/cart.svg" alt="장바구니" />장바구니</button>
-                        </div>
+                <!-- 도서 카드 1개 예시 -->
+                <div class="list-row-container">
+                    <!-- 체크박스 -->
+                    <input type="checkbox" class="select-checkbox" name="book_ids" value="123" />
 
-                        <!-- 정렬 버튼들 -->
-                        <button class="sort-button selected" data-sort="new">최신순</button>
-                        <div class="divider"></div>
-                        <button class="sort-button" data-sort="title-asc">도서명 순(ㄱ~ㅎ)</button>
-                        <div class="divider"></div>
-                        <button class="sort-button" data-sort="title-desc">도서명 순(ㅎ~ㄱ)</button>
-                        <div class="divider"></div>
-                        <button class="sort-button" data-sort="price-desc">높은 가격 순</button>
-                        <div class="divider"></div>
-                        <button class="sort-button" data-sort="price-asc">낮은 가격 순</button>
+                    <!-- 도서 이미지 -->
+                    <div class="book-image">
+                        <img src="./image/book_field_book1.jpg" alt="도서 이미지" />
                     </div>
 
-                    <div class="divisor-long"></div>
-
-                    <!-- 도서 목록 -->
-                    <div class="list-row-container">
-                        <!-- 책 이미지 + 찜하기 하트 -->
-                        <div class="book-image">
-                            <img src="./image/book_field_book1.jpg" alt="도서 이미지" />
-                            <div class="wishlist-icon">
-                            <img src="./icon/heart_empty.svg" alt="찜하기 아이콘" />
-                            </div>
-                        </div>
-
-                        <!-- 도서 정보 -->
+                    <!-- 본문 + 우측 버튼 묶음 -->
+                    <div class="book-main-info">
+                        <!-- 가운데 본문 정보 -->
                         <div class="book-info">
-                            <div class="category">문학</div>
-                            <div class="book-title-section">
-                                <div class="book-title">도서 제목</div>
-                                <div class="more-icon">
-                                    <img src="./image/more_icon.png" alt="더보기">
-                                </div>
-                            </div>
+                        <div class="book-title">0세부터 시작하는 우리 아이 금수저 플랜</div>
 
-                            <div class="book-meta">
-                                <span class="author">작가</span>
-                                <span class="divisor"></span>
-                                <span class="publisher">출판사명</span>
-                                <span class="divisor"></span>
-                                <span class="release-date">출간일</span>
-                            </div>
-
-                            <div class="book-description">
-                                도서 서평 부분입니다. 도서 서평 부분입니다. 도서 서평 부분입니다. 도서 서평 부분입니다. 도서 서평 부분입니다. 도서 서평 부분입니다.
-                            </div>
-
-                            <div class="book-price">
-                                <span class="discount">10%</span>
-                                <span class="sale-price">13,500</span><span>원</span>
-                                <span class="original-price">15,000원</span>
-                            </div>
+                        <div class="book-meta">
+                            <span>재테크하는 제인</span>
+                            <span class="divisor"></span>
+                            <span>라디오북</span>
+                            <span class="divisor"></span>
+                            <span>2025년 01월 20일 출시</span>
                         </div>
 
-                        <!-- 장바구니 버튼 -->
-                        <div class="cart-button-container">
-                            <img src="./icon/cart.svg" alt="장바구니 버튼" />장바구니
-                        </div>
-                    </div>
-                    <div class="list-row-container">
-                        <!-- 책 이미지 + 찜하기 하트 -->
-                        <div class="book-image">
-                            <img src="./image/book_field_book1.jpg" alt="도서 이미지" />
-                            <div class="wishlist-icon">
-                            <img src="./icon/heart_empty.svg" alt="찜하기 아이콘" />
-                            </div>
+                        <div class="book-description">
+                            증여부터 투자, 경제 교육까지… 궁금하다면 지금 시작하세요!
                         </div>
 
-                        <!-- 도서 정보 -->
-                        <div class="book-info">
-                            <div class="category">문학</div>
-                            <div class="book-title-section">
-                                <div class="book-title">도서 제목</div>
-                                <div class="more-icon">
-                                    <img src="./image/more_icon.png" alt="더보기">
-                                </div>
-                            </div>
-
-                            <div class="book-meta">
-                                <span class="author">작가</span>
-                                <span class="divisor"></span>
-                                <span class="publisher">출판사명</span>
-                                <span class="divisor"></span>
-                                <span class="release-date">출간일</span>
-                            </div>
-
-                            <div class="book-description">
-                                도서 서평 부분입니다. 도서 서평 부분입니다. 도서 서평 부분입니다. 도서 서평 부분입니다. 도서 서평 부분입니다. 도서 서평 부분입니다.
-                            </div>
-
-                            <div class="book-price">
-                                <span class="discount">10%</span>
-                                <span class="sale-price">13,500</span><span>원</span>
-                                <span class="original-price">15,000원</span>
-                            </div>
+                        <div class="wishlist-bar">
+                            <img src="./icon/heart_empty.svg" alt="찜하기" />
+                            <span>0</span>
+                        </div>
                         </div>
 
-                        <!-- 장바구니 버튼 -->
-                        <div class="cart-button-container">
-                            <img src="./icon/cart.svg" alt="장바구니 버튼" />장바구니
-                        </div>
-                    </div>
-                    <div class="list-row-container">
-                        <!-- 책 이미지 + 찜하기 하트 -->
-                        <div class="book-image">
-                            <img src="./image/book_field_book1.jpg" alt="도서 이미지" />
-                            <div class="wishlist-icon">
-                            <img src="./icon/heart_empty.svg" alt="찜하기 아이콘" />
-                            </div>
+                        <!-- 우측 가격 + 버튼 -->
+                        <div class="book-right-actions">
+                        <div class="book-price-box">
+                            <span class="original-price">15,000원</span>
+                            <span class="discount">10%</span>
+                            <div class="sale-price">13,500원</div>
                         </div>
 
-                        <!-- 도서 정보 -->
-                        <div class="book-info">
-                            <div class="category">문학</div>
-                            <div class="book-title-section">
-                                <div class="book-title">도서 제목</div>
-                                <div class="more-icon">
-                                    <img src="./image/more_icon.png" alt="더보기">
-                                </div>
-                            </div>
-
-                            <div class="book-meta">
-                                <span class="author">작가</span>
-                                <span class="divisor"></span>
-                                <span class="publisher">출판사명</span>
-                                <span class="divisor"></span>
-                                <span class="release-date">출간일</span>
-                            </div>
-
-                            <div class="book-description">
-                                도서 서평 부분입니다. 도서 서평 부분입니다. 도서 서평 부분입니다. 도서 서평 부분입니다. 도서 서평 부분입니다. 도서 서평 부분입니다.
-                            </div>
-
-                            <div class="book-price">
-                                <span class="discount">10%</span>
-                                <span class="sale-price">13,500</span><span>원</span>
-                                <span class="original-price">15,000원</span>
-                            </div>
+                        <div class="book-action-button-group">
+                            <form action="cartProc.jsp" method="post">
+                            <input type="hidden" name="book_id" value="123" />
+                            <input type="hidden" name="action" value="addToCart" />
+                            <button type="submit" class="btn-cart">장바구니</button>
+                            </form>
+                            <form action="cartProc.jsp" method="post">
+                            <input type="hidden" name="book_id" value="123" />
+                            <input type="hidden" name="action" value="buyNow" />
+                            <button type="submit" class="btn-buy">바로구매</button>
+                            </form>
                         </div>
-
-                        <!-- 장바구니 버튼 -->
-                        <div class="cart-button-container">
-                            <img src="./icon/cart.svg" alt="장바구니 버튼" />장바구니
                         </div>
-                    </div>
-                    <div class="list-row-container">
-                        <!-- 책 이미지 + 찜하기 하트 -->
-                        <div class="book-image">
-                            <img src="./image/book_field_book1.jpg" alt="도서 이미지" />
-                            <div class="wishlist-icon">
-                            <img src="./icon/heart_empty.svg" alt="찜하기 아이콘" />
-                            </div>
-                        </div>
-
-                        <!-- 도서 정보 -->
-                        <div class="book-info">
-                            <div class="category">문학</div>
-                            <div class="book-title-section">
-                                <div class="book-title">도서 제목</div>
-                                <div class="more-icon">
-                                    <img src="./image/more_icon.png" alt="더보기">
-                                </div>
-                            </div>
-
-                            <div class="book-meta">
-                                <span class="author">작가</span>
-                                <span class="divisor"></span>
-                                <span class="publisher">출판사명</span>
-                                <span class="divisor"></span>
-                                <span class="release-date">출간일</span>
-                            </div>
-
-                            <div class="book-description">
-                                도서 서평 부분입니다. 도서 서평 부분입니다. 도서 서평 부분입니다. 도서 서평 부분입니다. 도서 서평 부분입니다. 도서 서평 부분입니다.
-                            </div>
-
-                            <div class="book-price">
-                                <span class="discount">10%</span>
-                                <span class="sale-price">13,500</span><span>원</span>
-                                <span class="original-price">15,000원</span>
-                            </div>
-                        </div>
-
-                        <!-- 장바구니 버튼 -->
-                        <div class="cart-button-container">
-                            <img src="./icon/cart.svg" alt="장바구니 버튼" />장바구니
-                        </div>
-                    </div>
-                    <div class="list-row-container">
-                        <!-- 책 이미지 + 찜하기 하트 -->
-                        <div class="book-image">
-                            <img src="./image/book_field_book1.jpg" alt="도서 이미지" />
-                            <div class="wishlist-icon">
-                            <img src="./icon/heart_empty.svg" alt="찜하기 아이콘" />
-                            </div>
-                        </div>
-
-                        <!-- 도서 정보 -->
-                        <div class="book-info">
-                            <div class="category">문학</div>
-                            <div class="book-title-section">
-                                <div class="book-title">도서 제목</div>
-                                <div class="more-icon">
-                                    <img src="./image/more_icon.png" alt="더보기">
-                                </div>
-                            </div>
-
-                            <div class="book-meta">
-                                <span class="author">작가</span>
-                                <span class="divisor"></span>
-                                <span class="publisher">출판사명</span>
-                                <span class="divisor"></span>
-                                <span class="release-date">출간일</span>
-                            </div>
-
-                            <div class="book-description">
-                                도서 서평 부분입니다. 도서 서평 부분입니다. 도서 서평 부분입니다. 도서 서평 부분입니다. 도서 서평 부분입니다. 도서 서평 부분입니다.
-                            </div>
-
-                            <div class="book-price">
-                                <span class="discount">10%</span>
-                                <span class="sale-price">13,500</span><span>원</span>
-                                <span class="original-price">15,000원</span>
-                            </div>
-                        </div>
-
-                        <!-- 장바구니 버튼 -->
-                        <div class="cart-button-container">
-                            <img src="./icon/cart.svg" alt="장바구니 버튼" />장바구니
-                        </div>
-                    </div>
-                    <div class="list-row-container">
-                        <!-- 책 이미지 + 찜하기 하트 -->
-                        <div class="book-image">
-                            <img src="./image/book_field_book1.jpg" alt="도서 이미지" />
-                            <div class="wishlist-icon">
-                            <img src="./icon/heart_empty.svg" alt="찜하기 아이콘" />
-                            </div>
-                        </div>
-
-                        <!-- 도서 정보 -->
-                        <div class="book-info">
-                            <div class="category">문학</div>
-                            <div class="book-title-section">
-                                <div class="book-title">도서 제목</div>
-                                <div class="more-icon">
-                                    <img src="./image/more_icon.png" alt="더보기">
-                                </div>
-                            </div>
-
-                            <div class="book-meta">
-                                <span class="author">작가</span>
-                                <span class="divisor"></span>
-                                <span class="publisher">출판사명</span>
-                                <span class="divisor"></span>
-                                <span class="release-date">출간일</span>
-                            </div>
-
-                            <div class="book-description">
-                                도서 서평 부분입니다. 도서 서평 부분입니다. 도서 서평 부분입니다. 도서 서평 부분입니다. 도서 서평 부분입니다. 도서 서평 부분입니다.
-                            </div>
-
-                            <div class="book-price">
-                                <span class="discount">10%</span>
-                                <span class="sale-price">13,500</span><span>원</span>
-                                <span class="original-price">15,000원</span>
-                            </div>
-                        </div>
-
-                        <!-- 장바구니 버튼 -->
-                        <div class="cart-button-container">
-                            <img src="./icon/cart.svg" alt="장바구니 버튼" />장바구니
-                        </div>
-                    </div>
-                    <div class="list-row-container">
-                        <!-- 책 이미지 + 찜하기 하트 -->
-                        <div class="book-image">
-                            <img src="./image/book_field_book1.jpg" alt="도서 이미지" />
-                            <div class="wishlist-icon">
-                            <img src="./icon/heart_empty.svg" alt="찜하기 아이콘" />
-                            </div>
-                        </div>
-
-                        <!-- 도서 정보 -->
-                        <div class="book-info">
-                            <div class="category">문학</div>
-                            <div class="book-title-section">
-                                <div class="book-title">도서 제목</div>
-                                <div class="more-icon">
-                                    <img src="./image/more_icon.png" alt="더보기">
-                                </div>
-                            </div>
-
-                            <div class="book-meta">
-                                <span class="author">작가</span>
-                                <span class="divisor"></span>
-                                <span class="publisher">출판사명</span>
-                                <span class="divisor"></span>
-                                <span class="release-date">출간일</span>
-                            </div>
-
-                            <div class="book-description">
-                                도서 서평 부분입니다. 도서 서평 부분입니다. 도서 서평 부분입니다. 도서 서평 부분입니다. 도서 서평 부분입니다. 도서 서평 부분입니다.
-                            </div>
-
-                            <div class="book-price">
-                                <span class="discount">10%</span>
-                                <span class="sale-price">13,500</span><span>원</span>
-                                <span class="original-price">15,000원</span>
-                            </div>
-                        </div>
-
-                        <!-- 장바구니 버튼 -->
-                        <div class="cart-button-container">
-                            <img src="./icon/cart.svg" alt="장바구니 버튼" />장바구니
-                        </div>
-                    </div>
-                    <div class="list-row-container">
-                        <!-- 책 이미지 + 찜하기 하트 -->
-                        <div class="book-image">
-                            <img src="./image/book_field_book1.jpg" alt="도서 이미지" />
-                            <div class="wishlist-icon">
-                            <img src="./icon/heart_empty.svg" alt="찜하기 아이콘" />
-                            </div>
-                        </div>
-
-                        <!-- 도서 정보 -->
-                        <div class="book-info">
-                            <div class="category">문학</div>
-                            <div class="book-title-section">
-                                <div class="book-title">도서 제목</div>
-                                <div class="more-icon">
-                                    <img src="./image/more_icon.png" alt="더보기">
-                                </div>
-                            </div>
-
-                            <div class="book-meta">
-                                <span class="author">작가</span>
-                                <span class="divisor"></span>
-                                <span class="publisher">출판사명</span>
-                                <span class="divisor"></span>
-                                <span class="release-date">출간일</span>
-                            </div>
-
-                            <div class="book-description">
-                                도서 서평 부분입니다. 도서 서평 부분입니다. 도서 서평 부분입니다. 도서 서평 부분입니다. 도서 서평 부분입니다. 도서 서평 부분입니다.
-                            </div>
-
-                            <div class="book-price">
-                                <span class="discount">10%</span>
-                                <span class="sale-price">13,500</span><span>원</span>
-                                <span class="original-price">15,000원</span>
-                            </div>
-                        </div>
-
-                        <!-- 장바구니 버튼 -->
-                        <div class="cart-button-container">
-                            <img src="./icon/cart.svg" alt="장바구니 버튼" />장바구니
-                        </div>
-                    </div>
-                    <div class="list-row-container">
-                        <!-- 책 이미지 + 찜하기 하트 -->
-                        <div class="book-image">
-                            <img src="./image/book_field_book1.jpg" alt="도서 이미지" />
-                            <div class="wishlist-icon">
-                            <img src="./icon/heart_empty.svg" alt="찜하기 아이콘" />
-                            </div>
-                        </div>
-
-                        <!-- 도서 정보 -->
-                        <div class="book-info">
-                            <div class="category">문학</div>
-                            <div class="book-title-section">
-                                <div class="book-title">도서 제목</div>
-                                <div class="more-icon">
-                                    <img src="./image/more_icon.png" alt="더보기">
-                                </div>
-                            </div>
-
-                            <div class="book-meta">
-                                <span class="author">작가</span>
-                                <span class="divisor"></span>
-                                <span class="publisher">출판사명</span>
-                                <span class="divisor"></span>
-                                <span class="release-date">출간일</span>
-                            </div>
-
-                            <div class="book-description">
-                                도서 서평 부분입니다. 도서 서평 부분입니다. 도서 서평 부분입니다. 도서 서평 부분입니다. 도서 서평 부분입니다. 도서 서평 부분입니다.
-                            </div>
-
-                            <div class="book-price">
-                                <span class="discount">10%</span>
-                                <span class="sale-price">13,500</span><span>원</span>
-                                <span class="original-price">15,000원</span>
-                            </div>
-                        </div>
-
-                        <!-- 장바구니 버튼 -->
-                        <div class="cart-button-container">
-                            <img src="./icon/cart.svg" alt="장바구니 버튼" />장바구니
-                        </div>
-                    </div>
-                    <div class="list-row-container">
-                        <!-- 책 이미지 + 찜하기 하트 -->
-                        <div class="book-image">
-                            <img src="./image/book_field_book1.jpg" alt="도서 이미지" />
-                            <div class="wishlist-icon">
-                            <img src="./icon/heart_empty.svg" alt="찜하기 아이콘" />
-                            </div>
-                        </div>
-
-                        <!-- 도서 정보 -->
-                        <div class="book-info">
-                            <div class="category">문학</div>
-                            <div class="book-title-section">
-                                <div class="book-title">도서 제목</div>
-                                <div class="more-icon">
-                                    <img src="./image/more_icon.png" alt="더보기">
-                                </div>
-                            </div>
-
-                            <div class="book-meta">
-                                <span class="author">작가</span>
-                                <span class="divisor"></span>
-                                <span class="publisher">출판사명</span>
-                                <span class="divisor"></span>
-                                <span class="release-date">출간일</span>
-                            </div>
-
-                            <div class="book-description">
-                                도서 서평 부분입니다. 도서 서평 부분입니다. 도서 서평 부분입니다. 도서 서평 부분입니다. 도서 서평 부분입니다. 도서 서평 부분입니다.
-                            </div>
-
-                            <div class="book-price">
-                                <span class="discount">10%</span>
-                                <span class="sale-price">13,500</span><span>원</span>
-                                <span class="original-price">15,000원</span>
-                            </div>
-                        </div>
-
-                        <!-- 장바구니 버튼 -->
-                        <div class="cart-button-container">
-                            <img src="./icon/cart.svg" alt="장바구니 버튼" />장바구니
-                        </div>
-                    </div>
-
-                    <div class="field-bottom-bar">
-                        <input type="checkbox" class="select-checkbox" />
-                        <!-- 장바구니 버튼 -->
-                        <div class="button-cart">
-                            <button> <img src="./icon/cart.svg" alt="장바구니" />장바구니</button>
-                        </div>
-                    </div>
-
-                    <!-- 페이지 이동 구간 -->
-                    <div class="pagination">
-                        <!-- 첫 페이지로 이동 -->
-                        <button class="page-btn disabled">
-                            <img src="./icon/arrow_double_left.svg" alt="첫 페이지" />
-                        </button>
-
-                        <!-- 이전 페이지로 이동 -->
-                        <button class="page-btn disabled">
-                            <img src="./icon/arrow_left_icon.svg" alt="이전 페이지" />
-                        </button>
-
-                        <!-- 숫자 버튼 -->
-                        <button class="page-number active">1</button>
-                        <button class="page-number">2</button>
-                        <button class="page-number">3</button>
-                        <button class="page-number">4</button>
-                        <button class="page-number">5</button>
-
-                        <!-- 생략 표시 -->
-                        <span class="ellipsis">...</span>
-
-                        <!-- 마지막 페이지 -->
-                        <button class="page-number">100</button>
-
-                        <!-- 다음 페이지로 이동 -->
-                        <button class="page-btn">
-                            <img src="./icon/arrow_right_icon.svg" alt="다음 페이지" />
-                        </button>
-
-                        <!-- 마지막 페이지로 이동 -->
-                        <button class="page-btn">
-                            <img src="./icon/arrow_double_right.svg" alt="마지막 페이지" />
-                        </button>
                     </div>
                 </div>
+
+
+                <!-- 다른 카드들도 동일하게 반복하면서 체크박스 value만 book ID로 변경 -->
+
+                </div> <!-- /.field-body -->
+            </form> <!-- form 끝 -->
+
             </div>
+
         </div>
     </main>
     <footer>
